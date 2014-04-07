@@ -73,6 +73,7 @@ $_['button_add_module']             = 'Add Module';
 $_['button_add_link']               = 'Add Link';
 $_['button_update_total']           = 'Update Totals';
 $_['button_approve']                = 'Approve';
+$_['button_apply'] = 'Apply'; $_['button_install'] = 'Install'; $_['button_enable'] = 'Enable'; $_['button_disable'] = 'Disable'; $_['button_up'] = 'Up'; $_['text_clear_cache'] = 'Clear DB cache'; $_['text_clear_cache_image'] = 'Clear image cache'; $_['text_successch'] = 'Success: Cache for your shop was cleared';
 $_['button_reset']                  = 'Reset';
 
 // Tab

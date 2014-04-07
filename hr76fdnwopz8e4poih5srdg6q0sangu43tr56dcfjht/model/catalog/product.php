@@ -343,7 +343,7 @@ class ModelCatalogProduct extends Model {
 			$this->addProduct($data);
 		}
 	}
-	
+	public function editProductStatus($product_id, $status) { $this->db->query("UPDATE " . DB_PREFIX . "product SET status = '" . (int)$status . "', date_modified = NOW() WHERE product_id = '" . (int)$product_id . "'"); $this->cache->delete('product'); }
 	public function deleteProduct($product_id) {
     
      $query = $this->db->query("SELECT image FROM " . DB_PREFIX . "product WHERE  product_id = '" . (int)$product_id . "' UNION ALL SELECT image FROM " . DB_PREFIX . "product_image WHERE  product_id = '" . (int)$product_id . "'");

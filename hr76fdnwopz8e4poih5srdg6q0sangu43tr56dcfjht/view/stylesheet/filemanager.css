@@ -1,258 +1,42 @@
-body {
-	padding: 0;
-	margin: 0;
-	background: #F7F7F7;
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: 11px;
-}
-img {
-	border: 0;
-}
-#container {
-	padding: 0px 10px 7px 10px;
-	height: 340px;
-}
-#dialog {
-	display: none;
-}
-#menu {
-	clear: both;
-	height: 30px;
-	margin-top: 3px;
-	padding: 4px;
-	background: #E5E5E5;
-	border-left: 1px solid #CCC;
-	border-top: 1px solid #CCC;
-	border-right: 1px solid #CCC;
-	-webkit-border-radius: 4px 4px 0px 0px;
-	-moz-border-radius: 4px 4px 0px 0px;
-	-khtml-border-radius: 4px 4px 0px 0px;
-	border-radius: 4px 4px 0px 0px;
-}
-#menu .button-box-general {
-	overflow: hidden;
-	float: left;
-	height: 28px;
-	margin-right: 5px;
-	border: 1px solid #B2B2B2;
-	-webkit-border-radius: 4px 4px 4px 4px;
-	-moz-border-radius: 4px 4px 4px 4px;
-	-khtml-border-radius: 4px 4px 4px 4px;
-	border-radius: 4px 4px 4px 4px;
-	padding: 0;
-}
-.button-box-general a + a {
-	border-left: 1px solid #B2B2B2;
-}
-.button-box-general a.button-folder {
-	background: #EEEEEE url('../image/filemanager/folder.png') center center no-repeat;
-	padding: 4px;
-	cursor: pointer;
-	display: inline-block;
-	height: 20px;
-	width: 20px;
-}
-.button-box-general a.button-folder:hover {
-	background: #F8F8F8 url('../image/filemanager/folder.png') center center no-repeat;
-}
-.button-box-general a.button-delete {
-	background: #EEEEEE url('../image/filemanager/edit-delete.png') center center no-repeat;
-	padding: 4px;
-	cursor: pointer;
-	display: inline-block;
-	height: 20px;
-	width: 20px;
-}
-.button-box-general a.button-delete:hover {
-	background: #F8F8F8 url('../image/filemanager/edit-delete.png') center center no-repeat;
-}
-#menu .button-box-edit {
-	overflow: hidden;
-	float: left;
-	height: 28px;
-	margin-right: 5px;
-	border: 1px solid #B2B2B2;
-	-webkit-border-radius: 4px 4px 4px 4px;
-	-moz-border-radius: 4px 4px 4px 4px;
-	-khtml-border-radius: 4px 4px 4px 4px;
-	border-radius: 4px 4px 4px 4px;
-	padding: 0;
-}
-.button-box-edit a + a {
-	border-left: 1px solid #B2B2B2;
-}
-.button-box-edit a.button-move {
-	background: #EEEEEE url('../image/filemanager/edit-cut.png') center center no-repeat;
-	padding: 4px;
-	cursor: pointer;
-	display: inline-block;
-	height: 20px;
-	width: 20px;
-}
-.button-box-edit a.button-folder:hover {
-	background: #F8F8F8 url('../image/filemanager/edit-cut.png') center center no-repeat;
-}
-.button-box-edit a.button-copy {
-	background: #EEEEEE url('../image/filemanager/edit-copy.png') center center no-repeat;
-	padding: 4px;
-	cursor: pointer;
-	display: inline-block;
-	height: 20px;
-	width: 20px;
-}
-.button-box-edit a.button-copy:hover {
-	background: #F8F8F8 url('../image/filemanager/edit-copy.png') center center no-repeat;
-}
-.button-box-edit a.button-rename {
-	background: #EEEEEE url('../image/filemanager/edit-rename.png') center center no-repeat;
-	padding: 4px;
-	cursor: pointer;
-	display: inline-block;
-	height: 20px;
-	width: 20px;
-}
-.button-box-edit a.button-rename:hover {
-	background: #F8F8F8 url('../image/filemanager/edit-rename.png') center center no-repeat;
-}
-#menu .button-box-upload {
-	overflow: hidden;
-	float: left;
-	height: 28px;
-	margin-right: 5px;
-	border: 1px solid #B2B2B2;
-	-webkit-border-radius: 4px 4px 4px 4px;
-	-moz-border-radius: 4px 4px 4px 4px;
-	-khtml-border-radius: 4px 4px 4px 4px;
-	border-radius: 4px 4px 4px 4px;
-	padding: 0;
-}
-.button-box-upload a + a {
-	border-left: 1px solid #B2B2B2;
-}
-.button-box-upload a.button-uploads {
-	background: #EEEEEE url('../image/filemanager/upload.png') center center no-repeat;
-	padding: 4px;
-	cursor: pointer;
-	display: inline-block;
-	height: 20px;
-	width: 20px;
-}
-.button-box-upload a.button-uploads:hover {
-	background: #F8F8F8 url('../image/filemanager/upload.png') center center no-repeat;
-}
-.button-box-upload a.button-multiupload {
-	background: #EEEEEE url('../image/filemanager/multiupload.png') center center no-repeat;
-	padding: 4px;
-	cursor: pointer;
-	display: inline-block;
-	height: 20px;
-	width: 20px;
-}
-.button-box-upload a.button-multiupload:hover {
-	background: #F8F8F8 url('../image/filemanager/multiupload.png') center center no-repeat;
-}
-#menu .button-box-update {
-	overflow: hidden;
-	float: left;
-	height: 28px;
-	margin-right: 5px;
-	border: 1px solid #B2B2B2;
-	-webkit-border-radius: 4px 4px 4px 4px;
-	-moz-border-radius: 4px 4px 4px 4px;
-	-khtml-border-radius: 4px 4px 4px 4px;
-	border-radius: 4px 4px 4px 4px;
-	padding: 0;
-}
-.button-box-update a + a {
-	border-left: 1px solid #B2B2B2;
-}
-.button-box-update a.button-update {
-	background: #EEEEEE url('../image/filemanager/refresh.png') center center no-repeat;
-	padding: 4px;
-	cursor: pointer;
-	display: inline-block;
-	height: 20px;
-	width: 20px;
-}
-.button-box-update a.button-update:hover {
-	background: #F8F8F8 url('../image/filemanager/refresh.png') center center no-repeat;
-}
-.button-box-update a.button-insert {
-	background: #EEEEEE url('../image/filemanager/edit-paste.png') center center no-repeat;
-	padding: 4px;
-	cursor: pointer;
-	display: inline-block;
-	height: 20px;
-	width: 20px;
-}
-.button-box-update a.button-insert:hover {
-	background: #F8F8F8 url('../image/filemanager/edit-paste.png') center center no-repeat;
-}
-.search-box {
-	float: right;
-}
-#search { 
-	width: 200px; 
-	padding: 7px;
-	font-size: 11px;
-	border: 1px solid #B2B2B2;
-	-webkit-border-radius: 4px 4px 4px 4px;
-	-moz-border-radius: 4px 4px 4px 4px;
-	-khtml-border-radius: 4px 4px 4px 4px;
-	border-radius: 4px 4px 4px 4px;
-}
-#column-left {
-	background: #dbdfe3;
-	border: 1px solid #CCC;
-	float: left;
-	clear: both;
-	width: 163px;
-	margin: 0;
-	height: 290px;
-	overflow: auto;
-}
-#column-right {
-	background: #FFF;
-	border: 1px solid #CCC;
-	float: right;
-	width: 78%;
-	height: 290px;
-	margin: 0;
-	overflow: auto;
-	text-align: center;
-}
-#column-right div {
-	text-align: left;
-	padding: 5px;
-}
-#column-right a {
-	display: inline-block;
-	text-align: center;
-	border: 1px solid #EEEEEE;
-	cursor: pointer;
-	margin: 5px;
-	padding: 5px;
-}
-#column-right a.selected {
-	border: 1px solid #7DA2CE;
-	background: #EBF4FD;
-}
-#column-right input {
-	display: none;
-}
-.thumb {
-	padding: 5px;
-	width: 100px;
-	height: 100px;
-	background: #F7F7F7;
-	border: 1px solid #CCCCCC;
-	cursor: pointer;
-	cursor: move;
-	position: relative;
-}
-button.btn {float: left; font-size: 10px; margin-top: 6px;}
-.fileName { display: block;}
-.fileSize { clear: both; display: block; }
-.btnExtra { width: 58px; font-size: 9px; margin: 3px; }
-#visualFeedback { width: 240px;  position: fixed; right: 30px; top: 35px; border: 2px solid #fbfbfb; z-index: 99; background: #000; border-radius: 8px; box-shadow: 0px 0px 10px #ccc; overflow: hidden; display: none; }
-#visualFeedback span{ font-size: 12px; color: #fbfbfb;  font-weight: bold; padding: 13px; display: block; }
+body{background:#F7F7F7;font-family:Verdana, Arial, Helvetica, sans-serif;font-size:11px;margin:0;padding:0;}
+img{border:0;}
+#container{height:340px;padding:0 10px 7px;}
+#dialog{display:none;}
+#menu{clear:both;height:30px;margin-top:3px;background:#E5E5E5;border-left:1px solid #CCC;border-top:1px solid #CCC;border-right:1px solid #CCC;-webkit-border-radius:4px 4px 0 0;-moz-border-radius:4px 4px 0 0;-khtml-border-radius:4px 4px 0 0;border-radius:4px 4px 0 0;padding:4px;}
+.button-box-general a.button-folder{background:#EEE url(../image/filemanager/folder.png) center center no-repeat;cursor:pointer;display:inline-block;height:20px;width:20px;padding:4px;}
+.button-box-general a.button-folder:hover{background:#F8F8F8 url(../image/filemanager/folder.png) center center no-repeat;}
+.button-box-general a.button-delete{background:#EEE url(../image/filemanager/edit-delete.png) center center no-repeat;cursor:pointer;display:inline-block;height:20px;width:20px;padding:4px;}
+.button-box-general a.button-delete:hover{background:#F8F8F8 url(../image/filemanager/edit-delete.png) center center no-repeat;}
+.button-box-edit a.button-move{background:#EEE url(../image/filemanager/edit-cut.png) center center no-repeat;cursor:pointer;display:inline-block;height:20px;width:20px;padding:4px;}
+.button-box-edit a.button-folder:hover{background:#F8F8F8 url(../image/filemanager/edit-cut.png) center center no-repeat;}
+.button-box-edit a.button-copy{background:#EEE url(../image/filemanager/edit-copy.png) center center no-repeat;cursor:pointer;display:inline-block;height:20px;width:20px;padding:4px;}
+.button-box-edit a.button-copy:hover{background:#F8F8F8 url(../image/filemanager/edit-copy.png) center center no-repeat;}
+.button-box-edit a.button-rename{background:#EEE url(../image/filemanager/edit-rename.png) center center no-repeat;cursor:pointer;display:inline-block;height:20px;width:20px;padding:4px;}
+.button-box-edit a.button-rename:hover{background:#F8F8F8 url(../image/filemanager/edit-rename.png) center center no-repeat;}
+#menu .button-box-general,#menu .button-box-edit{overflow:hidden;float:left;height:28px;margin-right:5px;border:1px solid #B2B2B2;-webkit-border-radius:4px 4px 4px 4px;-moz-border-radius:4px;-khtml-border-radius:4px 4px 4px 4px;border-radius:4px 4px 4px 4px;padding:0;}
+.button-box-general a + a,.button-box-edit a + a{border-left:1px solid #B2B2B2;}
+.button-box-upload a.button-uploads{background:#EEE url(../image/filemanager/upload.png) center center no-repeat;cursor:pointer;display:inline-block;height:20px;width:20px;padding:4px;}
+.button-box-upload a.button-uploads:hover{background:#F8F8F8 url(../image/filemanager/upload.png) center center no-repeat;}
+.button-box-upload a.button-multiupload{background:#EEE url(../image/filemanager/multiupload.png) center center no-repeat;cursor:pointer;display:inline-block;height:20px;width:20px;padding:4px;}
+.button-box-upload a.button-multiupload:hover{background:#F8F8F8 url(../image/filemanager/multiupload.png) center center no-repeat;}
+.button-box-update a.button-update{background:#EEE url(../image/filemanager/refresh.png) center center no-repeat;cursor:pointer;display:inline-block;height:20px;width:20px;padding:4px;}
+.button-box-update a.button-update:hover{background:#F8F8F8 url(../image/filemanager/refresh.png) center center no-repeat;}
+.button-box-update a.button-insert{background:#EEE url(../image/filemanager/edit-paste.png) center center no-repeat;cursor:pointer;display:inline-block;height:20px;width:20px;padding:4px;}
+.button-box-update a.button-insert:hover{background:#F8F8F8 url(../image/filemanager/edit-paste.png) center center no-repeat;}
+.search-box{float:right;}
+#search{width:200px;font-size:11px;border:1px solid #B2B2B2;-webkit-border-radius:4px 4px 4px 4px;-moz-border-radius:4px;-khtml-border-radius:4px 4px 4px 4px;border-radius:4px 4px 4px 4px;padding:7px;}
+#column-left{background:#dbdfe3;border:1px solid #CCC;float:left;clear:both;width:163px;height:290px;overflow:auto;margin:0;}
+#column-right{background:#FFF;border:1px solid #CCC;float:right;width:78%;height:290px;overflow:auto;text-align:center;margin:0;}
+#column-right div{text-align:left;padding:5px;}
+#column-right a{display:inline-block;text-align:center;border:1px solid #EEE;cursor:pointer;margin:5px;padding:5px;}
+#column-right a.selected{border:1px solid #7DA2CE;background:#EBF4FD;}
+#column-right input{display:none;}
+.thumb{width:100px;height:100px;background:#F7F7F7;border:1px solid #CCC;cursor:move;position:relative;padding:5px;}
+button.btn{float:left;font-size:10px;margin-top:6px;}
+.fileName{display:block;}
+.fileSize{clear:both;display:block;}
+.btnExtra{width:58px;font-size:9px;margin:3px;}
+#visualFeedback{width:240px;position:fixed;right:30px;top:35px;border:2px solid #fbfbfb;z-index:99;background:#000;border-radius:8px;box-shadow:0 0 10px #ccc;overflow:hidden;display:none;}
+#visualFeedback span{font-size:12px;color:#fbfbfb;font-weight:700;display:block;padding:13px;}
+#menu .button-box-upload,#menu .button-box-update{overflow:hidden;float:left;height:28px;margin-right:5px;border:1px solid #B2B2B2;-webkit-border-radius:4px 4px 4px 4px;-moz-border-radius:4px;-khtml-border-radius:4px 4px 4px 4px;border-radius:4px 4px 4px 4px;padding:0;}
+.button-box-upload a + a,.button-box-update a + a{border-left:1px solid #B2B2B2;}

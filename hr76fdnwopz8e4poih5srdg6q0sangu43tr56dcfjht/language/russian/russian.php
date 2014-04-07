@@ -73,6 +73,7 @@ $_['button_add_module']             = 'Добавить модуль';
 $_['button_add_link']               = 'Добавить ссылку';
 $_['button_update_total']           = 'Обновить итого';
 $_['button_approve']                = 'Активировать';
+$_['button_apply'] = 'Применить'; $_['button_install'] = 'Установить'; $_['button_enable'] = 'Включить'; $_['button_disable'] = 'Отключить'; $_['button_up'] = 'Вверх'; $_['text_clear_cache'] = 'Очистить кэш БД'; $_['text_clear_cache_image'] = 'Очистить кэш изображений'; $_['text_successch'] = 'Кэш магазина был успешно очищен';
 $_['button_reset']                  = 'Сброс';
 
 // Tab

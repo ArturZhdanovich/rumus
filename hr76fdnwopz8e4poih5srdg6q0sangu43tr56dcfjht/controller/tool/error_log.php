@@ -51,7 +51,6 @@ class ControllerToolErrorLog extends Controller {
 				
 		$this->response->setOutput($this->render());
 	}
-	
 	public function clear() {
 		$this->language->load('tool/error_log');
 		

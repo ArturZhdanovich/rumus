@@ -163,7 +163,7 @@ class ControllerCatalogInformation extends Controller {
 							
 		$this->data['insert'] = $this->url->link('catalog/information/insert', 'token=' . $this->session->data['token'] . $url, 'SSL');
 		$this->data['delete'] = $this->url->link('catalog/information/delete', 'token=' . $this->session->data['token'] . $url, 'SSL');	
-
+$this->data['enabled'] = $this->url->link('catalog/information/enable', 'token=' . $this->session->data['token'] . $url, 'SSL'); $this->data['disabled'] = $this->url->link('catalog/information/disable', 'token=' . $this->session->data['token'] . $url, 'SSL');
 		$this->data['informations'] = array();
 
 		$data = array(
@@ -211,6 +211,7 @@ class ControllerCatalogInformation extends Controller {
 		
 		$this->data['button_insert'] = $this->language->get('button_insert');
 		$this->data['button_delete'] = $this->language->get('button_delete');
+        $this->data['button_enable'] = $this->language->get('button_enable'); $this->data['button_disable'] = $this->language->get('button_disable');
  
  		if (isset($this->error['warning'])) {
 			$this->data['error_warning'] = $this->error['warning'];
@@ -470,7 +471,7 @@ class ControllerCatalogInformation extends Controller {
 			return false;
 		}
 	}
-
+public function enable() { $this->load->language('catalog/information'); $this->document->setTitle($this->language->get('heading_title')); $this->load->model('catalog/information'); if (isset($this->request->post['selected'])) { foreach ($this->request->post['selected'] as $information_id) { $this->model_catalog_information->editInformationStatus($information_id, 1); } $this->session->data['success'] = $this->language->get('text_success'); $url = ''; if (isset($this->request->get['page'])) { $url .= '&page=' . $this->request->get['page']; } if (isset($this->request->get['sort'])) { $url .= '&sort=' . $this->request->get['sort']; } if (isset($this->request->get['order'])) { $url .= '&order=' . $this->request->get['order']; } $this->redirect($this->url->link('catalog/information', 'token=' . $this->session->data['token'] . $url, 'SSL')); } $this->getList(); } public function disable() { $this->load->language('catalog/information'); $this->document->setTitle($this->language->get('heading_title')); $this->load->model('catalog/information'); if (isset($this->request->post['selected'])) { foreach ($this->request->post['selected'] as $information_id) { $this->model_catalog_information->editInformationStatus($information_id, 0); } $this->session->data['success'] = $this->language->get('text_success'); $url = ''; if (isset($this->request->get['page'])) { $url .= '&page=' . $this->request->get['page']; } if (isset($this->request->get['sort'])) { $url .= '&sort=' . $this->request->get['sort']; } if (isset($this->request->get['order'])) { $url .= '&order=' . $this->request->get['order']; } $this->redirect($this->url->link('catalog/information', 'token=' . $this->session->data['token'] . $url, 'SSL')); } $this->getList(); }
 	protected function validateDelete() {
 		if (!$this->user->hasPermission('modify', 'catalog/information')) {
 			$this->error['warning'] = $this->language->get('error_permission');

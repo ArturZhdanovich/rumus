@@ -53,12 +53,22 @@ $(document).ready(function(){
     });
 });
 </script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+        //Striped table
+        try {
+            $(".list tbody tr").mouseover(function() {$(this).addClass("over");}).mouseout(function() {$(this).removeClass("over");});
+            $(".list tbody tr:even, .form tbody tr:even, .dashboard-content tbody tr:even").addClass("alt");
+            }
+          catch (err) {};
+        });
+    </script>
+    <script type="text/javascript"> $(function(){ $.fn.scrollToTop=function(){ $(this).hide().removeAttr("href"); if($(window).scrollTop()!="0"){ $(this).fadeIn("fast") } var scrollDiv=$(this); $(window).scroll(function(){ if($(window).scrollTop()=="0"){ $(scrollDiv).fadeOut("slow") }else{ $(scrollDiv).fadeIn("fast") } }); $(this).click(function(){ $("html, body").animate({scrollTop:0},"slow") }) } }); $(function() { $("#toTop").scrollToTop(); }); $(document).ready(function(){ try { $("input, textarea, select").focus(function() { $(this).addClass("focus"); }); $("input, textarea, select").blur(function() { $(this).removeClass("focus"); }); $(".list tbody tr").mouseover(function() {$(this).addClass("over");}).mouseout(function() {$(this).removeClass("over");}); $(".list tbody tr:even, .form tbody tr:even, .dashboard-content tbody tr:even").addClass("alt"); $("tbody td.right a").addClass('button'); $("tbody td.right").each(function () { $(this).html($(this).html().replace('[ ',' ').replace('[ ',' ').replace(' ]',' ').replace(' ]',' ')); }); $("a.button").each(function(){ <?php if( strpos( strtolower($_SERVER['REQUEST_URI']), 'insert' ) == false ) { ?> var onclick = $(this).attr('onclick'); if(typeof onclick != 'undefined' && onclick.indexOf('#form') != -1 && onclick.indexOf('.submit()') != -1 && $(this).text() == '<?php echo $this->language->get('button_save') ?>'){ var apply = '<a class="button apply" onclick="apply_form()"><?php echo $this->language->get('button_apply') ?></a>'; $(this).after(apply); } <?php } ?> if ($(this).text() == '<?php echo $this->language->get('button_insert') ?>' || $(this).text() == '<?php echo $this->language->get('button_save') ?>') {$(this).addClass('insert')} if ($(this).text() == '<?php echo $this->language->get('text_edit') ?>') {$(this).addClass('edit')} if ($(this).text() == '<?php echo $this->language->get('button_delete') ?>' || $(this).text() == '<?php echo $this->language->get('button_cancel') ?>') {$(this).addClass('delete')} if ($(this).text() == '<?php echo $this->language->get('button_install') ?>') {$(this).addClass('install')} }); } catch (err) {}; setTimeout(function(){$('.success,.warning,.attention').remove()},15000); $('.success,.warning,.attention').click(function() {$(this).remove();}); }); function apply_form(){ try { for (instance in CKEDITOR.instances) CKEDITOR.instances[instance].updateElement(); } catch(err) {}; $('.success,.warning,.attention').remove(); $.ajax({ type: 'POST', url: $('#form').attr('action'), data: $('#form').serialize(), dataType: 'text', success: function(data){ if($(data).find('.error').length > 0){ $("#form").submit(); }else{ $('#content .breadcrumb').after($(data).find('.success,.warning,.attention')); $('.success,.warning,.attention').click(function() {$(this).remove();}); setTimeout(function(){$('.success,.warning,.attention').remove()},15000); } } }); }; </script>
 </head>
 <body>
 <div id="container">
 <div id="header">
   <div class="div1">
-    <div class="div2"><img src="view/image/logo.png" title="<?php echo $heading_title; ?>" onclick="location = '<?php echo $home; ?>'" /></div>
     <?php if ($logged) { ?>
     <div class="div3"><?php echo $logged; ?></div>
     <?php } ?>

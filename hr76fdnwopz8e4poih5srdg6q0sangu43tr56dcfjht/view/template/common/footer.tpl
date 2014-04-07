@@ -14,4 +14,5 @@ $('.image').hover(function(){
 });
 //--></script>
 <?php } ?>
+<a href="#" id="toTop" style="display: none;"><?php echo $this->language->get('button_up'); ?></a>
 </body></html>

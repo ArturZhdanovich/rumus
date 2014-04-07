@@ -41,3 +41,9 @@
 2014-02-19 10:45:44 - PHP Notice:  Undefined variable: firstname in /var/www/rumusby/data/www/rumus.by/catalog/view/theme/default/template/mail/order.tpl on line 36
 2014-02-19 10:45:44 - PHP Notice:  Undefined variable: firstname in /var/www/rumusby/data/www/rumus.by/catalog/view/theme/default/template/mail/order.tpl on line 36
 2014-02-20 11:12:14 - PHP Warning:  unlink(/var/www/rumusby/data/www/rumus.by/image/data/products/2_ebay/3_bag/7_clutch/2014_02_16_1/c1.JPG): No such file or directory in /var/www/rumusby/data/www/rumus.by/hr76fdnwopz8e4poih5srdg6q0sangu43tr56dcfjht/model/catalog/product_quick.php on line 351
+2014-02-24 8:10:53 - PHP Warning:  unlink(/var/www/rumusby/data/www/rumus.by/image/): Is a directory in /var/www/rumusby/data/www/rumus.by/hr76fdnwopz8e4poih5srdg6q0sangu43tr56dcfjht/model/catalog/product_quick.php on line 351
+2014-02-27 18:03:50 - PHP Warning:  imagecreatefromjpeg(): gd-jpeg, libjpeg: recoverable error: Premature end of JPEG file
+ in /var/www/rumusby/data/www/rumus.by/system/library/image.php on line 34
+2014-02-27 18:03:50 - PHP Warning:  imagecreatefromjpeg(): '/var/www/rumusby/data/www/rumus.by/image/data/products/2_ebay/3_bag/3_briefcase/2014_02_27_1/mm1.jpg' is not a valid JPEG file in /var/www/rumusby/data/www/rumus.by/system/library/image.php on line 34
+2014-02-27 18:03:50 - PHP Warning:  imagecopyresampled() expects parameter 2 to be resource, boolean given in /var/www/rumusby/data/www/rumus.by/system/library/image.php on line 109
+2014-02-27 18:03:50 - PHP Warning:  imagedestroy() expects parameter 1 to be resource, boolean given in /var/www/rumusby/data/www/rumus.by/system/library/image.php on line 110
