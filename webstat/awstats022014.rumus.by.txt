@@ -1,0 +1,697 @@
+AWSTATS DATA FILE 7.1 (build 1.983)
+# If you remove this file, all statistics for date 201402 will be lost/reset.
+# Last config file used to build this data file was /etc/awstats/awstats.rumus.by.conf.
+
+# Position (offset in bytes) in this file for beginning of each section for
+# direct I/O access. If you made changes somewhere in this file, you should
+# also remove completely the MAP section (AWStats will rewrite it at next
+# update).
+BEGIN_MAP 27
+POS_GENERAL 1988                
+POS_TIME 2649                
+POS_VISITOR 21241               
+POS_DAY 26505               
+POS_DOMAIN 3561                
+POS_LOGIN 3797                
+POS_ROBOT 3952                
+POS_WORMS 4784                
+POS_EMAILSENDER 4915                
+POS_EMAILRECEIVER 5058                
+POS_SESSION 27047               
+POS_SIDER 27259               
+POS_FILETYPES 5193                
+POS_DOWNLOADS 5447                
+POS_OS 5495                
+POS_BROWSER 5720                
+POS_SCREENSIZE 6297                
+POS_UNKNOWNREFERER 6371                
+POS_UNKNOWNREFERERBROWSER 6921                
+POS_ORIGIN 7003                
+POS_SEREFERRALS 7148                
+POS_PAGEREFS 7316                
+POS_SEARCHWORDS 8443                
+POS_KEYWORDS 9451                
+POS_MISC 2313                
+POS_ERRORS 10255               
+POS_CLUSTER 3653                
+POS_SIDER_404 10421               
+END_MAP
+
+# LastLine    = Date of last record processed - Last record line number in last log - Last record offset in last log - Last record signature value
+# FirstTime   = Date of first visit for history file
+# LastTime    = Date of last visit for history file
+# LastUpdate  = Date of last update - Nb of parsed records - Nb of parsed old records - Nb of parsed new records - Nb of parsed corrupted - Nb of parsed dropped
+# TotalVisits = Number of visits
+# TotalUnique = Number of unique visitors
+# MonthHostsKnown   = Number of hosts known
+# MonthHostsUnKnown = Number of hosts unknown
+BEGIN_GENERAL 8
+LastLine 20140218012214 4 491 10645135617646
+FirstTime 0
+LastTime 20140217230824
+LastUpdate 20140218020233 2 0 2 0 0
+TotalVisits 200                 
+TotalUnique 125                 
+MonthHostsKnown 0                   
+MonthHostsUnknown 125                 
+END_GENERAL
+
+# Misc ID - Pages - Hits - Bandwidth
+BEGIN_MISC 10
+QuickTimeSupport 0 0 0
+JavaEnabled 0 0 0
+JavascriptDisabled 0 0 0
+PDFSupport 0 0 0
+WindowsMediaPlayerSupport 0 0 0
+AddToFavourites 0 0 0
+RealPlayerSupport 0 0 0
+TotalMisc 0 0 0
+DirectorSupport 0 0 0
+FlashSupport 0 0 0
+END_MISC
+
+# Hour - Pages - Hits - Bandwidth - Not viewed Pages - Not viewed Hits - Not viewed Bandwidth
+BEGIN_TIME 24
+0 403 1786 11797602 55 109 541897
+1 635 3272 18904109 73 175 504455
+2 1422 3899 17690183 217 335 1028720
+3 1811 4398 20596886 85 233 249593
+4 821 3871 24674016 200 335 976294
+5 863 6799 53086493 121 312 832315
+6 1576 5358 28452322 81 302 1308208
+7 520 2612 15059605 104 223 421040
+8 674 2059 10590497 76 131 568103
+9 35 485 4339268 98 166 921740
+10 18 320 3474625 68 110 1049776
+11 43 780 6640418 64 120 961047
+12 182 1308 9715098 51 101 649079
+13 916 2510 13069069 118 205 842304
+14 140 888 3799539 54 136 963051
+15 13 281 2079450 56 103 759325
+16 64 815 7617103 50 120 955972
+17 2 105 713119 468 551 8876052
+18 2 21 154240 124 184 2248990
+19 2 27 700156 30 67 720152
+20 0 0 0 25 49 325176
+21 6 77 821475 39 75 690600
+22 38 176 1493182 161 198 967176
+23 147 351 1171816 74 113 459931
+END_TIME
+
+# Domain - Pages - Hits - Bandwidth
+# The 10 first Pages must be first (order not required for others)
+BEGIN_DOMAIN 1
+ip 10333 42198 256640271
+END_DOMAIN
+
+# Cluster ID - Pages - Hits - Bandwidth
+BEGIN_CLUSTER 0
+END_CLUSTER
+
+# Login - Pages - Hits - Bandwidth - Last visit
+# The 10 first Pages must be first (order not required for others)
+BEGIN_LOGIN 0
+END_LOGIN
+
+# Robot ID - Hits - Bandwidth - Last visit - Hits on robots.txt
+# The 10 first Hits must be first (order not required for others)
+BEGIN_ROBOT 19
+yandex 550 3908849 20140218011337 42
+googlebot 500 7067275 20140218010155 19
+bingbot 367 1766282 20140217233920 78
+no_user_agent 203 9280460 20140216174240 0
+mail\.ru 144 2223649 20140217125255 55
+crawl 100 545661 20140210051315 2
+bot[\s_+:,\.\;\/\\-] 79 483622 20140214223534 1
+[\s_+:,\.\;\/\\-]bot 71 371067 20140213225011 3
+mj12bot 59 422483 20140214115814 13
+robot 51 289232 20140218012214 2
+yacy 2 602 20140213070425 2
+msnbot 4 5845 20140217185509 2
+ezoom 4 92433 20140212043837 2
+unknown 19 7861 20140217123347 19
+surveybot 2 9851 20140213181325 1
+archive\.org_bot 3 4116 20140216213940 3
+favicon 2 52426 20140212071721 0
+netcraft 1 42210 20140208181419 0
+msnbot\-media 2 602 20140213145502 2
+END_ROBOT
+
+# Worm ID - Hits - Bandwidth - Last visit
+# The 5 first Hits must be first (order not required for others)
+BEGIN_WORMS 0
+END_WORMS
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first Hits must be first (order not required for others)
+BEGIN_EMAILSENDER 0
+END_EMAILSENDER
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first hits must be first (order not required for others)
+BEGIN_EMAILRECEIVER 0
+END_EMAILRECEIVER
+
+# Files type - Hits - Bandwidth - Bandwidth without compression - Bandwidth after compression
+BEGIN_FILETYPES 9
+php 8908 8346758 0 0
+css 3968 12124442 0 0
+png 14719 92590105 0 0
+html 1155 8371066 0 0
+js 7496 46586028 0 0
+jpg 5321 86114007 0 0
+Unknown 266 2074285 0 0
+gif 361 358480 0 0
+swf 4 75100 0 0
+END_FILETYPES
+
+# Downloads - Hits - Bandwidth
+BEGIN_DOWNLOADS 0
+END_DOWNLOADS
+
+# OS ID - Hits
+BEGIN_OS ID - Hits - Pages 11
+linuxandroid 302 40
+winxp 37755 9981
+winlong 68 5
+linuxubuntu 922 45
+winvista 3 1
+linux 14 12
+win7 1768 121
+win16 4 4
+macosx 41 1
+win2003 7 7
+Unknown 1314 116
+END_OS
+
+# Browser ID - Hits - Pages
+BEGIN_BROWSER 26
+safari7.0 41 1
+msie6.0 48 12
+chrome24.0.1309.0 3 3
+firefox26.0 205 13
+samsung 302 40
+chrome28.0.1500.95 246 13
+chrome22.0.1229.79 3 3
+firefox18.0 4 2
+chrome28.0.1500.75 97 2
+chrome31.0.1650.63 922 45
+firefox24.0 11 11
+chrome32.0.1700.107 32187 8652
+opera9.80 2822 152
+safari5.1.7 352 55
+msie8.0 87 7
+chrome32.0.1700.102 4248 1225
+mozilla 29 29
+chrome30.0.1599.12785 65 2
+msie7.0 25 1
+firefox14.0.1 10 10
+msie10.0 4 4
+chrome25.0.1364.172 2 2
+chrome28.0.1501.283 119 16
+msie9.0 17 17
+firefox27.0 261 15
+chrome30.0.1599.101 88 1
+END_BROWSER
+
+# Screen size - Hits
+BEGIN_SCREENSIZE 0
+END_SCREENSIZE
+
+# Unknown referer OS - Last visit date
+BEGIN_UNKNOWNREFERER 5
+Opera/9.80_(Android;_Opera_Mini/6.0.24556/34.1244;_U;_ru)_Presto/2.8.119_Version/11.10 20140217024233
+Opera/9.80_(Android;_Opera_Mini/6.0.24556/34.1088;_U;_ru)_Presto/2.8.119_Version/11.10 20140206050531
+Mozilla/5.0_(compatible;_SiteExplorer/1.0b;__http://siteexplorer.info/) 20140213015319
+Mozilla/5.0_(compatible;_Google-Site-Verification/1.0) 20140202071026
+Opera/9.80_(Android;_Opera_Mini/6.0.24556/34.1153;_U;_ru)_Presto/2.8.119_Version/11.10 20140210003910
+END_UNKNOWNREFERER
+
+# Unknown referer Browser - Last visit date
+BEGIN_UNKNOWNREFERERBROWSER 0
+END_UNKNOWNREFERERBROWSER
+
+# Origin - Pages - Hits 
+BEGIN_ORIGIN 6
+From0 365 445
+From1 1 1
+From2 14 14
+From3 48 48
+From4 9905 41690
+From5 0 0
+END_ORIGIN
+
+# Search engine referers ID - Pages - Hits
+BEGIN_SEREFERRALS 2
+google 3 3
+yandex 11 11
+END_SEREFERRALS
+
+# External page referers - Pages - Hits
+# The 10 first Pages must be first (order not required for others)
+BEGIN_PAGEREFS 23
+http://yandex.by/clck/jsredir 11 11
+http://vk.com/id193796996 4 4
+http://vk.com/id193799626 4 4
+http://m.vk.com/id193799626 4 4
+http://yandex.ua/clck/jsredir 3 3
+http://vk.com/photo-44702020_303420420 3 3
+http://www.vizas.org/news 2 2
+http://vk.com/id193343977 2 2
+http://www.closetdoors.net/bypass-hardware/111-sd-sliding-bypass-door-hardware.html 1 1
+http://legemiddelverket.no/Om_Legemiddelverket/Sider/default.aspx 1 1
+http://touch.mail.ru/cgi-bin/link 1 1
+http://www.linkopingsmynt.com/tj\xe4nster-6559809 1 1
+http://immopresta.fr/index.php/nos-realisations 1 1
+http://de.msi.com/product/nb/ 1 1
+http://www.promocionesorcera.com/category.php 1 1
+http://rumus/404/ 1 1
+http://emotionalcoaching.org.uk/brainwashing-part-1/ 1 1
+http://yandex.kz/clck/jsredir 1 1
+http://www.winninggames.co.uk/online-scratch-cards-instant-thrills-and-wins/ 1 1
+http://m.vk.com/photo-44702020_303420420 1 1
+http://evoldo.com 1 1
+http://prostheticcenter.org/author/admin 1 1
+http://vizas.org 1 1
+END_PAGEREFS
+
+# Search keyphrases - Number of search
+# The 10 first number of search must be first (order not required for others)
+BEGIN_SEARCHWORDS 7
+%d1%8c%d0%84%d1%91+%d1%91%d1%8b%d1%94%d1%86%d1%81%d1%80+%d1%8f%d1%8e%d1%84%d1%84%d1%85%d0%81%d1%86%d1%8a%d1%88 4
+%d1%8c%d0%84%d1%91+%d1%97%d1%88%d0%84+%d0%84%d1%85%d1%8b%d1%85%d0%87%d1%8e%d1%8d 2
+%d1%88%d0%b0%d0%bf%d0%ba%d0%b0+%d0%b6%d0%b5%d0%bd%d1%81%d0%ba%d0%b0%d1%8f+sofia+%d0%b1%d0%b0%d0%b1%d0%b5%d1%82%d1%82%d0%b0 1
+gepur+%d0%bb%d0%b8%d1%87%d0%bd%d1%8b%d0%b9+%d0%ba%d0%b0%d0%b1%d0%b8%d0%bd%d0%b5%d1%82 1
+%d0%84%d1%85%d1%8b%d1%85%d0%87%d1%8e%d1%8d+%d1%91%d1%8b%d1%94%d1%86%d1%81%e2%88%9a+%d1%8f%d1%8e%d1%84%d1%84%d1%85%d0%81%d1%86%d1%8a%d1%88+%d1%8c%d0%84%d1%91 1
+rumus.by 1
+%d0%bf%d1%80%d0%b8%d0%b3%d0%bb%d0%b0%d1%88%d0%b0%d0%b5%d0%bc+%d0%ba+%d1%81%d0%be%d1%82%d1%80%d1%83%d0%b4%d0%bd%d0%b8%d1%87%d0%b5%d1%81%d1%82%d0%b2%d1%83+%d0%bf%d1%80%d0%be%d0%b8%d0%b7%d0%b2%d0%be%d0%b4%d0%b8%d1%82%d0%b5%d0%bb%d0%b5%d0%b9+%d0%be%d0%b4%d0%b5%d0%b6%d0%b4%d1%8b 1
+END_SEARCHWORDS
+
+# Search keywords - Number of search
+# The 10 first number of search must be first (order not required for others)
+BEGIN_KEYWORDS 19
+%d1%8c%d0%84%d1%91 7
+%d1%8f%d1%8e%d1%84%d1%84%d1%85%d0%81%d1%86%d1%8a%d1%88 5
+%d1%91%d1%8b%d1%94%d1%86%d1%81%d1%80 4
+%d0%84%d1%85%d1%8b%d1%85%d0%87%d1%8e%d1%8d 3
+%d1%97%d1%88%d0%84 2
+%d1%88%d0%b0%d0%bf%d0%ba%d0%b0 1
+%d0%b6%d0%b5%d0%bd%d1%81%d0%ba%d0%b0%d1%8f 1
+%d0%b1%d0%b0%d0%b1%d0%b5%d1%82%d1%82%d0%b0 1
+gepur 1
+%d0%bb%d0%b8%d1%87%d0%bd%d1%8b%d0%b9 1
+sofia 1
+%d0%bf%d1%80%d0%b8%d0%b3%d0%bb%d0%b0%d1%88%d0%b0%d0%b5%d0%bc 1
+%d0%bf%d1%80%d0%be%d0%b8%d0%b7%d0%b2%d0%be%d0%b4%d0%b8%d1%82%d0%b5%d0%bb%d0%b5%d0%b9 1
+%d1%91%d1%8b%d1%94%d1%86%d1%81%e2%88%9a 1
+%d1%81%d0%be%d1%82%d1%80%d1%83%d0%b4%d0%bd%d0%b8%d1%87%d0%b5%d1%81%d1%82%d0%b2%d1%83 1
+%d0%be%d0%b4%d0%b5%d0%b6%d0%b4%d1%8b 1
+%d0%ba%d0%b0%d0%b1%d0%b8%d0%bd%d0%b5%d1%82 1
+%d0%ba 1
+rumus.by 1
+END_KEYWORDS
+
+# Errors - Hits - Bandwidth
+BEGIN_ERRORS 7
+403 1 336
+302 829 11540
+206 74 809872
+500 34 51340
+400 2 610
+404 1059 362427
+301 174 10345
+END_ERRORS
+
+# URL with 404 errors - Hits - Last URL referer
+BEGIN_SIDER_404 107
+/image/cache/data/products/2_ebay/3_bag/7_clutch/2014_02_16_1/Lady%20Women%E2%80%99s%20Envelope%20Baguette%20Clutch%20Chain%20Purse%20Wristlet%20Bag%20Shoulder%20Handbag%206-74x74.jpg 1 -
+/image/cache/data/products/2_ebay/3_bag/7_clutch/2014_02_16_1/Lady%20Women%E2%80%99s%20Envelope%20Baguette%20Clutch%20Chain%20Purse%20Wristlet%20Bag%20Shoulder%20Handbag%207-74x74.jpg 1 -
+/image/cache/data/products/1_larionoff/1_women/101_dress/1/101-200x200.jpg 1 -
+/image/cache/data/products/2_ebay/1_women/103_jackets/1/4-160x160.jpg 1 http://rumus.by/women/nizhnee-bele-i-kupalniki/bikini-blue-pink
+/image/cache/data/products/2_ebay/3_bag/7_clutch/2014_02_16_1/Lady%20Women%E2%80%99s%20Envelope%20Baguette%20Clutch%20Chain%20Purse%20Wristlet%20Bag%20Shoulder%20Handbag%208-500x500.jpg 1 -
+/image/cache/data/products/1_larionoff/1_women/101_dress/6/4-500x500.jpg 1 -
+/image/cache/data/products/1_larionoff/1_women/101_dress/6/5-500x500.jpg 1 -
+/image/cache/data/products/1_larionoff/1_women/101_dress/9/5-500x500.jpg 1 -
+/image/cache/data/products/2_ebay/3_bag/7_clutch/2014_02_16_1/Lady%20Women%E2%80%99s%20Envelope%20Baguette%20Clutch%20Chain%20Purse%20Wristlet%20Bag%20Shoulder%20Handbag%201-500x500.jpg 1 -
+/image/cache/data/products/2_ebay/3_bag/7_clutch/2014_02_16_1/Lady%20Women%E2%80%99s%20Envelope%20Baguette%20Clutch%20Chain%20Purse%20Wristlet%20Bag%20Shoulder%20Handbag%209-74x74.jpg 1 -
+/image/cache/data/products/1_larionoff/1_women/101_dress/8/2-500x500.jpg 1 -
+/image/cache/data/products/2_ebay/3_bag/7_clutch/2014_02_16_1/Lady%20Women%E2%80%99s%20Envelope%20Baguette%20Clutch%20Chain%20Purse%20Wristlet%20Bag%20Shoulder%20Handbag%2013-500x500.jpg 1 -
+/image/cache/data/products/1_larionoff/1_women/101_dress/8/2-220x220.jpg 1 -
+/image/cache/data/products/1_larionoff/1_women/101_dress/9/1-200x200.jpg 1 -
+/image/cache/data/products/1_larionoff/1_women/101_dress/9/1-500x500.jpg 1 -
+/image/cache/data/products/1_larionoff/1_women/101_dress/9/1-220x220.jpg 1 -
+/image/cache/data/products/1_larionoff/1_women/101_dress/4/5-200x200.jpg 1 -
+/image/cache/data/products/1_larionoff/1_women/101_dress/8/2-200x200.jpg 1 -
+/image/cache/data/products/2_ebay/1_women/101_dress/2/201-220x220.jpg 1 -
+/image/cache/data/8-730x531-730x530.jpg 1 -
+/image/cache/data/iconcategoris/women-skirts-200x200.jpg 1 -
+/image/cache/data/products/1_larionoff/1_women/101_dress/6/1-500x500.jpg 1 -
+/image/cache/data/products/1_larionoff/1_women/101_dress/8/2-160x160.jpg 1 -
+/image/cache/data/products/2_ebay/1_women/101_dress/1/101-500x500.jpg 1 -
+/image/cache/data/products/1_larionoff/1_women/101_dress/7/4-500x500.jpg 1 -
+/image/cache/data/4-730x400.jpg 1 -
+/image/cache/data/ic/w_%D0%BD%D0%B8%D0%B6%D0%BD%D0%B5%D0%B5-%D0%B1%D0%B5%D0%BB%D1%8C%D0%B5-220x220.jpg 1 -
+/hr76fdnwopz8e4poih5srdg6q0sangu43tr56dcfjht/view/image/menu-hover.png 186 http://rumus.by/hr76fdnwopz8e4poih5srdg6q0sangu43tr56dcfjht/index.php
+/image/cache/data/products/2_ebay/3_bag/7_clutch/2014_02_16_1/Lady%20Women%E2%80%99s%20Envelope%20Baguette%20Clutch%20Chain%20Purse%20Wristlet%20Bag%20Shoulder%20Handbag%2015-74x74.jpg 1 -
+/image/cache/data/iconcategoris/men-jackets-220x220.jpg 1 -
+/image/cache/data/iconcategoris/women-dress-200x200.jpg 1 -
+/image/cache/data/products/2_ebay/3_bag/7_clutch/2014_02_16_1/Lady%20Women%E2%80%99s%20Envelope%20Baguette%20Clutch%20Chain%20Purse%20Wristlet%20Bag%20Shoulder%20Handbag%2010-74x74.jpg 1 -
+/image/cache/data/iconmanufactoris/larionoff-50x50.png 1 -
+/image/cache/data/1-730x400.jpg 1 -
+/image/cache/data/products/2_ebay/3_bag/7_clutch/2014_02_16_1/Lady%20Women%E2%80%99s%20Envelope%20Baguette%20Clutch%20Chain%20Purse%20Wristlet%20Bag%20Shoulder%20Handbag%206-500x500.jpg 1 -
+/image/cache/data/products/1-220x220.jpg 1 -
+/image/cache/data/products/2_ebay/1_women/101_dress/2/201-160x160.jpg 1 -
+/image/cache/data/products/2_ebay/3_bag/7_clutch/2014_02_16_1/Lady%20Women%E2%80%99s%20Envelope%20Baguette%20Clutch%20Chain%20Purse%20Wristlet%20Bag%20Shoulder%20Handbag%203-500x500.jpg 1 -
+/image/cache/data/products/2_ebay/3_bag/7_clutch/2014_02_16_1/Lady%20Women%E2%80%99s%20Envelope%20Baguette%20Clutch%20Chain%20Purse%20Wristlet%20Bag%20Shoulder%20Handbag%2010-500x500.jpg 1 -
+/image/cache/data/products/1_larionoff/1_women/101_dress/9/6-500x500.jpg 1 -
+/image/cache/data/products/2_ebay/3_bag/7_clutch/2014_02_16_1/Lady%20Women%E2%80%99s%20Envelope%20Baguette%20Clutch%20Chain%20Purse%20Wristlet%20Bag%20Shoulder%20Handbag%203-74x74.jpg 1 -
+/image/cache/data/products/2_ebay/3_bag/7_clutch/2014_02_16_1/Lady%20Women%E2%80%99s%20Envelope%20Baguette%20Clutch%20Chain%20Purse%20Wristlet%20Bag%20Shoulder%20Handbag%205-74x74.jpg 1 -
+/image/cache/data/products/2_ebay/3_bag/7_clutch/2014_02_16_1/Lady%20Women%E2%80%99s%20Envelope%20Baguette%20Clutch%20Chain%20Purse%20Wristlet%20Bag%20Shoulder%20Handbag%2012-500x500.jpg 1 -
+/image/cache/data/products/1_larionoff/1_women/101_dress/2/8-200x200.jpg 1 -
+/image/cache/data/products/1_larionoff/1_women/101_dress/9/3-500x500.jpg 2 -
+/image/cache/data/3-730x400.jpg 1 -
+/image/cache/data/ic/b_%D1%81%D1%83%D0%BC%D0%BA%D0%B8-200x200.jpg 1 -
+/image/cache/data/products/1_larionoff/1_women/101_dress/1/101-160x160.jpg 1 -
+/image/cache/data/products/1_larionoff/1_women/101_dress/6/2-500x500.jpg 1 -
+/image/cache/data/iconcategoris/women-dress-220x220.jpg 1 -
+/image/cache/data/products/2_ebay/3_bag/7_clutch/2014_02_16_1/Lady%20Women%E2%80%99s%20Envelope%20Baguette%20Clutch%20Chain%20Purse%20Wristlet%20Bag%20Shoulder%20Handbag%207-500x500.jpg 1 -
+/image/cache/data/products/1_larionoff/1_women/101_dress/7/1-500x500.jpg 1 -
+/image/cache/data/products/2_ebay/3_bag/7_clutch/2014_02_16_1/Lady%20Women%E2%80%99s%20Envelope%20Baguette%20Clutch%20Chain%20Purse%20Wristlet%20Bag%20Shoulder%20Handbag%202-500x500.jpg 1 -
+/image/cache/data/products/1_larionoff/1_women/101_dress/7/1-200x200.jpg 1 -
+/I18nMsg,AjxMsg,ZMsg,ZmMsg,AjxKeys,ZmKeys,ZdMsg,Ajx%20TemplateMsg.js.zgz 1 -
+/apple-touch-icon.png 1 -
+/image/cache/data/products/1_larionoff/1_women/101_dress/6/4-200x200.jpg 1 -
+/image/cache/data/iconmanufactoris/dress_code-80x80.png 1 -
+/image/cache/data/products/2_ebay/3_bag/7_clutch/2014_02_16_1/Lady%20Women%E2%80%99s%20Envelope%20Baguette%20Clutch%20Chain%20Purse%20Wristlet%20Bag%20Shoulder%20Handbag%209-500x500.jpg 1 -
+/hr76fdnwopz8e4poih5srdg6q0sangu43tr56dcfjht/view/image/menu-line.png 180 http://rumus.by/hr76fdnwopz8e4poih5srdg6q0sangu43tr56dcfjht/index.php
+/image/cache/data/ic/bw_%D0%BA%D0%BB%D0%B0%D1%82%D1%87%D0%B8-200x200.jpg 1 -
+/image/cache/data/products/1_larionoff/1_women/101_dress/7/1-160x160.jpg 1 -
+/image/cache/data/products/2_ebay/3_bag/7_clutch/2014_02_16_1/Lady%20Women%E2%80%99s%20Envelope%20Baguette%20Clutch%20Chain%20Purse%20Wristlet%20Bag%20Shoulder%20Handbag%205-500x500.jpg 1 -
+/image/cache/data/products/1_larionoff/1_women/101_dress/1/101-500x500.jpg 1 -
+/image/cache/data/products/1_larionoff/1_women/101_dress/3/1-200x200.jpg 1 -
+/image/cache/data/products/1_larionoff/1_women/101_dress/5/3-200x200.jpg 1 -
+/image/cache/data/6-730x531-730x530.jpg 1 -
+/image/cache/data/products/1_larionoff/1_women/101_dress/9/2-500x500.jpg 1 -
+/image/cache/data/products/1_larionoff/1_women/101_dress/7/1-220x220.jpg 1 -
+/image/cache/data/products/1_larionoff/1_women/101_dress/6/6-500x500.jpg 1 -
+/image/cache/data/iconcategoris/women-skirts-220x220.jpg 1 -
+/image/cache/data/iconcategoris/women-sweatshirts-220x220.jpg 1 -
+/image/cache/data/products/1_larionoff/1_women/101_dress/7/3-500x500.jpg 1 -
+/image/cache/data/products/2_ebay/1_women/101_dress/2/201-200x200.jpg 1 -
+/image/cache/data/products/2_ebay/3_bag/7_clutch/2014_02_16_1/Lady%20Women%E2%80%99s%20Envelope%20Baguette%20Clutch%20Chain%20Purse%20Wristlet%20Bag%20Shoulder%20Handbag%2012-74x74.jpg 1 -
+/image/cache/data/products/2_ebay/3_bag/7_clutch/2014_02_16_1/Lady%20Women%E2%80%99s%20Envelope%20Baguette%20Clutch%20Chain%20Purse%20Wristlet%20Bag%20Shoulder%20Handbag%202-74x74.jpg 1 -
+/image/cache/data/products/1_larionoff/1_women/101_dress/6/3-500x500.jpg 1 -
+/image/cache/data/products/1_larionoff/1_women/101_dress/6/4-220x220.jpg 1 -
+/image/cache/data/iconcategoris/men-jackets-200x200.jpg 1 -
+/image/cache/data/products/2_ebay/1_women/101_dress/1/101-200x200.jpg 1 -
+/image/cache/data/iconcategoris/women-coat-200x200.jpg 1 -
+/image/cache/data/iconcategoris/women-sweatshirts-200x200.jpg 1 -
+/image/cache/data/5-730x400.jpg 1 -
+/image/cache/data/products/2_ebay/3_bag/7_clutch/2014_02_16_1/Lady%20Women%E2%80%99s%20Envelope%20Baguette%20Clutch%20Chain%20Purse%20Wristlet%20Bag%20Shoulder%20Handbag%2015-500x500.jpg 1 -
+/image/cache/data/products/2_ebay/3_bag/7_clutch/2014_02_16_1/Lady%20Women%E2%80%99s%20Envelope%20Baguette%20Clutch%20Chain%20Purse%20Wristlet%20Bag%20Shoulder%20Handbag%208-74x74.jpg 1 -
+/image/cache/data/products/1_larionoff/1_women/101_dress/8/3-500x500.jpg 1 -
+/image/cache/data/products/1_larionoff/1_women/101_dress/9/4-500x500.jpg 1 -
+/image/cache/data/products/1_larionoff/1_women/101_dress/6/4-160x160.jpg 1 -
+/image/cache/data/products/1_larionoff/1_women/101_dress/9/1-160x160.jpg 1 -
+/image/cache/data/products/1_larionoff/1_women/101_dress/7/2-500x500.jpg 1 -
+/image/cache/data/iconmanufactoris/gepur-80x80.png 1 -
+/image/cache/data/iconmanufactoris/eva_style-80x80.png 1 -
+/image/cache/data/products/5_ebay/1_women/101_dress/201-220x220.jpg 1 -
+/image/cache/data/products/1_larionoff/1_women/101_dress/8/4-500x500.jpg 1 -
+/image/cache/data/2-730x400.jpg 1 -
+/res/I18nMsg,AjxMsg,ZMsg,ZmMsg,AjxKeys,ZmKeys,ZdMsg,Ajx%20TemplateMsg.js.zgz 1 -
+/image/cache/data/products/2_ebay/1_women/101_dress/2/201-500x500.jpg 1 -
+/image/cache/data/iconcategoris/women-coat-220x220.jpg 1 -
+/image/cache/data/iconmanufactoris/larionoff-80x80.png 1 -
+/catalog/view/javascript/jquery/amazonmenu/image/ul-hover.png 587 http://rumus.by/women/
+/image/cache/data/7-730x531-730x530.jpg 2 -
+/image/cache/data/products/1_larionoff/1_women/101_dress/1/101-220x220.jpg 1 -
+/image/cache/data/products/2_ebay/3_bag/7_clutch/2014_02_16_1/Lady%20Women%E2%80%99s%20Envelope%20Baguette%20Clutch%20Chain%20Purse%20Wristlet%20Bag%20Shoulder%20Handbag%201-74x74.jpg 1 -
+/image/cache/data/products/1_larionoff/1_women/101_dress/8/1-500x500.jpg 1 -
+/image/cache/data/products/2_ebay/3_bag/7_clutch/2014_02_16_1/Lady%20Women%E2%80%99s%20Envelope%20Baguette%20Clutch%20Chain%20Purse%20Wristlet%20Bag%20Shoulder%20Handbag%2013-74x74.jpg 1 -
+/image/cache/data/products/2_ebay/1_women/101_dress/1/101-160x160.jpg 1 -
+/image/cache/data/products/2_ebay/1_women/101_dress/1/101-220x220.jpg 1 -
+END_SIDER_404
+
+# Host - Pages - Hits - Bandwidth - Last visit date - [Start date of last visit] - [Last page of last visit]
+# [Start date of last visit] and [Last page of last visit] are saved only if session is not finished
+# The 10 first Hits must be first (order not required for others)
+BEGIN_VISITOR 125
+86.57.183.238 4740 20794 121969623 20140217230824
+46.191.31.160 1872 2155 1854104 20140217034649
+86.57.170.47 1406 1710 3015004 20140216083155
+37.212.39.147 664 1622 6075197 20140210145730
+178.124.203.227 352 1234 6780490 20140210142342
+86.57.234.247 322 733 2811428 20140215140120
+37.212.75.13 96 186 866520 20140215144121
+178.126.40.236 68 471 2125544 20140215085306
+178.126.23.67 66 582 5943427 20140204094142
+5.100.192.48 56 1576 13041816 20140210070813
+93.171.125.119 4 114 1061699 20140213134304
+46.201.41.23 2 51 179048 20140209150320
+37.99.17.157 1 51 185613 20140205095234
+82.145.216.205 9 176 2553947 20140205104923
+178.172.183.45 3 109 953656 20140212035851
+178.126.145.85 7 7 39818 20140208072033
+95.26.15.62 2 21 154240 20140216181438
+62.219.8.233 1 1 8819 20140217221619
+109.126.133.109 3 81 1371111 20140204121708
+37.45.66.161 1 1 4540 20140207190223
+93.125.88.105 3 63 388918 20140209094553
+178.168.248.57 1 69 521347 20140216141700
+217.69.133.169 2 4 17866 20140210065945
+78.154.170.155 3 67 349103 20140206091105
+93.84.111.71 1 8 286765 20140205133512
+93.84.104.52 2 62 318157 20140207013919
+178.168.248.32 1 1 6731 20140217032220
+208.43.255.30 4 4 24575 20140214142132
+37.212.169.158 2 146 1124530 20140209114407
+37.212.254.19 2 65 553035 20140214173822
+46.191.0.59 4 117 1107646 20140210114914
+37.213.89.184 1 1 4289 20140205075532
+86.57.205.155 9 80 334634 20140201152102
+178.126.65.117 20 380 3149792 20140217150924
+46.191.9.30 2 3 68984 20140203081202
+208.43.255.25 6 6 36511 20140215020408
+37.214.32.187 13 149 1187697 20140211072638
+178.126.172.2 8 179 800127 20140203144658
+37.212.103.156 3 101 922331 20140216044421
+208.43.225.85 17 17 102834 20140212014836
+194.158.203.14 2 88 695505 20140214024903
+46.53.195.102 2 143 904208 20140212161419
+46.191.2.180 16 580 5215502 20140206103247
+209.85.238.64 1 1 70 20140202071026
+176.14.10.129 2 21 154234 20140214033256
+46.53.195.146 2 2 13021 20140211131819
+178.123.171.66 1 3 1632 20140206041622
+213.184.254.14 1 88 889691 20140214055214
+178.172.232.34 1 3 1632 20140210070533
+5.100.199.181 9 243 887549 20140202134452
+178.168.248.83 38 232 1922496 20140210055455
+31.128.155.168 2 65 201346 20140210123539
+82.145.216.123 1 3 1632 20140210003910
+37.212.240.241 4 4 24256 20140201160811
+178.122.222.144 1 55 177534 20140213211127
+37.212.126.200 9 452 4084836 20140205163903
+86.57.136.59 1 16 260931 20140206095341
+86.57.172.195 13 259 2078836 20140207113646
+87.252.227.17 1 3 1632 20140205113613
+77.67.128.140 9 448 2838331 20140205051832
+109.126.133.34 9 98 114891 20140202083001
+46.191.14.154 18 558 3331686 20140207085132
+95.211.199.200 1 1 8479 20140212104919
+208.43.255.24 1 1 4402 20140208223545
+178.124.246.79 34 268 2291037 20140217065301
+178.172.153.239 8 129 1138466 20140212041351
+46.191.16.157 8 143 1072002 20140207161310
+37.212.94.140 4 12 171578 20140206142450
+46.191.17.211 5 44 253756 20140210133309
+91.231.85.210 11 11 51778 20140202132346
+119.130.30.174 8 8 189701 20140217222123
+178.124.169.137 1 63 533106 20140217111607
+208.43.255.31 4 4 22726 20140208215024
+178.123.129.42 10 113 1112588 20140211043356
+86.57.171.77 5 9 50713 20140208145551
+82.145.217.184 38 520 5954152 20140214040318
+37.214.142.89 5 117 1085582 20140216125421
+46.188.55.254 3 105 2010466 20140209101505
+176.14.10.184 2 21 152342 20140217090755
+109.126.171.210 2 128 495232 20140203035435
+86.57.219.235 1 2 12016 20140209153841
+193.34.191.65 1 3 1632 20140214015155
+86.57.172.98 1 1 5035 20140204105745
+109.126.133.207 8 189 1828181 20140212035151
+82.145.208.74 7 106 1090552 20140217024233
+37.45.254.60 1 1 4540 20140209232948
+93.84.105.49 2 73 583127 20140216081615
+46.191.15.69 3 96 914069 20140214023016
+37.204.181.185 1 41 166314 20140217172931
+37.212.50.224 23 95 428168 20140217150058
+86.57.233.145 6 90 683051 20140207160945
+82.145.209.178 3 79 888491 20140215124801
+37.214.202.77 1 3 1632 20140211060719
+89.106.198.118 1 3 1632 20140206163211
+176.14.10.251 1 18 621215 20140216215633
+86.57.205.25 7 115 1052856 20140217115453
+80.252.253.90 1 50 187880 20140212053423
+82.145.208.165 24 288 3330555 20140207040812
+212.52.50.196 2 2 65826 20140204054307
+86.57.170.120 2 7 40913 20140211143124
+178.126.124.97 1 66 442159 20140203154448
+178.126.254.157 5 67 265560 20140202221627
+37.212.203.42 5 13 63648 20140206134518
+109.126.170.191 17 835 7973511 20140204084224
+86.57.133.136 10 128 502373 20140202065210
+82.145.209.168 5 113 1198974 20140209114856
+5.100.197.36 6 12 54263 20140211053507
+178.127.118.254 7 129 1098761 20140215082500
+178.122.190.247 1 62 526476 20140210033145
+37.212.242.5 2 97 1159166 20140214050323
+95.211.159.118 6 6 4830 20140215094026
+93.84.29.22 3 92 921313 20140213053602
+69.58.178.59 10 10 232738 20140217123359
+31.130.93.219 2 2 21970 20140216071028
+46.191.16.60 1 66 258062 20140203045821
+208.43.225.84 11 11 60767 20140213015319
+46.191.8.96 1 25 6676 20140204003230
+95.25.93.216 1 18 612022 20140217103458
+93.125.126.208 10 115 811380 20140216093511
+37.45.18.128 1 1 4285 20140203065511
+37.215.46.73 16 119 1128845 20140205160554
+46.191.1.88 28 459 2538747 20140214081326
+208.43.255.28 2 2 15356 20140208090434
+86.57.187.72 4 82 618945 20140212070614
+37.212.13.148 10 147 1510686 20140210135711
+END_VISITOR
+
+# Date - Pages - Hits - Bandwidth - Visits
+BEGIN_DAY 17
+20140201 13 84 358890 5
+20140202 47 599 3211966 9
+20140203 761 1882 4868528 11
+20140204 372 3402 25752729 12
+20140205 191 2174 15726588 14
+20140206 224 2834 22886189 14
+20140207 441 3368 16443080 11
+20140208 29 87 768082 9
+20140209 123 603 3030441 9
+20140210 3029 9721 51471170 19
+20140211 436 2864 23095096 11
+20140212 244 1275 8537369 13
+20140213 47 581 5516798 9
+20140214 382 5021 43362139 16
+20140215 504 1606 7807510 9
+20140216 1446 2448 9477400 10
+20140217 2044 3649 14326296 19
+END_DAY
+
+# Session range - Number of visits
+BEGIN_SESSION 7
+1h+ 23
+5mn-15mn 16
+15mn-30mn 8
+0s-30s 101
+2mn-5mn 13
+30s-2mn 24
+30mn-1h 15
+END_SESSION
+
+# URL - Pages - Bandwidth - Entry - Exit
+# The 10 first Pages must be first (order not required for others)
+BEGIN_SIDER 95
+/hr76fdnwopz8e4poih5srdg6q0sangu43tr56dcfjht/index.php 8716 8208393 12 11
+/ 562 4702287 77 66
+/index.php 192 138365 1 12
+/women/ 140 1037044 3 4
+/bag/ 68 504749 9 9
+/accessories/ 64 408692 7 13
+/bijouterie/ 60 384515 8 13
+/men/ 58 362270 6 10
+/hr76fdnwopz8e4poih5srdg6q0sangu43tr56dcfjht/ 27 34965 6 0
+/bag/klachi/pu-leather-clutch-handbag 23 185849 0 0
+/women/women-jackets/chiffon-blouse 3 22182 0 0
+/women/women-dress/krasnoe-plate 2 14922 0 0
+/accessories/bijouterie/ 1 5209 0 0
+/bag/sumki-tout/ 3 18342 0 0
+/contact 6 68286 5 2
+/contacts 2 35992 0 0
+/bag/women-women_handbags/ 1 5937 0 0
+/order-history 1 4000 0 1
+/men/men-shirts/ 3 15943 0 0
+/about-us 6 40442 1 4
+/bijouterie/sergi-i-kaffy/serezhki-chernyy-list 2 15150 0 0
+/women/women-skirts/ 4 23852 0 0
+/women/women-jackets/t-shirt-blouse 1 7539 0 0
+/bijouterie/busy-i-kole/ 1 5987 0 0
+/hr76fdnwopz8e4poih5srdg6q0sangu43tr56dcfjht/view/javascript/plupload/js/plupload.flash.swf 4 75100 0 0
+/account-forgotten 5 21729 3 2
+/account-login 21 94471 13 6
+/women/nizhnee-bele-i-kupalniki/ 14 96109 2 3
+/bag/klassicheskie-sumki/sumochka-s-bantikom 1 7832 0 0
+/women/pidzhaki/ 12 68783 0 2
+/accessories/strap/ 1 6190 0 0
+/bag/klassicheskie-sumki/retro-sumka 2 16062 0 0
+/oplata 5 49763 0 1
+/product-compare 4 15532 0 0
+/cooperation 2 9144 2 1
+/accessories/caps/ 8 47973 0 5
+/bag/klachi/zhenskiy-koshelek-klatch 5 41376 0 0
+/eva_style 2 25909 0 0
+/accessories/muzhskie-chasy/ 5 29795 3 0
+/perevod-razmerov/ 3 13358 0 0
+/bag/klassicheskie-sumki/zhenskaya-sumka-s-bantikom 15 124595 0 0
+/women/women-dress/women-sexy-elegant-slim-long-lace-gown-evening-cocktail-casual-party-dress 2 14917 0 0
+/buyer-protection 4 47871 0 0
+/account-reward 2 9008 0 0
+/account-register 4 21838 0 0
+/women/women-dress/ 11 72988 0 3
+/women/women-sweatshirts/ 11 59925 2 3
+/men/men-jackets/ 8 42451 3 3
+/pomoshch-v-vybore-veshchi/ 2 10729 0 0
+/bag/klassicheskie-sumki/sumka-s-bantikom 1 8091 0 0
+/bijouterie/braslety/ 1 5932 0 0
+/women/nizhnee-bele-i-kupalniki/bikini-blue-pink 18 135503 0 0
+/articles/ 10 54528 0 0
+/men/men-cardigans/ 2 10500 1 0
+/bag/klachi/zhenskiy-klatch-na-cepochke 1 8558 0 0
+/bijouterie/zakolki-i-rezinki/ 1 5917 0 0
+/account-newsletter 1 4154 0 0
+/accessories/muzhskie-remni/ 1 5905 1 0
+/sitemap 1 4113 0 0
+/women/summer-short-sleeve-dress 8 59521 0 0
+/bag/naplechnye-sumki/ 3 18611 0 1
+/women/women-jackets/ 4 26733 0 2
+/bag/portfolios/ 3 18206 0 0
+/bijouterie/podveski/ 1 5925 1 0
+/articles/vidy-muzhskih-sumok 14 186587 1 0
+/bag/zhenskiy-klatch-meshochek 5 41592 0 0
+/women/women-dress/party-dress 16 120620 0 0
+/men/men-waistcoats/ 1 5036 0 0
+/bijouterie/sergi-i-kaffy/ 1 6838 0 0
+/informaciya-o-dostavke 7 57061 0 0
+/men/men-stories/ 1 5962 0 0
+/%20larionoff 6 61225 0 2
+/bag/klassicheskie-sumki/sumka-s-bantom 2 16494 0 0
+/bag/plyazhnaya-sumka/ 5 29352 0 0
+/gepur 7 48885 4 2
+/404/ 21 16905 11 9
+/pomoshch-v-vybore-veshchi/vybor-sumki-dlya-puteshestviy 1 5964 0 0
+/affiliate-login 2 9230 2 0
+/women/women-tshirts/ 2 11169 0 0
+/bag/klassicheskie-sumki/ 5 32553 1 1
+/oferta 5 65614 3 0
+/women/women-smock/ 6 34885 1 2
+/googleaa23b6fa0258eccb.html 1 70 1 1
+/women/women-dress/elegant-slim 7 53162 0 0
+/bag/hobo/ 2 12695 0 1
+/stati/ 1 4860 0 0
+/bag/klachi/ 6 41379 0 0
+/women/women-jackets/stars-printed-blouse 13 99313 0 0
+/account-success 2 8874 0 0
+/pomoshch-v-vybore-veshchi/kak-podobrat-sumochku 2 12534 0 0
+/bag/klassicheskie-sumki/stilnaya-sumka-s-bantikom 5 40889 0 0
+/accessories/clock/ 7 41109 4 1
+/account 14 60904 3 1
+/dress_code 8 70988 3 2
+/bijouterie/kolca/ 3 17903 0 1
+END_SIDER

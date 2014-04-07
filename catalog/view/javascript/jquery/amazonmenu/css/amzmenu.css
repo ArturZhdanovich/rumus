@@ -1,0 +1,331 @@
+@media only screen and max-width 840px {
+.amzmenu{display:none;}
+}@media only screen           
+and (min-width : 840px) {/* Opencart Box */
+.box .amzbox {
+	background: #222;
+	color: #FCFCFC;
+	width: 90px;
+	border-top: 1px solid #222;
+	border-left: 1px solid #222;
+	border-right: 1px solid #222;
+	-webkit-border-radius: 7px 7px 0px 0px;
+	-moz-border-radius: 7px 7px 0px 0px;
+	-khtml-border-radius: 7px 7px 0px 0px;
+	border-radius: 7px 7px 0px 0px;
+	padding: 8px 10px 7px 10px;
+    	z-index: 4;
+}
+/* Menu Container */
+.amzmenu {
+display:block;
+	position: relative;
+	margin: 0;
+	padding: 0px;
+    width: 100%;
+	-webkit-border-radius: 0px 0px 7px 7px;
+	-moz-border-radius: 0px 0px 7px 7px;
+	-khtml-border-radius: 0px 0px 7px 7px;
+	border-radius: 0px 0px 7px 7px;
+	border-left: 1px solid #DBDEE1;
+	border-right: 1px solid #DBDEE1;
+	border-bottom: 1px solid #DBDEE1;
+	border-top: 3px solid #222;
+    	z-index: 4;
+}
+.amzmenu ul { 
+	display: block;
+	float: none;
+	border: 0;
+	outline: none;
+	list-style: none;
+	z-index: 250;
+	margin: 0px;
+	padding: 0px;
+}
+.amzmenu p {
+	margin: 0px;
+	padding: 0px 0px 5px 0px;
+}
+/* ***************************** LTR - Left_Column *** */
+/* Level 1 Left */
+.amzmenu ul.amzleft {
+	position: relative;
+	width: 100%;
+}
+#amzmenu li{
+    background: #FFF url('../image/ul-hover.png') 0px 0px no-repeat;
+}
+.amzmenu ul.amzleft li, .amzmenu ul.amzleft li.line {
+	display: block;
+
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+}
+.amzmenu ul.amzleft li a {
+    display: block;
+	width: 95%;
+	line-height: 18px;
+    background-color: #FFF;
+    color: #333;
+    text-decoration: none;
+    padding: 8px 0px 8px 5%;
+    text-align: left;
+	font-size: 13px;
+    font-weight: normal;
+    color: #000;
+	text-shadow: 1px 1px 0px #FFF;
+    font: bold Tahoma, Arial, Helvetica, sans-serif !important;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.amzmenu ul.amzleft li a:hover, .amzmenu ul.amzleft li a:active, .amzmenu ul.amzleft li a:focus {
+	font-weight: bold;
+    color:#F57917;
+}
+.amzmenu ul.amzleft li.store a {
+    display: block;
+	width: 168px;
+	line-height: 18px;
+    background: #FFF url('../images/amazon-ltr.gif') right center no-repeat;
+    color: #333;
+    text-decoration: none;
+    padding-top: 4px;
+    text-align: left;
+	font-size: 13px;
+    font-weight: normal;
+    cursor: pointer;
+}
+.amzmenu ul.amzleft li.store a:hover {
+    color: #F57917;
+	text-decoration: underline;
+	background: #FFF;
+}
+.amzmenu ul.amzleft li samp {
+    color: #777;
+    text-decoration: none;
+    text-align: left;
+	font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+	font-size: 9px;
+	margin: 0px;
+}
+/* Level 2 Left */
+.amzmenu ul.amzleft li ul {
+	position: absolute;
+    z-index: 25 !important;
+	display: none;
+	float: none;
+    left: 100%;
+    top: -3px;
+	width: 400px;
+	height: 400px;
+	padding-left: 15px;
+	background: #FFF url('../images/border-left.png') top left repeat-y;
+	border-top: 3px solid #222;
+	border-right: 1px solid #DBDEE1;
+	border-bottom: 1px solid #DBDEE1;
+	border-left: 0px;
+	-webkit-border-radius: 0px 0px 5px 0px;
+	-moz-border-radius: 0px 0px 5px 0px;
+	-khtml-border-radius: 0px 0px 5px 0px;
+	border-radius: 0px 0px 5px 0px;
+	-webkit-box-shadow: 0px 3px 4px #AAA;
+	-moz-box-shadow: 0px 3px 4px #AAA;
+	box-shadow: 0px 3px 4px #AAA;
+	
+}
+.amzmenu ul.amzleft li ul:hover {
+	display: block;
+}
+.amzmenu ul.amzleft li ul h3 {
+    line-height: 28px;
+    text-decoration: none;
+    text-align: left;
+    font-weight: bold;
+	font-size: 16px;
+	margin: 0px;
+	padding-top: 4px;
+}
+.amzmenu ul.amzleft li ul li a {
+position: relative;
+    line-height: 18px;
+    color: #444;
+    text-decoration: none;
+	padding-top: 4px;
+    text-align: left;
+    font-weight: normal;
+    cursor: pointer;
+    background: transparent;
+    z-index:99;
+}
+.amzmenu ul.amzleft li ul li a:hover {
+    color: #F57917;
+	font-weight: bold;
+}
+.amzmenu ul.amzleft li ul li samp {
+	margin: 0px;
+	list-style: none;
+	display: block;
+}
+.amzmenu ul.amzleft li ul li samp a {
+    color: #777;
+	line-height: 11px;
+    text-decoration: none;
+    text-align: left;
+	font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+	font-size: 10px;
+    cursor: pointer;
+}
+/* Menu Sprites Left */
+.amzmenu ul.amzleft li ul img {
+	position: absolute;
+	bottom: -25px;
+	right: -25px;
+    display: block;
+	background: transparent;
+    z-index:88!important;
+}
+/* ***************************** RTL - Right_Column *** */
+/* Level 1 Right */
+.amzmenu ul.amzright {
+	position: relative;
+	width: 168px;
+	padding: 4px 10px 10px 0px;
+}
+.amzmenu ul.amzright li {
+	display: block;
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+}
+.amzmenu ul.amzright li.line {
+	padding-left: 10px;
+}
+.amzmenu ul.amzright li a {
+    display: block;
+	width: 168px;
+	line-height: 18px;
+    background-color: #FFF;
+    color: #333;
+    text-decoration: none;
+    padding-top: 4px;
+    text-align: right;
+	font-size: 13px;
+    font-weight: normal;
+    cursor: pointer;
+}
+.amzmenu ul.amzright li a:hover, .amzmenu ul.amzright li a:active, .amzmenu ul.amzright li a:focus {
+    color: #F57917;
+	font-weight: bold;
+	background: url('../images/amzarrowright.gif') left center no-repeat;
+}
+.amzmenu ul.amzright li.store a {
+    display: block;
+	width: 168px;
+	line-height: 18px;
+    background: #FFF url('../images/amazon-rtl.gif') left center no-repeat;
+    color: #333;
+    text-decoration: none;
+    padding-top: 4px;
+    text-align: right;
+	font-size: 13px;
+    font-weight: normal;
+    cursor: pointer;
+}
+.amzmenu ul.amzright li.store a:hover {
+    color: #F57917;
+	text-decoration: underline;
+	background: #FFF url('../images/amazon-rtl.gif') left center no-repeat;
+}
+.amzmenu ul.amzright li samp {
+    color: #777;
+	display: block;
+    text-decoration: none;
+    text-align: right;
+	font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+	font-size: 9px;
+	margin: 0px;
+}
+/* Level 2 Left */
+.amzmenu ul.amzright li ul {
+	position: absolute;
+	display: none;
+	float: none;
+    right: 178px;
+    top: -3px;
+	width: 400px;
+	min-height: 250px;
+	padding-right: 15px;
+	background: #FFF url('../images/border-right.png') top right repeat-y;
+	border-top: 3px solid #222;
+	border-left: 1px solid #DBDEE1;
+	border-bottom: 1px solid #DBDEE1;
+	border-right: 0px;
+	-webkit-border-radius: 0px 0px 0px 5px;
+	-moz-border-radius: 0px 0px 0px 5px;
+	-khtml-border-radius: 0px 0px 0px 5px;
+	border-radius: 0px 0px 0px 5px;
+	-webkit-box-shadow: 0px 3px 4px #AAA;
+	-moz-box-shadow: 0px 3px 4px #AAA;
+	box-shadow: 0px 3px 4px #AAA;
+	z-index: 250;
+}
+.amzmenu ul.amzright li ul:hover {
+	display: block;
+}
+.amzmenu ul.amzright li ul h3 {
+	color: #F57917;
+    line-height: 28px;
+    text-decoration: none;
+    text-align: right;
+    font-weight: bold;
+	font-size: 16px;
+	margin: 0px;
+	padding-top: 4px;
+}
+.amzmenu ul.amzright li ul li {
+	clear: right;
+    float: right;
+}
+.amzmenu ul.amzright li ul li a {
+    line-height: 18px;
+    color: #444;
+    text-decoration: none;
+	padding-top: 4px;
+    text-align: right;
+    font-weight: normal;
+    cursor: pointer;
+}
+.amzmenu ul.amzright li ul li a:hover {
+    color: #F57917;
+	font-weight: bold;
+	background: #FFF;
+}
+.amzmenu ul.amzright li ul li samp {
+	margin: 0px;
+	list-style: none;
+	display: block;
+}
+.amzmenu ul.amzright li ul li samp a {
+    color: #777;
+	line-height: 11px;
+    text-decoration: none;
+    text-align: right;
+	font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+	font-size: 10px;
+    cursor: pointer;
+}
+/* Menu Sprites Left */
+.amzmenu ul.amzright li ul img {
+	position: absolute;
+	top: -20px;
+	left: -20px;
+    display: block;
+	background: transparent;
+}
+}

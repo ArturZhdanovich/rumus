@@ -1,0 +1,667 @@
+AWSTATS DATA FILE 7.1 (build 1.983)
+# If you remove this file, all statistics for date 201401 will be lost/reset.
+# Last config file used to build this data file was /etc/awstats/awstats.rumus.by.conf.
+
+# Position (offset in bytes) in this file for beginning of each section for
+# direct I/O access. If you made changes somewhere in this file, you should
+# also remove completely the MAP section (AWStats will rewrite it at next
+# update).
+BEGIN_MAP 27
+POS_GENERAL 1988                
+POS_TIME 2659                
+POS_VISITOR 12890               
+POS_DAY 19836               
+POS_DOMAIN 3563                
+POS_LOGIN 3798                
+POS_ROBOT 3953                
+POS_WORMS 4825                
+POS_EMAILSENDER 4956                
+POS_EMAILRECEIVER 5099                
+POS_SESSION 20569               
+POS_SIDER 20782               
+POS_FILETYPES 5234                
+POS_DOWNLOADS 5546                
+POS_OS 5927                
+POS_BROWSER 6170                
+POS_SCREENSIZE 6772                
+POS_UNKNOWNREFERER 6846                
+POS_UNKNOWNREFERERBROWSER 7655                
+POS_ORIGIN 7843                
+POS_SEREFERRALS 7989                
+POS_PAGEREFS 8146                
+POS_SEARCHWORDS 9450                
+POS_KEYWORDS 9602                
+POS_MISC 2323                
+POS_ERRORS 9661                
+POS_CLUSTER 3654                
+POS_SIDER_404 9808                
+END_MAP
+
+# LastLine    = Date of last record processed - Last record line number in last log - Last record offset in last log - Last record signature value
+# FirstTime   = Date of first visit for history file
+# LastTime    = Date of last visit for history file
+# LastUpdate  = Date of last update - Nb of parsed records - Nb of parsed old records - Nb of parsed new records - Nb of parsed corrupted - Nb of parsed dropped
+# TotalVisits = Number of visits
+# TotalUnique = Number of unique visitors
+# MonthHostsKnown   = Number of hosts known
+# MonthHostsUnKnown = Number of hosts unknown
+BEGIN_GENERAL 8
+LastLine 20140201001743 1 0 9900725187206
+FirstTime 20140108001505
+LastTime 20140131173356
+LastUpdate 20140201010223 1 0 0 0 0
+TotalVisits 260                 
+TotalUnique 162                 
+MonthHostsKnown 0                   
+MonthHostsUnknown 167                 
+END_GENERAL
+
+# Misc ID - Pages - Hits - Bandwidth
+BEGIN_MISC 10
+QuickTimeSupport 0 0 0
+JavaEnabled 0 0 0
+JavascriptDisabled 0 0 0
+PDFSupport 0 0 0
+WindowsMediaPlayerSupport 0 0 0
+AddToFavourites 0 0 0
+RealPlayerSupport 0 0 0
+TotalMisc 0 0 0
+DirectorSupport 0 0 0
+FlashSupport 0 0 0
+END_MISC
+
+# Hour - Pages - Hits - Bandwidth - Not viewed Pages - Not viewed Hits - Not viewed Bandwidth
+BEGIN_TIME 24
+0 382 2499 16056630 153 354 1795201
+1 237 1486 8660156 94 136 160087
+2 680 2274 9981001 205 326 624591
+3 524 4255 36937470 120 264 832125
+4 813 3797 19696883 140 374 2027878
+5 393 4121 21393533 193 318 951039
+6 848 3397 19010039 155 228 1455292
+7 140 2301 13459393 47 126 1585010
+8 120 786 3912033 48 100 567474
+9 226 1598 8765045 56 110 673853
+10 438 1729 7946839 161 207 597730
+11 828 2821 14282808 56 113 178370
+12 402 2874 15665553 41 116 279274
+13 163 1318 10092011 162 228 663432
+14 657 1992 9069197 65 125 635668
+15 108 811 4925742 53 68 120407
+16 10 173 861376 28 34 104395
+17 28 178 897414 52 78 263769
+18 17 17 99043 32 40 121818
+19 3 68 336610 25 53 358037
+20 0 0 0 59 72 286774
+21 6 126 1560410 71 81 595669
+22 0 0 0 18 23 83844
+23 482 3372 18918115 114 175 101267
+END_TIME
+
+# Domain - Pages - Hits - Bandwidth
+# The 10 first Pages must be first (order not required for others)
+BEGIN_DOMAIN 1
+ip 7505 41993 242527301
+END_DOMAIN
+
+# Cluster ID - Pages - Hits - Bandwidth
+BEGIN_CLUSTER 0
+END_CLUSTER
+
+# Login - Pages - Hits - Bandwidth - Last visit
+# The 10 first Pages must be first (order not required for others)
+BEGIN_LOGIN 0
+END_LOGIN
+
+# Robot ID - Hits - Bandwidth - Last visit - Hits on robots.txt
+# The 10 first Hits must be first (order not required for others)
+BEGIN_ROBOT 20
+googlebot 658 5990725 20140131202409 37
+yandex 154 673453 20140131221818 45
+mj12bot 143 1645067 20140129152255 22
+bingpreview 138 951116 20140112022003 0
+[\s_+:,\.\;\/\\-]bot 127 760931 20140119172158 1
+bot[\s_+:,\.\;\/\\-] 125 659276 20140130192043 3
+bingbot 77 299038 20140131122826 28
+msnbot\-media 39 339297 20140123190534 21
+unknown 16 6687 20140125170436 16
+w3c_validator 11 65809 20140121023753 0
+exabot 2 7821 20140117080806 1
+no_user_agent 1 33870 20140108032755 0
+msnbot 4 8666 20140116110925 2
+mail\.ru 9 139887 20140131195706 4
+ezoom 2 39775 20140127212619 1
+robot 2 590 20140123032509 2
+surveybot 2 7697 20140131142529 1
+archive\.org_bot 2 39742 20140121023811 1
+favicon 8 84763 20140129194226 0
+crawl 2 7600 20140124045223 1
+END_ROBOT
+
+# Worm ID - Hits - Bandwidth - Last visit
+# The 5 first Hits must be first (order not required for others)
+BEGIN_WORMS 0
+END_WORMS
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first Hits must be first (order not required for others)
+BEGIN_EMAILSENDER 0
+END_EMAILSENDER
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first hits must be first (order not required for others)
+BEGIN_EMAILRECEIVER 0
+END_EMAILRECEIVER
+
+# Files type - Hits - Bandwidth - Bandwidth without compression - Bandwidth after compression
+BEGIN_FILETYPES 12
+mp3 20 22913736 0 0
+css 3882 18907206 0 0
+png 17374 25387824 0 0
+swf 15 2193078 0 0
+php 5196 10320194 0 0
+html 1719 12068455 0 0
+js 7511 54091566 0 0
+jpg 5364 92886226 0 0
+xml 24 4881 0 0
+jpeg 2 2158 0 0
+Unknown 551 3188881 0 0
+gif 335 563096 0 0
+END_FILETYPES
+
+# Downloads - Hits - Bandwidth
+BEGIN_DOWNLOADS 6
+/404/music/graieste_moldovneste_gheaghea_vanea.mp3 14 0 11531092
+/404/music/florinel_ma_insor_la_anu-n_mai.mp3 2 0 3078862
+/404/music/christian_green_live.mp3 1 0 1255473
+/404/music/nicolae_guta_si_sorina-nunta.mp3 1 0 2805170
+/404/music/Nicolae_Guta_Gigoloo.mp3 1 0 2841035
+/404/music/off_mai_Ioane_tare_vreu_banane.mp3 1 0 1402104
+END_DOWNLOADS
+
+# OS ID - Hits
+BEGIN_OS ID - Hits - Pages 12
+linuxandroid 2 2
+winlong 5 5
+winxp 35930 6686
+winnt 1 1
+linuxubuntu 707 47
+winvista 183 10
+linux 139 60
+win7 4062 400
+winunknown 152 31
+j2me 294 20
+Unknown 485 240
+macosx7 33 3
+END_OS
+
+# Browser ID - Hits - Pages
+BEGIN_BROWSER 28
+msie6.0 18 3
+chrome12.0.742.100 1 0
+firefox26.0 485 20
+android 2 2
+firefox3.0.1 53 53
+firefox21.0 68 3
+firefox18.0 2 1
+chrome31.0.1650.57 377 28
+chrome31.0.1650.63 21095 5055
+chrome21.0.1231.0 73 3
+chrome13.0.782.215 33 3
+firefox12.0 289 10
+opera9.80 4072 206
+firefox1.5.0.9 5 5
+msie8.0 27 3
+chrome32.0.1700.102 2035 755
+mozilla 300 229
+chrome30.0.1599.12785 134 20
+chrome32.0.1700.76 12447 943
+msie7.0 5 5
+firefox3.0.6 1 1
+msie10.0 152 31
+chrome26.0.1410.63 79 1
+chrome28.0.1501.283 118 3
+msie9.0 55 55
+Unknown 8 8
+firefox11.0 58 58
+firefox3.5.7 1 1
+END_BROWSER
+
+# Screen size - Hits
+BEGIN_SCREENSIZE 0
+END_SCREENSIZE
+
+# Unknown referer OS - Last visit date
+BEGIN_UNKNOWNREFERER 9
+Mozilla/5.0_(compatible;_SiteExplorer/1.0b;__http://siteexplorer.info/) 20140115003958
+Google_Analytics_Snippet_Validator 20140108053441
+Mozilla/5.0_(compatible;_Google-Site-Verification/1.0) 20140108042545
+2ip.ru_CMS_Detector_(http://2ip.ru/cms/) 20140121024329
+Opera/9.80_(Android;_Opera_Mini/7.5.33361/34.873;_U;_ru)_Presto/2.8.119_Version/11.10 20140116023257
+Mozilla/4.0_(compatible;_HostTracker.com/1.0;_http://host-tracker.com/) 20140121024017
+Mozilla/5.0_(compatible;_XML_Sitemaps_Generator;_http://www.xml-sitemaps.com)_Gecko_XML-Sitemaps/1.0 20140111002619
+Mozilla/3.0_(compatible;_Indy_Library) 20140118004736
+Opera/9.80_(Android;_Opera_Mini/7.5.33361/34.926;_U;_ru)_Presto/2.8.119_Version/11.10 20140121153355
+END_UNKNOWNREFERER
+
+# Unknown referer Browser - Last visit date
+BEGIN_UNKNOWNREFERERBROWSER 2
+Google_Analytics_Snippet_Validator 20140108053441
+2ip.ru_CMS_Detector_(http://2ip.ru/cms/) 20140121024329
+END_UNKNOWNREFERERBROWSER
+
+# Origin - Pages - Hits 
+BEGIN_ORIGIN 6
+From0 783 868
+From1 0 0
+From2 27 27
+From3 84 413
+From4 6611 40685
+From5 0 0
+END_ORIGIN
+
+# Search engine referers ID - Pages - Hits
+BEGIN_SEREFERRALS 1
+google 27 27
+END_SEREFERRALS
+
+# External page referers - Pages - Hits
+# The 10 first Pages must be first (order not required for others)
+BEGIN_PAGEREFS 31
+http://host-tracker.com/web-site-uptime/14311923/ 16 16
+http://vk.com/photo-44702020_303420420 8 8
+http://vk.com/id193799626 8 8
+http://vizas.org 6 6
+http://nude-club.ru/404/index.swf 6 8
+http://yandex.by/clck/jsredir 5 5
+http://m.vk.com/photo-44702020_303420420 5 71
+http://vk.com/away.php 4 4
+http://www.xml-sitemaps.com/details-rumus.by.html 4 4
+http://vk.com/id145673475 4 4
+http://vk.com/id193796996 2 2
+http://rumus 3 3
+http://e.mail.ru/cgi-bin/link 1 1
+http://nude-club.ru/category/updates/4.html 1 1
+http://rumus/404/ 1 1
+http://vizas.org/products 1 1
+https://e.mail.ru/message/13906412350000000796/ 0 2
+http://nude-club.ru/webstat/index.012014.html 1 1
+http://vk.com/id193343977 2 2
+http://nude-club.ru/paula-patton.html 1 1
+http://nude-club.ru/nicole-kidman.html 1 1
+http://webcache.googleusercontent.com/search 1 5
+http://nude-club.ru 0 140
+https://e.mail.ru/message/13894588630000000706/ 0 2
+https://e.mail.ru/cgi-bin/readmsg 0 2
+http://lifemaster.biz 0 67
+http://vizas.org/adverts 1 1
+https://e.mail.ru/message/13896065310000000833/ 0 4
+http://sex-babi.ru 0 36
+http://nude-club.ru/404/ 2 4
+https://e.mail.ru/message/13896049360000000785/ 0 2
+END_PAGEREFS
+
+# Search keyphrases - Number of search
+# The 10 first number of search must be first (order not required for others)
+BEGIN_SEARCHWORDS 0
+END_SEARCHWORDS
+
+# Search keywords - Number of search
+# The 10 first number of search must be first (order not required for others)
+BEGIN_KEYWORDS 0
+END_KEYWORDS
+
+# Errors - Hits - Bandwidth
+BEGIN_ERRORS 5
+302 947 16240
+206 138 1563238
+500 10 15100
+301 267 16765
+404 613 206294
+END_ERRORS
+
+# URL with 404 errors - Hits - Last URL referer
+BEGIN_SIDER_404 34
+/storage/2-Guns/2-Guns-Paula-Patton-04.jpg 1 http://nude-club.ru/paula-patton.html
+/hr76fdnwopz8e4poih5srdg6q0sangu43tr56dcfjht/view/image/menu-line.png 53 http://rumus.by/hr76fdnwopz8e4poih5srdg6q0sangu43tr56dcfjht/index.php
+/storage/Powder-Blue/Jessica-Biel/Powder-Blue-Jessica-Biel-03.jpg 1 http://nude-club.ru/category/updates/5.html
+/hostcmsfiles/main.js 1 -
+/error/404.htm 1 -
+/script.js 1 -
+/templates/box/loading.gif 1 http://nude-club.ru/paula-patton.html
+/storage/Powder-Blue/Jessica-Biel/Powder-Blue-Jessica-Biel-01.jpg 1 http://nude-club.ru/category/updates/5.html
+/common/js/calendar.js 1 -
+/storage/2-Guns/2-Guns-Paula-Patton-08.jpg 2 http://nude-club.ru/paula-patton.html
+/system/jscripts/front.js 1 -
+/plugins/content/jw_sigpro/jw_sigpro/includes/js/jquery_fancybox/fancybox/fancybox_sprite.png 1 http://nude-club.ru/paula-patton.html
+/error/404.html 12 http://rumus.by/
+/image/cache/data/ic/w_%D1%88%D1%82%D0%B0%D0%BD%D1%8B-50x50.jpg 12 http://rumus.by/hr76fdnwopz8e4poih5srdg6q0sangu43tr56dcfjht/index.php
+/hr76fdnwopz8e4poih5srdg6q0sangu43tr56dcfjht/view/image/menu-hover.png 52 http://rumus.by/hr76fdnwopz8e4poih5srdg6q0sangu43tr56dcfjht/index.php
+/templates/box/previous.png 1 http://nude-club.ru/paula-patton.html
+/storage/2-Guns/2-Guns-Paula-Patton-02.jpg 1 http://nude-club.ru/paula-patton.html
+/catalog/view/theme/default/stylesheet/stylesheet.css 1 http://rumus.by/men/
+/admin/js/type_page_edit.js 1 -
+/plugins/content/jw_sigpro/jw_sigpro/includes/js/jquery_fancybox/fancybox/helpers/fancybox_buttons.png 1 http://nude-club.ru/paula-patton.html
+/image/cache/data/ic/w_%D1%88%D1%82%D0%B0%D0%BD%D1%8B-100x100.jpg 1 http://rumus.by/hr76fdnwopz8e4poih5srdg6q0sangu43tr56dcfjht/index.php
+/templates/box/play.png 1 http://nude-club.ru/paula-patton.html
+/manager/includes/accesscontrol.inc.php 1 -
+/storage/2-Guns/2-Guns-Paula-Patton-03.jpg 1 http://nude-club.ru/paula-patton.html
+/plugins/content/jw_sigpro/jw_sigpro/includes/js/jquery_fancybox/fancybox/blank.gif 1 http://nude-club.ru/paula-patton.html
+/storage/2-Guns/2-Guns-Paula-Patton-07.jpg 2 http://nude-club.ru/paula-patton.html
+/common/js/lang/ru/te.js 1 -
+/templates/box/next.png 1 http://nude-club.ru/paula-patton.html
+/catalog/view/javascript/jquery/amazonmenu/image/ul-hover.png 452 http://rumus.by/women/
+/templates/box/pause.png 1 http://nude-club.ru/paula-patton.html
+/storage/2-Guns/2-Guns-Paula-Patton-01.jpg 1 http://nude-club.ru/paula-patton.html
+/templates/box/close.png 1 http://nude-club.ru/paula-patton.html
+/plugins/content/jw_sigpro/jw_sigpro/includes/js/jquery_fancybox/fancybox/fancybox_overlay.png 1 http://nude-club.ru/paula-patton.html
+/plugins/content/jw_sigpro/jw_sigpro/includes/js/jquery_fancybox/fancybox/fancybox_loading.gif 2 http://nude-club.ru/paula-patton.html
+END_SIDER_404
+
+# Host - Pages - Hits - Bandwidth - Last visit date - [Start date of last visit] - [Last page of last visit]
+# [Start date of last visit] and [Last page of last visit] are saved only if session is not finished
+# The 10 first Hits must be first (order not required for others)
+BEGIN_VISITOR 167
+86.57.183.238 3450 17666 88463599 20140131063402
+178.126.74.102 818 2603 11055352 20140112144918
+178.126.25.235 489 718 1905182 20140113145546
+37.212.191.188 341 737 1926492 20140111131047
+86.57.219.62 286 665 3561389 20140110153514
+37.212.220.97 278 1006 4833394 20140110110202
+81.19.188.229 181 181 839785 20140111002619
+5.100.194.169 141 1225 18954553 20140113095612
+5.100.197.241 81 439 2081931 20140115092018
+37.45.177.242 77 251 1183103 20140125053717
+208.43.251.181 24 24 144747 20140125145039
+178.126.199.164 4 65 51405 20140130085727
+178.218.216.87 1 1 6559 20140108060618
+87.242.67.117 1 1 33870 20140108033418
+185.10.208.72 1 1 38370 20140121023808
+86.57.170.116 43 452 2150971 20140116114802
+178.120.174.146 3 118 732953 20140117093841
+109.126.171.32 1 1 7409 20140123021155
+217.69.133.169 1 2 7964 20140123172536
+46.252.161.17 1 3 1632 20140121041330
+98.142.253.37 1 1 38370 20140121023807
+178.126.226.119 4 111 754715 20140116034453
+37.212.245.130 20 144 1087070 20140115144218
+69.164.111.198 1 25 967366 20140109005739
+37.212.87.146 57 355 1376229 20140125093119
+216.38.216.101 3 33 951540 20140130212714
+95.85.24.226 1 1 38370 20140121023830
+188.40.74.9 3 3 76817 20140121024326
+178.172.185.225 4 89 592067 20140110142033
+87.242.75.48 1 16 483072 20140111010416
+37.212.234.112 2 16 147295 20140113083144
+178.127.226.162 1 80 547560 20140128154553
+192.114.71.13 58 58 277350 20140131153811
+178.124.246.169 5 192 1364697 20140115005859
+77.67.130.115 19 208 876193 20140129073350
+46.191.126.205 31 152 982009 20140121070153
+86.57.136.5 17 149 782994 20140115111034
+66.77.136.153 1 1 805 20140116035054
+37.214.175.106 1 1 7690 20140113160716
+82.145.208.176 10 123 771259 20140113065013
+37.215.173.118 4 75 446326 20140130040621
+46.191.7.227 72 283 1541737 20140116075902
+62.2.182.223 1 1 38370 20140121023810
+46.191.25.102 23 171 941201 20140108155920
+188.231.162.145 1 3 1632 20140117134226
+86.57.196.215 10 127 809004 20140119234020
+46.191.30.21 2 109 705643 20140126140925
+178.126.189.125 6 155 779192 20140131173356
+178.126.95.187 46 241 6669268 20140110134556
+178.121.154.205 20 134 860574 20140126131018
+146.185.30.53 1 1 38370 20140121023958
+178.124.206.199 1 12 46980 20140110144428
+89.23.1.96 1 1 6619 20140117110549
+178.126.129.42 2 165 1147461 20140117151828
+178.126.54.206 5 95 597417 20140121141653
+109.126.129.165 7 29 121373 20140130135801
+5.100.199.232 9 142 538860 20140131062311
+94.100.190.81 0 4 16836 
+37.44.78.116 11 175 972461 20140118120336
+93.85.160.11 3 18 78096 20140130144414
+66.249.88.132 2 2 12851 20140108053441
+37.45.123.247 11 19 70135 20140129061511
+89.189.191.25 3 193 478382 20140108233710
+128.140.169.81 0 2 8634 
+144.76.80.37 53 53 154417 20140121023645
+208.43.252.200 25 25 148327 20140123185228
+128.140.169.86 0 4 16956 
+62.105.140.58 5 7 1607051 20140114062502
+109.126.131.22 27 598 3784912 20140122085335
+66.249.93.204 3 3 12464 20140108042545
+178.126.159.252 1 4 8918 20140123143847
+178.127.189.212 4 84 488364 20140130070337
+109.126.171.13 2 80 529925 20140121112525
+178.126.89.248 7 326 2213446 20140128095448
+178.126.48.75 29 315 1974678 20140117102231
+78.46.106.70 1 1 38370 20140121023808
+173.231.33.53 1 1 38370 20140121023828
+86.57.199.230 2 78 460588 20140131132508
+178.126.145.27 6 151 941792 20140131105940
+31.184.242.120 1 1 38370 20140121023802
+178.127.168.9 7 118 744734 20140123045026
+93.84.191.68 28 75 674518 20140113130540
+46.191.3.226 2 6 11938 20140130010443
+109.126.173.179 24 1263 7122471 20140120080117
+91.229.128.202 6 77 2380196 20140108233653
+178.127.120.39 6 128 839972 20140112233230
+46.191.6.40 18 122 950513 20140114030201
+37.45.199.25 1 1 7456 20140116065233
+46.191.4.141 12 128 312985 20140113164034
+46.191.4.14 23 86 210781 20140109034754
+178.126.240.174 21 717 4126353 20140123133533
+5.100.196.143 3 56 24612 20140119143108
+192.3.30.158 1 1 38370 20140121023836
+178.121.143.202 16 134 892764 20140115125343
+178.172.184.82 3 98 588824 20140121122228
+91.243.110.32 6 8 1890973 20140109001008
+46.191.14.202 15 291 674718 20140108092934
+178.218.210.232 1 1 30695 20140109232013
+178.126.129.73 4 5 28070 20140116082400
+144.76.5.117 1 1 38370 20140121023804
+37.212.117.102 9 161 1004305 20140108125301
+178.126.12.124 1 1 7409 20140123100949
+77.93.127.74 1 1 41847 20140114235327
+198.71.59.81 5 5 123973 20140121023904
+37.214.230.105 15 120 801843 20140115052601
+178.126.53.197 15 523 3244330 20140117125346
+208.43.255.25 6 6 36727 20140125170446
+109.126.173.198 4 93 568984 20140130083308
+208.43.251.180 9 9 52147 20140115003910
+91.235.142.15 1 1 38370 20140121023853
+173.208.58.138 1 79 558062 20140121023823
+178.122.124.234 15 124 792502 20140125061824
+37.214.49.238 7 112 712748 20140121060605
+178.126.68.36 16 106 814010 20140108153203
+46.191.6.54 1 69 101808 20140111023653
+82.145.208.23 3 67 343854 20140116023257
+188.40.74.10 3 3 115121 20140121024329
+178.218.216.69 1 1 31464 20140108060613
+37.212.20.229 12 21 68802 20140118125227
+37.214.99.55 11 111 704815 20140112142916
+178.123.130.65 3 115 733594 20140121160826
+78.47.176.227 1 1 38370 20140121024017
+199.187.122.91 2 2 76724 20140125065721
+176.111.24.226 1 1 40489 20140112041539
+178.123.4.104 3 68 336610 20140113191500
+46.191.23.143 31 257 1143420 20140112141651
+5.9.201.12 1 1 38370 20140121023831
+37.45.60.158 1 1 7692 20140114042811
+91.228.198.223 1 1 38370 20140121023805
+178.172.158.39 1 3 1632 20140130075854
+178.126.207.58 39 229 974405 20140111120705
+178.126.171.45 31 1216 7222946 20140120141748
+82.145.217.125 5 73 436614 20140118143240
+46.191.27.87 4 22 54777 20140110093258
+178.123.236.14 8 95 467082 20140113131209
+176.197.112.101 1 79 546483 20140124101015
+178.218.210.227 1 1 31464 20140108055129
+46.191.15.69 6 13 107496 20140114084628
+128.140.169.80 0 2 8458 
+86.57.135.113 17 166 1027321 20140120122904
+82.145.218.175 3 51 308988 20140122072809
+88.200.141.176 1 69 468895 20140108233617
+93.85.140.222 2 110 709772 20140124061017
+93.84.56.222 3 93 608870 20140116214927
+178.204.55.149 0 1 2959 
+194.28.132.153 1 1 38370 20140121023806
+37.212.117.21 9 78 365213 20140118021534
+86.57.232.255 3 79 490154 20140109152353
+178.122.15.5 1 77 545276 20140127062447
+141.0.9.169 3 116 539113 20140121153355
+208.43.243.244 10 10 76977 20140115003958
+46.191.30.128 3 131 404424 20140120135438
+212.100.243.113 1 1 7463 20140121023754
+37.214.179.5 2 106 681362 20140129032303
+77.67.130.25 36 720 4388425 20140121084518
+109.126.175.214 5 111 576236 20140110100954
+192.254.69.56 1 1 39126 20140118004736
+178.124.250.103 8 144 1147735 20140121010037
+91.200.40.33 1 1 38370 20140121023810
+82.145.209.204 7 120 604337 20140113073804
+5.100.194.227 4 279 1886757 20140117033306
+109.126.175.219 1 1 7409 20140124010503
+46.191.4.140 26 235 1628417 20140118084814
+178.126.230.173 3 3 23316 20140119113901
+178.126.151.187 4 191 1282583 20140122030629
+80.249.87.17 3 73 330932 20140118054800
+212.98.189.25 3 111 752573 20140116074349
+END_VISITOR
+
+# Date - Pages - Hits - Bandwidth - Visits
+BEGIN_DAY 24
+20140108 444 3216 18348072 23
+20140109 70 1047 10279407 10
+20140110 711 2734 17827372 10
+20140111 525 1509 5959109 9
+20140112 1058 4049 18019424 9
+20140113 1565 4932 33206948 17
+20140114 248 985 6693216 9
+20140115 561 2953 16001553 15
+20140116 341 2252 11685011 16
+20140117 195 2075 13170763 10
+20140118 46 454 2252001 8
+20140119 19 299 1588485 7
+20140120 119 4420 27331408 8
+20140121 282 3546 21841940 42
+20140122 121 2055 12861480 8
+20140123 42 234 1512273 10
+20140124 4 190 1263664 3
+20140125 160 741 3487631 6
+20140126 24 325 2121975 3
+20140127 5 247 1667790 3
+20140128 20 384 2538056 5
+20140129 101 742 3332186 7
+20140130 569 1376 4476604 12
+20140131 275 1228 5060933 10
+END_DAY
+
+# Session range - Number of visits
+BEGIN_SESSION 7
+1h+ 32
+5mn-15mn 32
+0s-30s 107
+15mn-30mn 14
+30s-2mn 40
+2mn-5mn 20
+30mn-1h 15
+END_SESSION
+
+# URL - Pages - Bandwidth - Entry - Exit
+# The 10 first Pages must be first (order not required for others)
+BEGIN_SIDER 91
+/hr76fdnwopz8e4poih5srdg6q0sangu43tr56dcfjht/index.php 4540 9195793 4 13
+/ 901 7841899 183 135
+/index.php 656 1124401 6 18
+/women/ 216 1519695 14 24
+/men/ 118 662506 6 13
+/404/ 99 118860 9 8
+/women/women-dress/ 63 409609 1 8
+/hr76fdnwopz8e4poih5srdg6q0sangu43tr56dcfjht/ 46 76114 11 1
+/accessories/ 43 263176 1 4
+/women/poloniya 42 279676 10 1
+/sitemap.xml 9 180 0 0
+/accessories/bijouterie/ 10 53625 0 0
+/women/kira 4 27768 0 0
+/manager/ 2 154 0 0
+/product-special 4 18736 0 1
+/contact 7 38842 0 0
+/contacts 20 89816 0 2
+/order-history 5 20100 0 0
+/bag/women-women_handbags/ 15 74641 0 2
+/men/men-shirts/ 2 9936 0 0
+/about-us 7 40407 0 0
+/women/women-skirts/ 17 85748 0 2
+/accessories/umbrella/ 1 5151 0 0
+/women/karolina 37 260317 2 0
+/affiliate-forgotten 2 8019 0 0
+/account-voucher 5 22576 0 0
+/accessories/glasses 1 4888 0 0
+/account-forgotten 3 12498 0 0
+/account-login 36 156036 2 0
+/404/index.swf 8 2137120 0 0
+/women/iskra 10 72053 0 0
+/404/data.xml 8 2440 0 0
+http://rumus.by/ 6 44646 0 0
+/kak-zakazazat 4 19036 0 0
+/women/pidzhaki/ 1 4947 0 0
+/accessories/strap/ 9 44859 1 0
+/404/track.xml 7 2261 0 2
+/oplata 7 28116 0 0
+/women 1 5700 0 0
+/product-compare 3 11341 0 1
+/women/kamilla 11 76541 0 0
+/women/madlen 20 145108 0 0
+/cooperation 4 17296 0 0
+/accessories/caps/ 8 39785 0 0
+/account-logout 1 4025 0 0
+/eva_style 4 17486 0 0
+/women/women-coat/ 17 84985 1 2
+/women/raduga 5 33939 0 0
+/affiliate-register 5 27761 0 0
+/buyer-protection 13 78435 1 0
+/account-reward 1 4154 0 0
+/account-register 13 70419 0 0
+/women/women-sweatshirts/ 29 145677 0 3
+/men/men-jackets/ 5 25446 0 0
+/affiliate-success 1 4316 0 0
+/women/women-shorts/ 8 39741 0 0
+/men/men-cardigans/ 5 24869 0 1
+/accessories/rezinochka 14 92228 0 0
+/men/men-trousers/ 1 4959 0 0
+/sitemap 5 19813 0 2
+/checkout 23 141621 0 0
+/women/dzhuliya 21 149754 0 0
+/zakaz-i-oplata 7 34999 0 0
+/women/women-homewear/ 1 5158 0 0
+/women/women-dress/sofya 41 276935 0 0
+/wishlist 6 26777 0 0
+/women/women-jackets/ 7 34642 0 0
+/bag/portfolios/ 6 29488 1 1
+/men/men-tshirts/ 3 14969 0 0
+/men/men-waistcoats/ 7 34870 0 0
+/informaciya-o-dostavke 14 54283 1 0
+/men/men-stories/ 8 39608 0 2
+/cart 17 87770 0 0
+/buyer 4 17391 0 0
+/%20larionoff 21 115792 0 2
+/gepur 5 21814 0 0
+/women/zheneva 2 13396 0 0
+/affiliate-login 14 63010 0 0
+/women/women-tshirts/ 10 49577 1 0
+/404/logo.swf 7 55958 0 0
+/oferta 7 89862 0 0
+/brands 10 38418 0 0
+/googleaa23b6fa0258eccb.html 2 140 0 1
+/women/women-smock/ 9 44949 1 2
+/bag/ 25 140307 1 3
+/bag/klachi/ 9 44434 0 2
+/account-success 6 25780 0 0
+/accessories/clock/ 10 49285 1 1
+/account 23 95615 0 2
+/women/gerda 29 202088 1 0
+/dress_code 6 26130 1 1
+END_SIDER

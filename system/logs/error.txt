@@ -1,0 +1,40 @@
+2014-02-07 15:37:32 - PHP Warning:  unlink(/var/www/rumusby/data/www/rumus.by/image/Array): No such file or directory in /var/www/rumusby/data/www/rumus.by/hr76fdnwopz8e4poih5srdg6q0sangu43tr56dcfjht/model/catalog/product_quick.php on line 351
+2014-02-07 15:37:32 - PHP Warning:  unlink(/var/www/rumusby/data/www/rumus.by/image/Array): No such file or directory in /var/www/rumusby/data/www/rumus.by/hr76fdnwopz8e4poih5srdg6q0sangu43tr56dcfjht/model/catalog/product_quick.php on line 351
+2014-02-07 15:46:48 - PHP Warning:  unlink(/var/www/rumusby/data/www/rumus.by/image/Array): No such file or directory in /var/www/rumusby/data/www/rumus.by/hr76fdnwopz8e4poih5srdg6q0sangu43tr56dcfjht/model/catalog/product_quick.php on line 351
+2014-02-07 15:46:48 - PHP Warning:  unlink(/var/www/rumusby/data/www/rumus.by/image/Array): No such file or directory in /var/www/rumusby/data/www/rumus.by/hr76fdnwopz8e4poih5srdg6q0sangu43tr56dcfjht/model/catalog/product_quick.php on line 351
+2014-02-10 11:00:07 - PHP Warning:  imagecreatefrompng(): gd-png:  fatal libpng error: Read Error: truncated data in /var/www/rumusby/data/www/rumus.by/system/library/image.php on line 32
+2014-02-10 11:00:07 - PHP Warning:  imagecreatefrompng(): gd-png error: setjmp returns error condition in /var/www/rumusby/data/www/rumus.by/system/library/image.php on line 32
+2014-02-10 11:00:07 - PHP Warning:  imagecreatefrompng(): '/var/www/rumusby/data/www/rumus.by/image/data/menu/bg_w.png' is not a valid PNG file in /var/www/rumusby/data/www/rumus.by/system/library/image.php on line 32
+2014-02-10 11:00:07 - PHP Warning:  imagecopyresampled() expects parameter 2 to be resource, boolean given in /var/www/rumusby/data/www/rumus.by/system/library/image.php on line 109
+2014-02-10 11:00:07 - PHP Warning:  imagedestroy() expects parameter 1 to be resource, boolean given in /var/www/rumusby/data/www/rumus.by/system/library/image.php on line 110
+2014-02-10 11:05:40 - PHP Warning:  imagecreatefrompng(): gd-png:  fatal libpng error: Read Error: truncated data in /var/www/rumusby/data/www/rumus.by/system/library/image.php on line 32
+2014-02-10 11:05:40 - PHP Warning:  imagecreatefrompng(): gd-png error: setjmp returns error condition in /var/www/rumusby/data/www/rumus.by/system/library/image.php on line 32
+2014-02-10 11:05:40 - PHP Warning:  imagecreatefrompng(): '/var/www/rumusby/data/www/rumus.by/image/data/menu/bg_w.png' is not a valid PNG file in /var/www/rumusby/data/www/rumus.by/system/library/image.php on line 32
+2014-02-10 11:05:40 - PHP Warning:  imagecopyresampled() expects parameter 2 to be resource, boolean given in /var/www/rumusby/data/www/rumus.by/system/library/image.php on line 109
+2014-02-10 11:05:40 - PHP Warning:  imagedestroy() expects parameter 1 to be resource, boolean given in /var/www/rumusby/data/www/rumus.by/system/library/image.php on line 110
+2014-02-10 15:15:19 - PHP Warning:  imagecreatefromjpeg(): gd-jpeg, libjpeg: recoverable error: Premature end of JPEG file
+ in /var/www/rumusby/data/www/rumus.by/system/library/image.php on line 34
+2014-02-10 15:15:19 - PHP Warning:  imagecreatefromjpeg(): '/var/www/rumusby/data/www/rumus.by/image/data/ic/aw_шапки.jpg' is not a valid JPEG file in /var/www/rumusby/data/www/rumus.by/system/library/image.php on line 34
+2014-02-10 15:15:19 - PHP Warning:  imagecopyresampled() expects parameter 2 to be resource, boolean given in /var/www/rumusby/data/www/rumus.by/system/library/image.php on line 109
+2014-02-10 15:15:19 - PHP Warning:  imagedestroy() expects parameter 1 to be resource, boolean given in /var/www/rumusby/data/www/rumus.by/system/library/image.php on line 110
+2014-02-17 14:57:41 - PHP Notice:  Undefined variable: quick_view_categories in /var/www/rumusby/data/www/rumus.by/catalog/view/theme/default/template/product/product.tpl on line 388
+2014-02-17 14:57:42 - PHP Notice:  Undefined variable: quick_view_categories in /var/www/rumusby/data/www/rumus.by/catalog/view/theme/default/template/product/product.tpl on line 388
+2014-02-17 14:57:42 - PHP Notice:  Undefined variable: quick_view_categories in /var/www/rumusby/data/www/rumus.by/catalog/view/theme/default/template/product/product.tpl on line 388
+2014-02-17 14:57:42 - PHP Notice:  Undefined variable: quick_view_categories in /var/www/rumusby/data/www/rumus.by/catalog/view/theme/default/template/product/product.tpl on line 388
+2014-02-17 14:58:38 - PHP Notice:  Undefined variable: quick_view_categories in /var/www/rumusby/data/www/rumus.by/catalog/view/theme/default/template/product/product.tpl on line 388
+2014-02-17 14:58:38 - PHP Notice:  Undefined variable: quick_view_categories in /var/www/rumusby/data/www/rumus.by/catalog/view/theme/default/template/product/product.tpl on line 388
+2014-02-17 14:58:38 - PHP Notice:  Undefined variable: quick_view_categories in /var/www/rumusby/data/www/rumus.by/catalog/view/theme/default/template/product/product.tpl on line 388
+2014-02-17 14:58:38 - PHP Notice:  Undefined variable: quick_view_categories in /var/www/rumusby/data/www/rumus.by/catalog/view/theme/default/template/product/product.tpl on line 388
+2014-02-17 14:59:01 - PHP Notice:  Undefined variable: quick_view_categories in /var/www/rumusby/data/www/rumus.by/catalog/view/theme/default/template/product/product.tpl on line 388
+2014-02-17 14:59:01 - PHP Notice:  Undefined variable: quick_view_categories in /var/www/rumusby/data/www/rumus.by/catalog/view/theme/default/template/product/product.tpl on line 388
+2014-02-17 14:59:01 - PHP Notice:  Undefined variable: quick_view_categories in /var/www/rumusby/data/www/rumus.by/catalog/view/theme/default/template/product/product.tpl on line 388
+2014-02-17 14:59:01 - PHP Notice:  Undefined variable: quick_view_categories in /var/www/rumusby/data/www/rumus.by/catalog/view/theme/default/template/product/product.tpl on line 388
+2014-02-17 14:59:01 - PHP Notice:  Undefined variable: quick_view_categories in /var/www/rumusby/data/www/rumus.by/catalog/view/theme/default/template/product/product.tpl on line 388
+2014-02-17 14:59:07 - PHP Notice:  Undefined variable: quick_view_categories in /var/www/rumusby/data/www/rumus.by/catalog/view/theme/default/template/product/product.tpl on line 388
+2014-02-17 14:59:07 - PHP Notice:  Undefined variable: quick_view_categories in /var/www/rumusby/data/www/rumus.by/catalog/view/theme/default/template/product/product.tpl on line 388
+2014-02-17 14:59:07 - PHP Notice:  Undefined variable: quick_view_categories in /var/www/rumusby/data/www/rumus.by/catalog/view/theme/default/template/product/product.tpl on line 388
+2014-02-17 14:59:07 - PHP Notice:  Undefined variable: quick_view_categories in /var/www/rumusby/data/www/rumus.by/catalog/view/theme/default/template/product/product.tpl on line 388
+2014-02-17 14:59:31 - PHP Notice:  Undefined variable: quick_view_categories in /var/www/rumusby/data/www/rumus.by/catalog/view/theme/default/template/product/product.tpl on line 388
+2014-02-17 14:59:31 - PHP Notice:  Undefined variable: quick_view_categories in /var/www/rumusby/data/www/rumus.by/catalog/view/theme/default/template/product/product.tpl on line 388
+2014-02-17 14:59:31 - PHP Notice:  Undefined variable: quick_view_categories in /var/www/rumusby/data/www/rumus.by/catalog/view/theme/default/template/product/product.tpl on line 388
+2014-02-17 14:59:31 - PHP Notice:  Undefined variable: quick_view_categories in /var/www/rumusby/data/www/rumus.by/catalog/view/theme/default/template/product/product.tpl on line 388
