@@ -103,7 +103,7 @@ $('body').prepend('<iframe src="<?php echo $store; ?>" style="display: none;"></
 			  <div class="contact"><?php echo $text_mobile_telephone; ?><span class="contact-data"><?php echo $contacts_mobile_telephone; ?></span></div>
 			<?php } ?>
 			<?php if ($contacts_fax) { ?>
-			  <div class="contact"><?php echo $text_fax; ?><span class="contact-data"><?php echo $contacts_fax; ?></span></div>
+			  <div class="contact"><?php echo $text_fax; ?><span class="contact-data"> <a id="grupcontact" href="http://vk.com/odezhda_mira">odezhda_mira</a></span></div>
 			<?php } ?>
 		  </div>
 		</div>

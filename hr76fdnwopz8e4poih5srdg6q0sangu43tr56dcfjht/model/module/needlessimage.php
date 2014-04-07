@@ -11,6 +11,7 @@ class ModelModuleNeedlessimage extends Model {
 		'product_image' => 'image',
 		'setting' => 'value',
 		'voucher_theme' => 'image',
+        'product_option_value' => 'ob_image',
 	);
 	
 	public function getImagesDb() {

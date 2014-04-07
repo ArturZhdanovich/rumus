@@ -4,6 +4,7 @@ class ControllerSaleOrder extends Controller {
 
   	public function index() {
 		$this->language->load('sale/order');
+$this->language->load('sale/russian_post');
 
 		$this->document->setTitle($this->language->get('heading_title'));
 
@@ -14,6 +15,7 @@ class ControllerSaleOrder extends Controller {
 	
   	public function insert() {
 		$this->language->load('sale/order');
+$this->language->load('sale/russian_post');
 
 		$this->document->setTitle($this->language->get('heading_title'));
 
@@ -70,6 +72,7 @@ class ControllerSaleOrder extends Controller {
 	
   	public function update() {
 		$this->language->load('sale/order');
+$this->language->load('sale/russian_post');
 
 		$this->document->setTitle($this->language->get('heading_title'));
 
@@ -126,6 +129,7 @@ class ControllerSaleOrder extends Controller {
 	
   	public function delete() {
 		$this->language->load('sale/order');
+$this->language->load('sale/russian_post');
 
 		$this->document->setTitle($this->language->get('heading_title'));
 
@@ -367,6 +371,7 @@ class ControllerSaleOrder extends Controller {
 		$this->data['column_action'] = $this->language->get('column_action');
 
 		$this->data['button_invoice'] = $this->language->get('button_invoice');
+	  $this->data['button_russian_post_f113'] = $this->language->get('button_russian_post_f113');
 		$this->data['button_insert'] = $this->language->get('button_insert');
 		$this->data['button_delete'] = $this->language->get('button_delete');
 		$this->data['button_filter'] = $this->language->get('button_filter');
@@ -1361,6 +1366,7 @@ class ControllerSaleOrder extends Controller {
 
 		if ($order_info) {
 			$this->language->load('sale/order');
+$this->language->load('sale/russian_post');
 
 			$this->document->setTitle($this->language->get('heading_title'));
 
@@ -1479,6 +1485,7 @@ class ControllerSaleOrder extends Controller {
 			$this->data['entry_comment'] = $this->language->get('entry_comment');
 			
 			$this->data['button_invoice'] = $this->language->get('button_invoice');
+	  $this->data['button_russian_post_f113'] = $this->language->get('button_russian_post_f113');
 			$this->data['button_cancel'] = $this->language->get('button_cancel');
 			$this->data['button_add_history'] = $this->language->get('button_add_history');
 		
@@ -1544,7 +1551,9 @@ class ControllerSaleOrder extends Controller {
 			);
 
 			$this->data['invoice'] = $this->url->link('sale/order/invoice', 'token=' . $this->session->data['token'] . '&order_id=' . (int)$this->request->get['order_id'], 'SSL');
-			$this->data['cancel'] = $this->url->link('sale/order', 'token=' . $this->session->data['token'] . $url, 'SSL');
+			$this->data['russian_post_f113'] = $this->url->link('sale/order/f113', 'token=' . $this->session->data['token'] . '&order_id=' . (int)$this->request->get['order_id'], 'SSL');
+
+            $this->data['cancel'] = $this->url->link('sale/order', 'token=' . $this->session->data['token'] . $url, 'SSL');
 
 			$this->data['order_id'] = $this->request->get['order_id'];
 			
@@ -1984,6 +1993,7 @@ class ControllerSaleOrder extends Controller {
 
 	public function createInvoiceNo() {
 		$this->language->load('sale/order');
+$this->language->load('sale/russian_post');
 
 		$json = array();
 		
@@ -2006,7 +2016,8 @@ class ControllerSaleOrder extends Controller {
 
 	public function addCredit() {
 		$this->language->load('sale/order');
-		
+		$this->language->load('sale/russian_post');
+
 		$json = array();
     	
      	if (!$this->user->hasPermission('modify', 'sale/order')) {
@@ -2036,7 +2047,8 @@ class ControllerSaleOrder extends Controller {
 	
 	public function removeCredit() {
 		$this->language->load('sale/order');
-		
+$this->language->load('sale/russian_post');
+
 		$json = array();
     	
      	if (!$this->user->hasPermission('modify', 'sale/order')) {
@@ -2062,7 +2074,8 @@ class ControllerSaleOrder extends Controller {
 				
 	public function addReward() {
 		$this->language->load('sale/order');
-		
+		$this->language->load('sale/russian_post');
+
 		$json = array();
     	
      	if (!$this->user->hasPermission('modify', 'sale/order')) {
@@ -2094,7 +2107,8 @@ class ControllerSaleOrder extends Controller {
 	
 	public function removeReward() {
 		$this->language->load('sale/order');
-		
+		$this->language->load('sale/russian_post');
+
 		$json = array();
     	
      	if (!$this->user->hasPermission('modify', 'sale/order')) {
@@ -2120,7 +2134,8 @@ class ControllerSaleOrder extends Controller {
 		
 	public function addCommission() {
 		$this->language->load('sale/order');
-		
+$this->language->load('sale/russian_post');
+
 		$json = array();
     	
      	if (!$this->user->hasPermission('modify', 'sale/order')) {
@@ -2152,7 +2167,8 @@ class ControllerSaleOrder extends Controller {
 	
 	public function removeCommission() {
 		$this->language->load('sale/order');
-		
+		$this->language->load('sale/russian_post');
+
 		$json = array(); 
     	
      	if (!$this->user->hasPermission('modify', 'sale/order')) {
@@ -2178,7 +2194,8 @@ class ControllerSaleOrder extends Controller {
 
 	public function history() {
     	$this->language->load('sale/order');
-		
+		$this->language->load('sale/russian_post');
+
 		$this->data['error'] = '';
 		$this->data['success'] = '';
 		
@@ -2307,7 +2324,8 @@ class ControllerSaleOrder extends Controller {
 
 	public function upload() {
 		$this->language->load('sale/order');
-		
+		$this->language->load('sale/russian_post');
+
 		$json = array();
 		
 		if ($this->request->server['REQUEST_METHOD'] == 'POST') {
@@ -2366,9 +2384,39 @@ class ControllerSaleOrder extends Controller {
 		
 		$this->response->setOutput(json_encode($json));
 	}
-			
+		
+    public function f113() {
+		
+		$this->language->load('sale/russian_post');
+		if (isset($this->request->server['HTTPS']) && (($this->request->server['HTTPS'] == 'on') || ($this->request->server['HTTPS'] == '1'))) {
+			$this->data['base'] = HTTPS_SERVER;
+		} else {
+			$this->data['base'] = HTTP_SERVER;
+		}
+        
+		$this->load->model('sale/order');
+		$this->load->model('setting/setting');
+
+		if (isset($this->request->get['order_id'])) {
+			$order_id = $this->request->get['order_id'];
+		} else {
+			$order_id = 0;
+		}
+		$order_info = $this->model_sale_order->getOrder($order_id);                
+		if ($order_info) {
+			$this->data['total'] = number_format($order_info['total']*10000, 0, '.', '' );
+			$this->data['shipping_postcode'] = $order_info['payment_postcode'];
+			$this->data['shipping_name'] = $order_info['payment_lastname']." ".$order_info['payment_firstname'];
+			$this->data['shipping_address_1'] = $order_info['payment_address_1'];
+			$this->data['shipping_address_2'] = $order_info['payment_zone']." ".$order_info['payment_city'];
+		}
+		$this->template = 'sale/order_f113.tpl';
+		$this->response->setOutput($this->render());
+	}
+	
   	public function invoice() {
 		$this->language->load('sale/order');
+$this->language->load('sale/russian_post');
 
 		$this->data['title'] = $this->language->get('heading_title');
 

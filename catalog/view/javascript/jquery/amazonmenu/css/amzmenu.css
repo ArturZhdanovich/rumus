@@ -7,7 +7,7 @@ and (min-width : 840px) {/* Opencart Box */
 .amzmenu ul{display:block;float:none;border:0;outline:none;list-style:none;z-index:250;margin:0;padding:0;}
 .amzmenu p{margin:0;padding:0 0 5px;}
 .amzmenu ul.amzleft{position:relative;width:100%;}
-#amzmenu li{background:#FFF url(../image/ul-hover.png) 0 0 no-repeat;}
+#amzmenu li{background:#FFF}
 .amzmenu ul.amzleft li,.amzmenu ul.amzleft li.line{display:block;list-style:none;margin:0;padding:0;}
 .amzmenu ul.amzleft li a{display:block;width:95%;line-height:18px;background-color:#FFF;text-decoration:none;text-align:left;font-size:13px;font-weight:400;color:#000;text-shadow:1px 1px 0 #FFF;font:bold Tahoma, Arial, Helvetica, sans-serif!important;text-transform:uppercase;cursor:pointer;padding:8px 0 8px 5%;}
 .amzmenu ul.amzleft li a:hover,.amzmenu ul.amzleft li a:active,.amzmenu ul.amzleft li a:focus{font-weight:700;color:#F57917;}

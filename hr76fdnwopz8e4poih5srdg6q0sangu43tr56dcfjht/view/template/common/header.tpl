@@ -220,6 +220,7 @@ $(document).ready(function(){
 		  <li><a href="<?php echo $clear_seo_cache ?>"><?php echo $text_clear_seo_cache; ?></a></li>
 		  <li><a href="<?php echo $clear_all_cache ?>"><?php echo $text_clear_all_cache; ?></a></li>
 		  <li><a href="<?php echo $clear_image_cache ?>"><?php echo $text_clear_image_cache; ?></a></li>
+          <li><a href="<?php echo $clear_needlessimage ?>"><?php echo $text_clear_needlessimage; ?></a></li>
         </ul>
       </li>
     </ul>

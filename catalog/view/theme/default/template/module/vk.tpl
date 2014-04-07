@@ -5,7 +5,7 @@
   <div class="box-product">
 <div style="background:none;">
 
-<script type="text/javascript" src="http://userapi.com/js/api/openapi.js?49"></script>
+<script type="text/javascript" src="catalog/view/javascript/jquery/openapi.js?49"></script>
 
 <!-- VK Widget -->
 <div id="vk_groups"></div>

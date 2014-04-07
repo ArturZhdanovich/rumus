@@ -24,6 +24,10 @@
 	  <li><a class="special" href="<?php echo $special; ?>"><?php echo $text_special; ?></a></li>
       <li><a class="voucher" href="<?php echo $voucher; ?>"><?php echo $text_voucher; ?></a></li>
       <li><a class="affiliate" href="<?php echo $affiliate; ?>"><?php echo $text_affiliate; ?></a></li>
+            <li><a class="basic"><?php echo $text_table_size; ?></a></li>
+				<div id="basic-modal-content">
+				  <?php echo $table_size; ?>
+				</div>
     </ul>
   </div>
   <div class="column" style="<?php echo $width; ?>">
@@ -43,7 +47,7 @@
 	    <div class="address"><?php echo $contact_address; ?></div>
 	  <?php } ?>
 	  <?php if ($contact_email) { ?>
-	    <div class="email-address"><?php echo $contact_email; ?></div>
+	    <div class="email-address"><a href="<?php echo $contact; ?>"><?php echo $contact_email; ?></a></div>
 	  <?php } ?>
 	  <?php if ($contact_telephone) { ?>
 	    <div class="phone"><?php echo $contact_telephone; ?></div>
@@ -52,7 +56,7 @@
 	    <div class="mobile"><?php echo $contact_mobile_telephone; ?></div>
 	  <?php } ?>
 	  <?php if ($contact_fax) { ?>
-	    <div class="fax"><?php echo $contact_fax; ?></div>
+	    <div class="fax"><a href="http://vk.com/odezhda_mira">ОДЕЖДА МИРА</a></div>
 	  <?php } ?>
 	</div>
   </div>
@@ -72,4 +76,12 @@ if ($(this).hasClass('active')) $(this).find('span').html('<?php echo $text_canc
 else $(this).find('span').html('<?php echo $text_login; ?>')
 });
 //--></script>
+<script type="text/javascript" ><!--
+				$(document).ready(function() {
+					$('.basic').click(function (e) {
+						$('#basic-modal-content').modal();
+						return false;
+					});
+				});
+				//--></script>
 </body></html>

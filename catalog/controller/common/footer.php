@@ -20,7 +20,9 @@ class ControllerCommonFooter extends Controller {
 		$this->data['text_address'] = $this->language->get('text_address');
 		$this->data['text_login'] = $this->language->get('text_login');
 		$this->data['text_cancel'] = $this->language->get('text_cancel');
-		
+		$this->document->addStyle('catalog/view/javascript/tablesize/table_size.css');
+        $this->document->addScript('catalog/view/javascript/tablesize/jquery.simplemodal.js');
+        $this->data['text_table_size'] = $this->language->get('text_table_size');
 		$this->load->model('catalog/information');
 		
 		$this->data['informations'] = array();
@@ -109,7 +111,9 @@ class ControllerCommonFooter extends Controller {
 		} else {
 			$this->template = 'default/template/common/footer.tpl';
 		}
-		
+		$this->children = array(
+				'module/table_size'
+			);
 		$this->render();
 	}
 }

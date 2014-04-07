@@ -22,7 +22,6 @@
       <?php } ?>
 	  <div class="cart-box">
         <div class="cart-button">
-          <a onclick="addToCompare('<?php echo $product['product_id']; ?>');" class="poshytips button-compares" title="<?php echo $button_compare; ?>" /></a>
 		  <a onclick="addToWishList('<?php echo $product['product_id']; ?>');" class="poshytips button-wishlists" title="<?php echo $button_wishlist; ?>" /></a>
 		  <a onclick="addToCart('<?php echo $product['product_id']; ?>');" class="poshytips button-carts" title="<?php echo $button_cart; ?>" /></a>
 		  <?php if ($quick_view_categories) { ?>

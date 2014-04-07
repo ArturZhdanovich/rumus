@@ -23,10 +23,10 @@
           <thead>
             <tr>
               <td width="1" style="text-align: center;"><input type="checkbox" onclick="$('input[name*=\'selected\']').attr('checked', this.checked);" /></td>
+              <td class="center"><?php echo $column_action; ?></td>
               <td class="left"><?php echo $column_name; ?></td>
               <td class="right"><?php echo $column_sort_order; ?></td>
 			  <td class="center"><?php echo $column_status; ?></td>
-              <td class="right"><?php echo $column_action; ?></td>
             </tr>
           </thead>
           <tbody>
@@ -40,10 +40,7 @@
 					  <input type="checkbox" name="selected[]" value="<?php echo $category['category_id']; ?>" />
 					<?php } ?>
 				  </td>
-				  <td class="left"><?php echo $category['name']; ?></td> 
-				  <td align="right"><?php echo $category['sort_order']; ?></td>
-				  <td align="center" width="100"><a class="ajax-status" id="status-<?php echo $category['category_id']; ?>"><?php echo $category['status']; ?></a></td>
-				  <td align="right" width="200">
+                  <td align="center" width="100">
 				    <?php if ($this->config->get('config_category_quick_all_buttons') == 0) { ?>
 					  <?php if ($this->config->get('config_category_general_data') == 1) { ?>
 					    <a style="text-decoration: none;" href="<?php echo $link;?>&category_description&category_id=<?php echo $category['category_id'];?>" class="description_dialog button_general_data tooltip" title="<?php echo $text_description; ?>" /></a>
@@ -68,6 +65,9 @@
 					  <a class="button_edites tooltip" href="<?php echo $action['href']; ?>" title="<?php echo $action['text']; ?>"></a>
 					<?php } ?>
 				  </td>
+				  <td class="left"><?php echo $category['name']; ?></td> 
+				  <td align="right"><?php echo $category['sort_order']; ?></td>
+				  <td align="center" width="100"><a class="ajax-status" id="status-<?php echo $category['category_id']; ?>"><?php echo $category['status']; ?></a></td>
 				</tr>
               <?php } ?>
             <?php } else { ?>
@@ -79,10 +79,10 @@
 		  <tfoot>
             <tr>
 			  <td width="1" style="text-align: center;"><input type="checkbox" onclick="$('input[name*=\'selected\']').attr('checked', this.checked);" /></td>
+              <td class="center"><?php echo $column_action; ?></td>
               <td class="left"><?php echo $column_name; ?></td>
               <td class="right"><?php echo $column_sort_order; ?></td>
 			  <td class="center"><?php echo $column_status; ?></td>
-              <td class="right"><?php echo $column_action; ?></td>
 			</tr>
           </tfoot>
         </table>

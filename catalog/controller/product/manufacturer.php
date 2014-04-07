@@ -238,11 +238,10 @@ class ControllerProductManufacturer extends Controller {
 				'start'                  => ($page - 1) * $limit,
 				'limit'                  => $limit
 			);
-					
-			$product_total = $this->model_catalog_product->getTotalProducts($data);
-								
+            
 			$results = $this->model_catalog_product->getProducts($data);
-					
+			$product_total = $this->model_catalog_product->getFoundProducts(); 
+	
 			foreach ($results as $result) {
 				if ($result['image']) {
 					$image = $this->model_tool_image->resize($result['image'], $this->config->get('config_image_product_width'), $this->config->get('config_image_product_height'));

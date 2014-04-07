@@ -23,6 +23,7 @@
           <thead>
             <tr>
               <td width="1" style="text-align: center;"><input type="checkbox" onclick="$('input[name*=\'selected\']').attr('checked', this.checked);" /></td>
+              <td class="center" style="width: 80px;"><?php echo $column_action; ?></td>
               <td class="center"><?php echo $column_image; ?></td>
               <td class="left"><?php if ($sort == 'pd.name') { ?>
                 <a href="<?php echo $sort_name; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_name; ?></a>
@@ -55,12 +56,12 @@
                 <?php } else { ?>
                 <a href="<?php echo $sort_status; ?>"><?php echo $column_status; ?></a>
                 <?php } ?></td>
-              <td class="center" style="width: 80px;"><?php echo $column_action; ?></td>
             </tr>
           </thead>
           <tbody>
             <tr class="filter">
               <td></td>
+              <td align="center"><a onclick="filter();" class="button_filter tooltip" title="<?php echo $button_filter; ?>"></a></td>
               <td></td>
               <td><input type="text" name="filter_name" value="<?php echo $filter_name; ?>" size="50" /></td>
 			  <td align="left">
@@ -75,9 +76,9 @@
                   <?php } ?>
 				</select>
               </td>
-              <td><input type="text" name="filter_model" value="<?php echo $filter_model; ?>" size="30" /></td>
-              <td align="right"><input type="text" name="filter_price" value="<?php echo $filter_price; ?>" size="15"/></td>
-              <td align="right"><input type="text" name="filter_quantity" value="<?php echo $filter_quantity; ?>" style="text-align: right;"  size="12" /></td>
+              <td><input type="text" name="filter_model" value="<?php echo $filter_model; ?>" size="10" /></td>
+              <td align="right"><input type="text" name="filter_price" value="<?php echo $filter_price; ?>" size="8"/></td>
+              <td align="right"><input type="text" name="filter_quantity" value="<?php echo $filter_quantity; ?>" style="text-align: right;"  size="8" /></td>
               <td align="center">
 			    <select name="filter_status" onchange="filter();">
                   <option value="*"></option>
@@ -93,7 +94,7 @@
                   <?php } ?>
                 </select>
 			  </td>
-              <td align="center"><a onclick="filter();" class="button_filter tooltip" title="<?php echo $button_filter; ?>"></a></td>
+              
             </tr>
               <?php if ($products) { ?>
 				<?php foreach ($products as $product) { ?>
@@ -103,6 +104,14 @@
 					<?php } else { ?>
 					<input type="checkbox" name="selected[]" value="<?php echo $product['product_id']; ?>" />
 					<?php } ?></td>
+                   <td class="center">
+				    <?php foreach ($product['action'] as $action) { ?>
+					  <div class="button-action">
+					    <a class="button_edites tooltip" href="<?php echo $action['href']; ?>" title="<?php echo $action['text']; ?>"></a>
+						<a class="button_view tooltip" href="<?php echo HTTP_CATALOG;?>?route=product/product&product_id=<?php echo $product['product_id'];?>" target="_blank" title="<?php echo $text_view; ?>"></a>
+					  </div>
+					<?php } ?>
+				  </td>
 				  <td class="center" rel="<?php echo $link;?>&edit_image&product_id=<?php echo $product['product_id'];?>">
                     <div>
 					  <a class="edit-image">
@@ -134,13 +143,13 @@
 					  <div class="sale tooltip" title="<?php echo $product['special']; ?>"></div>
 					<?php } ?>
 					<span class="ajax-edit-right" id="price-<?php echo $product['product_id']; ?>" value="<?php echo $product['product_id']; ?>">
-					  <input type="text" value="<?php echo $product['price']; ?>" class="input-edit-right" size="15">
+					  <input type="text" value="<?php echo $product['price']; ?>" class="input-edit-right" size="8">
 					  <a onclick="save_price(<?php echo $product['product_id']; ?>)" class="button-save-right"></a>
 					</span>
 					<span><?php echo $product['price']; ?></span></td>
 				  <td  align="right">
 					<span class="ajax-edit-right" id="quantity-<?php echo $product['product_id']; ?>" value="<?php echo $product['product_id']; ?>">
-					  <input type="text" value="<?php echo $product['quantity']; ?>" class="input-edit-right" size="12">
+					  <input type="text" value="<?php echo $product['quantity']; ?>" class="input-edit-right" size="8">
 					  <a onclick="save_quantity(<?php echo $product['product_id']; ?>)" class="button-save-right"></a>
 					</span>
 					<?php if ($product['quantity'] <= 0) { ?>
@@ -153,14 +162,6 @@
 					<span style="color: #008000;"><?php echo $product['quantity']; ?></span>
 					<?php } ?></td>
 				  <td align="center" width="100"><a class="ajax-status" id="status-<?php echo $product['product_id']; ?>"><?php echo $product['status']; ?></a></td>
-				  <td class="center">
-				    <?php foreach ($product['action'] as $action) { ?>
-					  <div class="button-action">
-					    <a class="button_edites tooltip" href="<?php echo $action['href']; ?>" title="<?php echo $action['text']; ?>"></a>
-						<a class="button_view tooltip" href="<?php echo HTTP_CATALOG;?>?route=product/product&product_id=<?php echo $product['product_id'];?>" target="_blank" title="<?php echo $text_view; ?>"></a>
-					  </div>
-					<?php } ?>
-				  </td>
 				</tr>
 				<?php if ($this->config->get('config_quick_all_buttons') == 0) { ?>
 				<tr class="no">
@@ -275,6 +276,7 @@
 		  <tfoot>
             <tr>
               <td width="1" style="text-align: center;"><input type="checkbox" onclick="$('input[name*=\'selected\']').attr('checked', this.checked);" /></td>
+              <td class="center" style="width: 80px;"><?php echo $column_action; ?></td>
               <td class="center"><?php echo $column_image; ?></td>
               <td class="left"><?php if ($sort == 'pd.name') { ?>
                 <a href="<?php echo $sort_name; ?>" class="<?php echo strtolower($order); ?>"><?php echo $column_name; ?></a>
@@ -307,7 +309,6 @@
                 <?php } else { ?>
                 <a href="<?php echo $sort_status; ?>"><?php echo $column_status; ?></a>
                 <?php } ?></td>
-              <td class="center" style="width: 80px;"><?php echo $column_action; ?></td>
             </tr>
           </tfoot>
         </table>

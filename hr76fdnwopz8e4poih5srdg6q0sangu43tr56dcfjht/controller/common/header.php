@@ -206,7 +206,8 @@ class ControllerCommonHeader extends Controller {
 			$this->data['clear_all_cache'] = $this->url->link('common/home', 'token=' . $this->session->data['token']. '&clear_all_cache=true', 'SSL');
 			$this->data['clear_image_cache'] = $this->url->link('common/home', 'token=' . $this->session->data['token']. '&clear_image_cache=true', 'SSL');
 			$this->data['clear_seo_cache'] = $this->url->link('common/home', 'token=' . $this->session->data['token']. '&clear_seo_cache=true', 'SSL');
-			
+			$this->data['clear_needlessimage'] = $this->url->link('module/needlessimage', 'token=' . $this->session->data['token'], 'SSL'); $this->data['text_clear_needlessimage']= $this->language->get('text_clear_needlessimage');
+            
 			$this->data['stores'] = array();
 			
 			$this->load->model('setting/store');

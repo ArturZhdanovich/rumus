@@ -39,14 +39,50 @@ class Cart {
 					$option_weight = 0;
 	
 					$option_data = array();
-	
+	//Q: Options Boost - overwrite product image with option image for cart (pt1)
+				$option_price_only = false;
+      			$prod_image = $product_query->row['image'];
+
+				//Q: Options Boost (cloned pricing code for convenience. Not best way. Should move the code below)
+				if ($this->customer->isLogged()) {
+					$customer_group_id = $this->customer->getCustomerGroupId();
+				} else {
+					$customer_group_id = $this->config->get('config_customer_group_id');
+				}
+
+				$price = $product_query->row['price'];
+
+				// Product Discounts
+				$discount_quantity = 0;
+
+				foreach ($this->session->data['cart'] as $key_2 => $quantity_2) {
+					$product_2 = explode(':', $key_2);
+
+					if ($product_2[0] == $product_id) {
+						$discount_quantity += $quantity_2;
+					}
+				}
+
+				$product_discount_query = $this->db->query("SELECT price FROM " . DB_PREFIX . "product_discount WHERE product_id = '" . (int)$product_id . "' AND customer_group_id = '" . (int)$customer_group_id . "' AND quantity <= '" . (int)$discount_quantity . "' AND ((date_start = '0000-00-00' OR date_start < NOW()) AND (date_end = '0000-00-00' OR date_end > NOW())) ORDER BY quantity DESC, priority ASC, price ASC LIMIT 1");
+
+				if ($product_discount_query->num_rows) {
+					$price = $product_discount_query->row['price'];
+				}
+
+				// Product Specials
+				$product_special_query = $this->db->query("SELECT price FROM " . DB_PREFIX . "product_special WHERE product_id = '" . (int)$product_id . "' AND customer_group_id = '" . (int)$customer_group_id . "' AND ((date_start = '0000-00-00' OR date_start < NOW()) AND (date_end = '0000-00-00' OR date_end > NOW())) ORDER BY priority ASC, price ASC LIMIT 1");
+
+				if ($product_special_query->num_rows) {
+					$price = $product_special_query->row['price'];
+				}
 					foreach ($options as $product_option_id => $option_value) {
 						$option_query = $this->db->query("SELECT po.product_option_id, po.option_id, od.name, o.type FROM " . DB_PREFIX . "product_option po LEFT JOIN `" . DB_PREFIX . "option` o ON (po.option_id = o.option_id) LEFT JOIN " . DB_PREFIX . "option_description od ON (o.option_id = od.option_id) WHERE po.product_option_id = '" . (int)$product_option_id . "' AND po.product_id = '" . (int)$product_id . "' AND od.language_id = '" . (int)$this->config->get('config_language_id') . "'");
 						
 						if ($option_query->num_rows) {
 							if ($option_query->row['type'] == 'select' || $option_query->row['type'] == 'radio' || $option_query->row['type'] == 'image') {
 								$option_value_query = $this->db->query("SELECT pov.option_value_id, ovd.name, pov.quantity, pov.subtract, pov.price, pov.price_prefix, pov.points, pov.points_prefix, pov.weight, pov.weight_prefix FROM " . DB_PREFIX . "product_option_value pov LEFT JOIN " . DB_PREFIX . "option_value ov ON (pov.option_value_id = ov.option_value_id) LEFT JOIN " . DB_PREFIX . "option_value_description ovd ON (ov.option_value_id = ovd.option_value_id) WHERE pov.product_option_value_id = '" . (int)$option_value . "' AND pov.product_option_id = '" . (int)$product_option_id . "' AND ovd.language_id = '" . (int)$this->config->get('config_language_id') . "'");
-								
+								//Q: Options Boost - Override default query for select/radio/image
+        		 	$option_value_query = $this->db->query("SELECT * FROM " . DB_PREFIX . "product_option_value pov LEFT JOIN " . DB_PREFIX . "option_value_description ovd ON (pov.option_value_id = ovd.option_value_id) LEFT JOIN " . DB_PREFIX . "option_value ov ON (pov.option_value_id = ov.option_value_id) WHERE pov.product_option_value_id = '" . (int)$option_value . "' AND pov.product_option_id = '" . (int)$product_option_id . "' AND ovd.language_id = '" . (int)$this->config->get('config_language_id') . "'");
 								if ($option_value_query->num_rows) {
 									if ($option_value_query->row['price_prefix'] == '+') {
 										$option_price += $option_value_query->row['price'];
@@ -69,7 +105,28 @@ class Cart {
 									if ($option_value_query->row['subtract'] && (!$option_value_query->row['quantity'] || ($option_value_query->row['quantity'] < $quantity))) {
 										$stock = false;
 									}
-									
+									//Q: Options Boost - Support additional price prefixes
+        				if (!empty($option_value_query)) {
+							if ($option_value_query->row['price_prefix'] == '%') {
+								$option_price = $option_price + ($price * ($option_value_query->row['price']/100));
+								$option_value_query->row['price_prefix'] = '+';
+							} elseif ($option_value_query->row['price_prefix'] == '=') {
+								$option_price = $option_value_query->row['price'];
+								$option_value_query->row['price_prefix'] = '';
+								$option_price_only = true;
+							} elseif ($option_value_query->row['price_prefix'] == '*') {
+								$option_price += $option_value_query->row['price'] * $price;
+								$option_value_query->row['price_prefix'] = '+';
+							}
+
+							$option_value_query->row['name'] = ($option_value_query->row['ob_sku']) ? ($option_value_query->row['name'] . ' ['.$option_value_query->row['ob_sku'].']') : $option_value_query->row['name'];
+						}
+						//
+
+        				//Q: Options Boost - overwrite product image with option image for cart (pt2)
+        				if (isset($option_value_query->row['ob_image']) && $option_value_query->row['ob_image']) {
+        					$prod_image = $option_value_query->row['ob_image'];
+        				}//
 									$option_data[] = array(
 										'product_option_id'       => $product_option_id,
 										'product_option_value_id' => $option_value,
@@ -91,7 +148,8 @@ class Cart {
 							} elseif ($option_query->row['type'] == 'checkbox' && is_array($option_value)) {
 								foreach ($option_value as $product_option_value_id) {
 									$option_value_query = $this->db->query("SELECT pov.option_value_id, ovd.name, pov.quantity, pov.subtract, pov.price, pov.price_prefix, pov.points, pov.points_prefix, pov.weight, pov.weight_prefix FROM " . DB_PREFIX . "product_option_value pov LEFT JOIN " . DB_PREFIX . "option_value ov ON (pov.option_value_id = ov.option_value_id) LEFT JOIN " . DB_PREFIX . "option_value_description ovd ON (ov.option_value_id = ovd.option_value_id) WHERE pov.product_option_value_id = '" . (int)$product_option_value_id . "' AND pov.product_option_id = '" . (int)$product_option_id . "' AND ovd.language_id = '" . (int)$this->config->get('config_language_id') . "'");
-									
+									//Q: Options Boost - Override default query for checkbox
+        		 	$option_value_query = $this->db->query("SELECT * FROM " . DB_PREFIX . "product_option_value pov LEFT JOIN " . DB_PREFIX . "option_value_description ovd ON (pov.option_value_id = ovd.option_value_id) LEFT JOIN " . DB_PREFIX . "option_value ov ON (pov.option_value_id = ov.option_value_id) WHERE pov.product_option_value_id = '" . (int)$product_option_value_id . "' AND pov.product_option_id = '" . (int)$product_option_id . "' AND ovd.language_id = '" . (int)$this->config->get('config_language_id') . "'");
 									if ($option_value_query->num_rows) {
 										if ($option_value_query->row['price_prefix'] == '+') {
 											$option_price += $option_value_query->row['price'];
@@ -114,7 +172,28 @@ class Cart {
 										if ($option_value_query->row['subtract'] && (!$option_value_query->row['quantity'] || ($option_value_query->row['quantity'] < $quantity))) {
 											$stock = false;
 										}
-										
+										//Q: Options Boost - Support additional price prefixes
+        				if (!empty($option_value_query)) {
+							if ($option_value_query->row['price_prefix'] == '%') {
+								$option_price = $option_price + ($price * ($option_value_query->row['price']/100));
+								$option_value_query->row['price_prefix'] = '+';
+							} elseif ($option_value_query->row['price_prefix'] == '=') {
+								$option_price = $option_value_query->row['price'];
+								$option_value_query->row['price_prefix'] = '';
+								$option_price_only = true;
+							} elseif ($option_value_query->row['price_prefix'] == '*') {
+								$option_price += $option_value_query->row['price'] * $price;
+								$option_value_query->row['price_prefix'] = '+';
+							}
+
+							$option_value_query->row['name'] = ($option_value_query->row['ob_sku']) ? ($option_value_query->row['name'] . ' ['.$option_value_query->row['ob_sku'].']') : $option_value_query->row['name'];
+						}
+						//
+
+        				//Q: Options Boost - overwrite product image with option image for cart (pt2)
+        				if (isset($option_value_query->row['ob_image']) && $option_value_query->row['ob_image']) {
+        					$prod_image = $option_value_query->row['ob_image'];
+        				}//
 										$option_data[] = array(
 											'product_option_id'       => $product_option_id,
 											'product_option_value_id' => $product_option_value_id,
@@ -135,7 +214,29 @@ class Cart {
 									}
 								}						
 							} elseif ($option_query->row['type'] == 'text' || $option_query->row['type'] == 'textarea' || $option_query->row['type'] == 'file' || $option_query->row['type'] == 'date' || $option_query->row['type'] == 'datetime' || $option_query->row['type'] == 'time') {
-								$option_data[] = array(
+								//Q: Options Boost - Support additional price prefixes
+        				if (!empty($option_value_query)) {
+							if ($option_value_query->row['price_prefix'] == '%') {
+								$option_price = $option_price + ($price * ($option_value_query->row['price']/100));
+								$option_value_query->row['price_prefix'] = '+';
+							} elseif ($option_value_query->row['price_prefix'] == '=') {
+								$option_price = $option_value_query->row['price'];
+								$option_value_query->row['price_prefix'] = '';
+								$option_price_only = true;
+							} elseif ($option_value_query->row['price_prefix'] == '*') {
+								$option_price += $option_value_query->row['price'] * $price;
+								$option_value_query->row['price_prefix'] = '+';
+							}
+
+							$option_value_query->row['name'] = ($option_value_query->row['ob_sku']) ? ($option_value_query->row['name'] . ' ['.$option_value_query->row['ob_sku'].']') : $option_value_query->row['name'];
+						}
+						//
+
+        				//Q: Options Boost - overwrite product image with option image for cart (pt2)
+        				if (isset($option_value_query->row['ob_image']) && $option_value_query->row['ob_image']) {
+        					$prod_image = $option_value_query->row['ob_image'];
+        				}//
+                                $option_data[] = array(
 									'product_option_id'       => $product_option_id,
 									'product_option_value_id' => '',
 									'option_id'               => $option_query->row['option_id'],
@@ -198,8 +299,10 @@ class Cart {
 					}
 					
 					// Downloads		
-					$download_data = array();     		
-					
+					$download_data = array();    		
+					if ($option_price_only) {
+                        $price = 0;
+                    }
 					$download_query = $this->db->query("SELECT * FROM " . DB_PREFIX . "product_to_download p2d LEFT JOIN " . DB_PREFIX . "download d ON (p2d.download_id = d.download_id) LEFT JOIN " . DB_PREFIX . "download_description dd ON (d.download_id = dd.download_id) WHERE p2d.product_id = '" . (int)$product_id . "' AND dd.language_id = '" . (int)$this->config->get('config_language_id') . "'");
 				
 					foreach ($download_query->rows as $download) {
@@ -224,6 +327,7 @@ class Cart {
 						'model'           => $product_query->row['model'],
 						'shipping'        => $product_query->row['shipping'],
 						'image'           => $product_query->row['image'],
+                        'image'        => $prod_image, //Q: Options Boost - overwrite product image with option image for cart (pt3)
 						'option'          => $option_data,
 						'download'        => $download_data,
 						'quantity'        => $quantity,

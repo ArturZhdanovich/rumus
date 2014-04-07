@@ -19,4 +19,5 @@ $_['text_cancel']       = 'Отмена';
 $_['text_login']        = 'Войти';
 $_['text_powered']      = 'Зарегистрирован в торговом реестре РБ 20. 12. 2013 %s &copy; %s';
 $_['text_no_copyright'] = '<span class="copyright-none">Работает на  </span>%s &copy; %s';
+$_['text_table_size']   = 'Таблицы размеров';
 ?>

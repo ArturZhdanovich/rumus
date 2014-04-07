@@ -1,10 +1,76 @@
 <?php  
 class ControllerProductProduct extends Controller {
 	private $error = array(); 
-	
+	//Q: Options Boost - Ajax image update
+        public function updateImage() {
+
+			$this->load->model('tool/image');
+
+			$json = array();
+
+			$product_id = $this->request->post['product_id'];
+
+			# Get product options and add it to the current price
+			if (isset($this->request->post['option']) && is_array($this->request->post['option'])) {
+				foreach ($this->request->post['option'] as $option_id => $option_value_id) {
+
+					//checkbox massaging
+					if (is_array($option_value_id)) {
+						$option_value_id = end($option_value_id);
+					}
+
+					if ($option_value_id != $this->request->post['option_value_id']) { continue; }
+					//$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "product_option_value WHERE product_option_value_id = '" . (int)$option_value_id . "' AND product_id = '" . (int)$product_id . "'");
+					$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "product_option_value pov LEFT JOIN " . DB_PREFIX . "option_value_description ovd ON (pov.option_value_id = ovd.option_value_id) WHERE pov.product_option_value_id = '" . (int)$option_value_id . "' AND pov.product_id = '" . (int)$product_id . "' AND ovd.language_id = '" . (int)$this->config->get('config_language_id') . "'");
+					if ($query->num_rows) {
+
+						// Allow html in misc info field
+						$query->row['ob_info'] = html_entity_decode($query->row['ob_info']);
+						
+						$json = $query->row;
+
+						if ($query->row['ob_image']) {
+							$json['swatch'] = $this->model_tool_image->resize($query->row['ob_image'], 40, 40);
+							$json['thumb']  = $this->model_tool_image->resize($query->row['ob_image'], $this->config->get('config_image_thumb_width'), $this->config->get('config_image_thumb_height'));
+							$json['popup']  = $this->model_tool_image->resize($query->row['ob_image'], $this->config->get('config_image_popup_width'), $this->config->get('config_image_popup_height'));
+                            
+                            $json['thumb_zoom']  = $this->model_tool_image->resize($query->row['ob_image'], $this->config->get('config_image_thumb_width'), $this->config->get('config_image_thumb_height'));
+                            $json['small']  = $this->model_tool_image->resize($query->row['ob_image'], $this->config->get('config_image_additional_width'), $this->config->get('config_image_additional_height'));
+						}
+					}
+				}
+			}
+
+            
+            
+            foreach ($product_images as $product_image) {
+			if ($product_image['image'] && file_exists(DIR_IMAGE . $product_image['image'])) {
+				$image = $product_image['image'];
+			} else {
+				$image = 'no_image.jpg';
+			}
+			
+			$this->data['product_images'][] = array(
+				'image'      => $image,
+				'thumb'      => $this->model_tool_image->resize($image, 100, 100),
+				'sort_order' => $product_image['sort_order']
+			);
+		}
+        
+        
+        
+			if (!method_exists($this->tax, 'getRates')) { //v1.5.1.2 or earlier
+				$this->load->library('json');
+				$this->response->setOutput(Json::encode($json));
+			} else {
+				$this->response->setOutput(json_encode($json));
+			}
+
+
+		}
 	public function index() { 
 		$this->language->load('product/product');
-	
+        $this->document->addScript('catalog/view/javascript/options_boost.js');
 		$this->data['breadcrumbs'] = array();
 
 		$this->data['breadcrumbs'][] = array(
@@ -253,7 +319,7 @@ class ControllerProductProduct extends Controller {
 			$this->document->setKeywords($product_info['meta_keyword']);
 			$this->document->addLink($this->url->link('product/product', 'product_id=' . $this->request->get['product_id']), 'canonical');
 			$this->document->addScript('catalog/view/javascript/jquery/tabs.js');
-			$this->document->addScript('catalog/view/javascript/jquery/colorbox/jquery.colorbox-min.js');
+			$this->document->addScript('catalog/view/javascript/jquery/colorbox/jquery.colorbox.js');
 			$this->document->addStyle('catalog/view/javascript/jquery/colorbox/colorbox.css');
 			
 			if ($product_info['seo_h1']) {
@@ -409,7 +475,7 @@ class ControllerProductProduct extends Controller {
 			$this->data['images'] = array();
 			
 			$results = $this->model_catalog_product->getProductImages($this->request->get['product_id']);
-			
+			$resultsboost = $this->model_catalog_product->getProductImagesBoost($this->request->get['product_id']);
 			foreach ($results as $result) {
 				$this->data['images'][] = array(
 					'popup' 	 => $this->model_tool_image->resize($result['image'], $this->config->get('config_image_popup_width'), $this->config->get('config_image_popup_height')),
@@ -418,7 +484,16 @@ class ControllerProductProduct extends Controller {
 					'small' 	 => $this->model_tool_image->resize($result['image'], $this->config->get('config_image_additional_width'), $this->config->get('config_image_additional_height'))
 				);
 			}	
-			
+			foreach ($resultsboost as $result) {
+            if ($result['ob_image']&& file_exists(DIR_IMAGE . $result['ob_image'])) {
+				$this->data['images'][] = array(
+					'popup' 	 => $this->model_tool_image->resize($result['ob_image'], $this->config->get('config_image_popup_width'), $this->config->get('config_image_popup_height')),
+					'thumb' 	 => $this->model_tool_image->resize($result['ob_image'], $this->config->get('config_image_additional_width'), $this->config->get('config_image_additional_height')),
+					'thumb_zoom' => $this->model_tool_image->resize($result['ob_image'], $this->config->get('config_image_thumb_width'), $this->config->get('config_image_thumb_height')),
+					'small' 	 => $this->model_tool_image->resize($result['ob_image'], $this->config->get('config_image_additional_width'), $this->config->get('config_image_additional_height'))
+				);
+            }
+			}	
 			$this->load->model('catalog/manufacturer');	
 			
 			$manufacturer_image = $this->model_catalog_manufacturer->getManufacturer($product_info['manufacturer_id']);
@@ -535,13 +610,13 @@ class ControllerProductProduct extends Controller {
                                 $ourl = $q['ourl'];
                                 if (!$ourl and strpos($q['url'],'ttp'))
                                     $ourl = urldecode($q['url']);
-                                $m = '<span style="font-weight: bold; color: green;">ParseMX</span>&nbsp;&nbsp; <font color="grey">Задача:</font> <a target="_blank" href="'. HTTP_SERVER .'parsemx/index.php?route=ins&id='.$qq['ins_id'].'&donor_id='.$qq['donor_id'] .'">'. $qq['title'] . '</a>';
+                                $m = '<font color="grey">Задача:</font> <a target="_blank" href="'. HTTP_SERVER .'parsemx/index.php?route=ins&id='.$qq['ins_id'].'&donor_id='.$qq['donor_id'] .'">'. $qq['title'] . '</a>';
                                 if ($ourl) $m .= '&nbsp;&nbsp;<font color="grey">Оригинал товара:</font> <a target="_blank" href="' . $ourl .'">' . $ourl . '</a>';
-                                $m .= "<div style='font-style:italic; font-size:10px; margin-bottom: 10px; margin-top: 5px'>(Эта информация видна только администраторам магазина)</div>";
+                                $m .= "<div style='font-style:italic; font-size:12px; margin-bottom: 10px; margin-top: 5px; color:#F00;'>(Эта информация видна только администраторам магазина!)</div>";
                                 $this->data['description'] = $m . $this->data['description'];
                             }
                     }
-
+            include('catalog/controller/product/options_boost.inc.php'); //Q: Options Boost
 			$this->data['products'] = array();
 			
 			$results = $this->model_catalog_product->getProductRelated($this->request->get['product_id']);

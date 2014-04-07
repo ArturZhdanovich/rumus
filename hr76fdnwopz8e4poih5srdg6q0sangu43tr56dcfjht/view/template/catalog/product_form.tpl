@@ -376,6 +376,8 @@
             <?php foreach ($product_options as $product_option) { ?>
             <a href="#tab-option-<?php echo $option_row; ?>" id="option-<?php echo $option_row; ?>"><?php echo $product_option['name']; ?>&nbsp;<img src="view/image/delete.png" alt="" onclick="$('#option-<?php echo $option_row; ?>').remove(); $('#tab-option-<?php echo $option_row; ?>').remove(); $('#vtabs a:first').trigger('click'); return false;" /></a>
             <?php $option_row++; ?>
+            <?php //Q: Options Boost ?>
+          <?php $this->load->language('catalog/options_boost'); ?>
             <?php } ?>
             <span id="option-add">
             <input name="option" value="" style="width: 130px;" />
@@ -448,6 +450,8 @@
                   <td class="right"><?php echo $entry_price; ?></td>
                   <td class="right"><?php echo $entry_option_points; ?></td>
                   <td class="right"><?php echo $entry_weight; ?></td>
+                  <td class="right"><?php echo $entry_sku; ?></td>
+                   <td class="right"><?php echo $entry_image; ?></td>
                   <td></td>
                 </tr>
               </thead>
@@ -477,16 +481,12 @@
                       <?php } ?>
                     </select></td>
                   <td class="right"><select name="product_option[<?php echo $option_row; ?>][product_option_value][<?php echo $option_value_row; ?>][price_prefix]">
-                      <?php if ($product_option_value['price_prefix'] == '+') { ?>
-                      <option value="+" selected="selected">+</option>
-                      <?php } else { ?>
-                      <option value="+">+</option>
-                      <?php } ?>
-                      <?php if ($product_option_value['price_prefix'] == '-') { ?>
-                      <option value="-" selected="selected">-</option>
-                      <?php } else { ?>
-                      <option value="-">-</option>
-                      <?php } ?>
+                      <option value="+" <?php echo ($product_option_value['price_prefix'] == '+') ? 'selected="selected"' : '' ?>>+</option>
+                    <option value="-" <?php echo ($product_option_value['price_prefix'] == '-') ? 'selected="selected"' : '' ?>>-</option>
+                    <option value="*" <?php echo ($product_option_value['price_prefix'] == '*') ? 'selected="selected"' : '' ?>>*</option>
+                    <option value="%" <?php echo ($product_option_value['price_prefix'] == '%') ? 'selected="selected"' : '' ?>>%</option>
+                    <option value="=" <?php echo ($product_option_value['price_prefix'] == '=') ? 'selected="selected"' : '' ?>>=</option>
+                    <option value="&" <?php echo ($product_option_value['price_prefix'] == '&') ? 'selected="selected"' : '' ?>>&</option>
                     </select>
                     <input type="text" name="product_option[<?php echo $option_row; ?>][product_option_value][<?php echo $option_value_row; ?>][price]" value="<?php echo $product_option_value['price']; ?>" size="5" /></td>
                   <td class="right"><select name="product_option[<?php echo $option_row; ?>][product_option_value][<?php echo $option_value_row; ?>][points_prefix]">
@@ -515,14 +515,24 @@
                       <?php } ?>
                     </select>
                     <input type="text" name="product_option[<?php echo $option_row; ?>][product_option_value][<?php echo $option_value_row; ?>][weight]" value="<?php echo $product_option_value['weight']; ?>" size="5" /></td>
+                    <td class="right"><input name="product_option[<?php echo $option_row; ?>][product_option_value][<?php echo $option_value_row; ?>][ob_sku]" value="<?php echo $product_option_value['ob_sku']; ?>" size="4"></td>
+					<td>
+					  <img src="<?php echo $product_option_value['preview']; ?>" alt="<?php echo $product_option_value['ob_image']; ?>" id="preview_<?php echo $option_row; ?>_<?php echo $option_value_row; ?>" onclick="image_upload('image_<?php echo $option_row; ?>_<?php echo $option_value_row; ?>', 'preview_<?php echo $option_row; ?>_<?php echo $option_value_row; ?>');"/>
+			    	  <input type="hidden" id="image_<?php echo $option_row; ?>_<?php echo $option_value_row; ?>" name="product_option[<?php echo $option_row; ?>][product_option_value][<?php echo $option_value_row; ?>][ob_image]" value="<?php echo $product_option_value['ob_image']; ?>" />
+                	</td>
                   <td class="left"><a onclick="$('#option-value-row<?php echo $option_value_row; ?>').remove();" class="button"><?php echo $button_remove; ?></a></td>
                 </tr>
+                <tr>
+                    <td class="left"><?php echo $entry_info; ?></td>
+                    <td colspan="7" class="right"><input name="product_option[<?php echo $option_row; ?>][product_option_value][<?php echo $option_value_row; ?>][ob_info]" value="<?php echo $product_option_value['ob_info']; ?>" size="150"></td>
+                    
+                    </tr>
               </tbody>
               <?php $option_value_row++; ?>
               <?php } ?>
               <tfoot>
                 <tr>
-                  <td colspan="6"></td>
+                  <td colspan="8"></td>
                   <td class="left"><a onclick="addOptionValue('<?php echo $option_row; ?>');" class="button"><?php echo $button_add_option_value; ?></a></td>
                 </tr>
               </tfoot>
@@ -537,6 +547,8 @@
             <?php } ?>
           </div>
           <?php $option_row++; ?>
+          <?php //Q: Options Boost ?>
+          <?php $this->load->language('catalog/options_boost'); ?>
           <?php } ?>
         </div>
         <div id="tab-discount">
@@ -577,7 +589,7 @@
             <?php } ?>
             <tfoot>
               <tr>
-                <td colspan="6"></td>
+                <td colspan="8"></td>
                 <td class="left"><a onclick="addDiscount();" class="button"><?php echo $button_add_discount; ?></a></td>
               </tr>
             </tfoot>
@@ -1092,12 +1104,14 @@ $('input[name=\'option\']').catcomplete({
 			html += '        <td class="right"><?php echo $entry_price; ?></td>';
 			html += '        <td class="right"><?php echo $entry_option_points; ?></td>';
 			html += '        <td class="right"><?php echo $entry_weight; ?></td>';
+                        html += '        <td class="right"><?php echo $entry_sku; ?></td>';
+			html += '        <td class="right"><?php echo $entry_image; ?></td>';
 			html += '        <td></td>';
 			html += '      </tr>';
 			html += '  	 </thead>';
 			html += '    <tfoot>';
 			html += '      <tr>';
-			html += '        <td colspan="6"></td>';
+			html += '        <td colspan="8"></td>';
 			html += '        <td class="left"><a onclick="addOptionValue(' + option_row + ');" class="button"><?php echo $button_add_option_value; ?></a></td>';
 			html += '      </tr>';
 			html += '    </tfoot>';
@@ -1152,6 +1166,10 @@ function addOptionValue(option_row) {
 	html += '      <option value="0"><?php echo $text_no; ?></option>';
 	html += '    </select></td>';
 	html += '    <td class="right"><select name="product_option[' + option_row + '][product_option_value][' + option_value_row + '][price_prefix]">';
+    html += '      <option value="*">*</option>';
+			html += '      <option value="%">%</option>';
+			html += '      <option value="=">=</option>';
+			html += '      <option value="&">&</option>';
 	html += '      <option value="+">+</option>';
 	html += '      <option value="-">-</option>';
 	html += '    </select>';
@@ -1166,6 +1184,12 @@ function addOptionValue(option_row) {
 	html += '      <option value="-">-</option>';
 	html += '    </select>';
 	html += '    <input type="text" name="product_option[' + option_row + '][product_option_value][' + option_value_row + '][weight]" value="" size="5" /></td>';
+     html += '    <td class="right"><input type="text" name="product_option[' + option_row + '][product_option_value][' + option_value_row + '][ob_sku]" value="" size="3" /></td>';
+			html += '    <td>';
+			html += '      <img src="<?php echo HTTPS_SERVER; ?>../image/cache/no_image-38x38.jpg" alt="" id="preview_'+ option_row + '_' + option_value_row + '" onclick="image_upload(\'image_'+ option_row + '_' + option_value_row + '\', \'preview_'+ option_row + '_' + option_value_row + '\');" />';
+			html += '      <input type="hidden" id="image_' + option_row + '_' + option_value_row + '" name="product_option[' + option_row + '][product_option_value][' + option_value_row + '][ob_image]" value="" />';
+            html += '    </td>';
+    html += '  <tr><td class="left"><?php echo $entry_info; ?></td><td colspan="8" class="left"><input name="product_option[' + option_row + '][product_option_value][' + option_value_row + '][ob_info]" value="" size="100"></td></tr>';
 	html += '    <td class="left"><a onclick="$(\'#option-value-row' + option_value_row + '\').remove();" class="button"><?php echo $button_remove; ?></a></td>';
 	html += '  </tr>';
 	html += '</tbody>';
@@ -1286,4 +1310,75 @@ $('#tabs a').tabs();
 $('#languages a').tabs(); 
 $('#vtab-option a').tabs();
 //--></script> 
+<script type="text/javascript"><!--
+function addBatchOption() {
+	$('#batchoption_product :selected').each(function() {
+		$(this).remove();
+
+		$('#batchoption option[value=\'' + $(this).attr('value') + '\']').remove();
+
+		$('#batchoption').append('<option value="' + $(this).attr('value') + '">' + $(this).text() + '</option>');
+
+		$('#product_batchoption input[value=\'' + $(this).attr('value') + '\']').remove();
+
+		$('#product_batchoption').append('<input type="hidden" name="product_batchoption[]" value="' + $(this).attr('value') + '" />');
+	});
+}
+
+function removeBatchOption() {
+	$('#batchoption :selected').each(function() {
+		$(this).remove();
+
+		$('#batchoption_product').append('<option value="' + $(this).attr('value') + '">' + $(this).text() + '</option>');
+
+		$('#product_batchoption input[value=\'' + $(this).attr('value') + '\']').remove();
+	});
+}
+
+function getProducts() {
+	$('#product option').remove();
+
+	<?php if (isset($this->request->get['product_id'])) {?>
+	var product_id = '<?php echo $this->request->get['product_id'] ?>';
+	<?php } else { ?>
+	var product_id = 0;
+	<?php } ?>
+
+	$.ajax({
+		url: 'index.php?route=catalog/product/category&token=<?php echo $token; ?>&category_id=' + $('#category').attr('value'),
+		dataType: 'json',
+		success: function(data) {
+			for (i = 0; i < data.length; i++) {
+				if (data[i]['product_id'] == product_id) { continue; }
+	 			$('#product').append('<option value="' + data[i]['product_id'] + '">' + data[i]['name'] + ' (' + data[i]['model'] + ') </option>');
+			}
+		}
+	});
+}
+
+function getProductsBatchOption() {
+	$('#batchoption_product option').remove();
+
+	<?php if (isset($this->request->get['product_id'])) {?>
+	var product_id = '<?php echo $this->request->get['product_id'] ?>';
+	<?php } else { ?>
+	var product_id = 0;
+	<?php } ?>
+
+	$.ajax({
+		url: 'index.php?route=catalog/product/category&token=<?php echo $token; ?>&category_id=' + $('#category_batchoption').attr('value'),
+		dataType: 'json',
+		success: function(data) {
+			for (i = 0; i < data.length; i++) {
+				if (data[i]['product_id'] == product_id) { continue; }
+	 			$('#batchoption_product').append('<option value="' + data[i]['product_id'] + '">' + data[i]['name'] + ' (' + data[i]['model'] + ') </option>');
+			}
+		}
+	});
+}
+
+
+getProductsBatchOption();
+
+//--></script>
 <?php echo $footer; ?>

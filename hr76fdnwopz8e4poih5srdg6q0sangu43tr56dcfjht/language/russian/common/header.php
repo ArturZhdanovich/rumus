@@ -103,4 +103,5 @@ $_['text_october']                     = 'октября';
 $_['text_november']                    = 'ноября';
 $_['text_december']                    = 'декабря';
 $_['text_year']                        = ' г.';
+$_['text_clear_needlessimage']          ='Удаление картинок';
 ?>

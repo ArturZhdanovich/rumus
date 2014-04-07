@@ -13,7 +13,6 @@ if (isset($products) && count($products)) { ?>
                 <?php if ($products[$i]['image']) { ?>
                 <div class="image"><a href="<?php echo $products[$i]['href']; ?>"><img src="<?php echo $products[$i]['image']; ?>" alt="<?php echo $products[$i]['name']; ?>" /></a></div>
                 <?php } ?>
-                <div class="name"><a href="<?php echo $products[$i]['href']; ?>"><?php echo $products[$i]['name']; ?></a></div>
                 <?php if ($products[$i]['price']) { ?>
                 <div class="price">
                   <?php if (!$products[$i]['special']) { ?>

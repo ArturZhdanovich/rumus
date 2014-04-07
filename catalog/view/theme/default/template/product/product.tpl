@@ -7,22 +7,20 @@
 <?php echo $column_left; ?><?php echo $column_right; ?>
 <div id="content"><?php echo $content_top; ?>
   <h1><?php echo $heading_title; ?></h1>
+  
   <div class="main-content">
   <div class="product-info">
-    <?php if ($config_zoom) { ?>
-	  <div class="left">
-        <?php if ($thumb) { ?>
-          <?php foreach ($images as $image) { ?>
-            <div class="view-images"><a href="<?php echo $image['popup']; ?>" title="<?php echo $heading_title; ?>" data-gal="prettyPhoto[gallery]"><img src="<?php echo $image['thumb']; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" id="image" /></a></div>
-          <?php } ?>
-          <?php if ($thumb) { ?>
-            <div class="image"> 
-              <a href="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>" class = 'cloud-zoom' id='zoom1' rel="position: 'right' ,showTitle:false, adjustX:-0, adjustY:-4" data-gal="prettyPhoto[gallery]"><img src="<?php echo $thumb; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></a>
-              <?php echo $sale; ?><?php echo $new; ?><?php echo $popular; ?>
-			</div>
-          <?php } ?>
-		<?php } ?>
-		<div class="cart">
+ 
+ <div class="left">
+      <?php if ($thumb) { ?>
+          
+      <div class="image">
+      <a href="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>"  class="colorbox cloud-zoom" id='zoom1' rel="position: 'right' ,showTitle:false, adjustX:-0, adjustY:-4" data-gal="prettyPhoto[gallery]" ><img src="<?php echo $thumb; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" id="image" /></a>
+      
+      <?php echo $sale; ?><?php echo $new; ?><?php echo $popular; ?>
+      </div>
+      <?php } ?>
+      <div class="cart">
 		  <div>
 		    <div class="cart-box-bottom">
 			  <div class="quantity-input">
@@ -39,46 +37,19 @@
 		    <?php } ?>
 		  </div>
 	    </div>
-        <?php if ($images) { ?>
-          <div class="image-additional">
-            <?php foreach ($images as $image) { ?>
-              <a href="<?php echo $image['popup']; ?>" title="<?php echo $heading_title; ?>" class="cloud-zoom-gallery" rel="useZoom: 'zoom1', smallImage: '<?php echo $image['thumb_zoom']; ?>' "><img src="<?php echo $image['small']; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></a>
-            <?php } ?>
-          </div>
-        <?php } ?>    
+      <?php if ($images) { ?>
+      <div class="image-additional">
+        <?php foreach ($images as $image) { ?>
+        <a href="<?php echo $image['popup']; ?>" title="<?php echo $heading_title; ?>"  class="colorbox cloud-zoom-gallery" rel="useZoom: 'zoom1', smallImage: '<?php echo $image['thumb_zoom']; ?>' "><img src="<?php echo $image['small']; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></a>
+        <?php } ?>
       </div>
-	<?php } else { ?>
-	  <div class="left">
-		<?php if ($thumb) { ?>
-		  <div class="image"><a href="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>" data-gal="prettyPhoto[gallery]"><img src="<?php echo $thumb; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" id="image" /></a><?php echo $sale; ?><?php echo $new; ?><?php echo $popular; ?></div>
-		<?php } ?>
-		<div class="cart">
-		  <div>
-		    <div class="cart-box-bottom">
-			  <div class="quantity-input">
-			    <span class="minus"></span>
-			    <input id="cont" type="text" name="quantity" size="2" value="<?php echo $minimum; ?>" />
-			    <span class="plus"></span>
-			    <input type="hidden" name="product_id" size="2" value="<?php echo $product_id; ?>" />
-			  </div>
-			  <a onclick="addToWishList('<?php echo $product_id; ?>');" class="poshytips button-wishlists" title="<?php echo $button_wishlist; ?>" /></a>
-			  <input type="button" value="<?php echo $button_cart; ?>" id="button-cart" class="poshytips button-carts" title="<?php echo $button_cart; ?>" />
-		    </div>
-		    <?php if ($minimum > 1) { ?>
-			  <div class="minimum"><?php echo $text_minimum; ?></div>
-		    <?php } ?>
-		  </div>
-	    </div>
-		<?php if ($images) { ?>
-		  <div class="image-additional">
-			<?php foreach ($images as $image) { ?>
-			  <a href="<?php echo $image['popup']; ?>" title="<?php echo $heading_title; ?>" data-gal="prettyPhoto[gallery]"><img src="<?php echo $image['thumb']; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" /></a>
-			<?php } ?>
-		  </div>
-		<?php } ?>
-	  </div>
-	<?php } ?>
-    <div class="right">
+      <?php } ?>
+   
+    </div>
+    
+    
+    
+   <div class="right">
       <div class="description">
         <?php if ($manufacturer) { ?>
 		  <div class="manufacturer-image"><a href="<?php echo $manufacturers; ?>"><img src="<?php echo $brand_image; ?>" title="<?php echo $manufacturer; ?>" alt="<?php echo $manufacturer; ?>" /></a></div>
@@ -96,9 +67,6 @@
         <?php } ?>
 		<?php if ($jan) { ?>
 		  <span><?php echo $text_jan; ?></span> <?php echo $jan; ?><br />
-        <?php } ?>
-		<?php if ($isbn) { ?>
-		  <span><?php echo $text_isbn; ?></span> <?php echo $isbn; ?><br />
         <?php } ?>
 		<?php if ($mpn) { ?>
 		  <span><?php echo $text_mpn; ?></span> <?php echo $mpn; ?><br />
@@ -283,6 +251,9 @@
         <?php } ?>
       </div>
       <?php } ?>
+      <?php if ($isbn) { ?>
+		<span style="color:#111111;font-weight: 600;"><?php echo $text_isbn; ?></span><br />
+      <?php } ?>
       <?php if ($review_status) { ?>
       <div class="review">
         <div><img src="catalog/view/theme/default/image/stars-<?php echo $rating; ?>.png" alt="<?php echo $reviews; ?>" />&nbsp;&nbsp;<a onclick="$('a[href=\'#tab-review\']').trigger('click');"><?php echo $reviews; ?></a>&nbsp;&nbsp;|&nbsp;&nbsp;<?php if ($guest_review) { ?><a onclick="$('a[href=\'#tab-review\']').trigger('click');"><?php echo $text_write; ?></a><?php } else { echo $text_login_write; } ?></div>
@@ -362,7 +333,7 @@
   </div>
   <?php } ?>
   <?php if ($products) { ?>
-  <div id="tab-related" class="tab-content">
+ <div id="tab-related" class="tab-content">
     <div class="related-box-product">
 	  <?php foreach ($products as $product) { ?>
 		<div>
@@ -400,6 +371,15 @@
   <div class="bottom"></div>
   <?php echo $content_bottom; ?></div>
 <script type="text/javascript"><!--
+$(document).ready(function() {
+	$('.colorbox').colorbox({
+		overlayClose: true,
+		opacity: 0.5,
+		rel: "colorbox"
+	});
+});
+//--></script> 
+<script type="text/javascript"><!--
 $('#button-cart').bind('click', function() {
 	$.ajax({
 		url: 'index.php?route=checkout/cart/add',
@@ -417,9 +397,14 @@ $('#button-cart').bind('click', function() {
 				}
 			} 
 			if (json['success']) {
-				$.colorbox({width: '500px',  transition: 'elastic', html: "<div class='free_popup_cart'>" + json['success'] + "<br /><a class='button' href='index.php?route=checkout/checkout'>Оформить заказ</a></div>", title:"" });
+				$('#notification').html('<div class="success" style="display: none;">' + json['success'] + '<img src="catalog/view/theme/default/image/close.png" alt="" class="close" /></div>');
+					
+				$('.success').fadeIn('slow');
+					
 				$('#cart-total').html(json['total']);
-			}
+				
+				$('html, body').animate({ scrollTop: 0 }, 'slow'); 
+			}	
 		}
 	});
 });

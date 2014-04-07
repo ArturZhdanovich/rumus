@@ -74,7 +74,7 @@ button:hover{background:url(../image/button.png) center bottom repeat-x;}
 .login .button_login:hover{background:url(../image/button_login.png) left -83px no-repeat;}
 .login .button_login a{display:block;width:275px;text-align:center;text-decoration:none;text-shadow:-1px 1px 0 #000;color:#ccc;font-size:20px;font-weight:700;padding:10px 0 30px;}
 .login .forgotten a{color:#999;float:right;font-size:14px;text-decoration:none;margin:10px 40px;}
-a.button,input.button,.list a.button{text-decoration:none;color:#FFF;border:none;display:inline-block;text-shadow:0 1px 0 #000;-webkit-border-radius:4px 4px 4px 4px;-moz-border-radius:4px;-khtml-border-radius:4px 4px 4px 4px;border-radius:4px 4px 4px 4px;cursor:pointer;padding:7px 15px; background:url(../image/button.png) center bottom repeat-x;}
+a.button,input.button,.list a.button{text-decoration:none;color:#FFF;border:none;display:inline-block;text-shadow:0 1px 0 #000;-webkit-border-radius:4px 4px 4px 4px;-moz-border-radius:4px;-khtml-border-radius:4px 4px 4px 4px;border-radius:4px 4px 4px 4px;cursor:pointer;padding: 7px; background:url(../image/button.png) center bottom repeat-x;}
 .list{border-collapse:collapse;width:100%;border-top:1px solid #DDD;border-left:1px solid #DDD;margin-bottom:20px;}
 .list td{border-right:1px solid #DDD;border-bottom:1px solid #DDD;}
 .list thead td{background-color:#EFEFEE;padding:0 5px;}
@@ -156,7 +156,6 @@ a.edit-control:hover{background:url(../image/icon/code.png) right bottom no-repe
 
 
 a,a:hover,.list tbody .alt td,.list tbody .over td,.form tbody .alt td,a.button,a.button:hover,.success,.warning,.attention,.required{-webkit-transition:all .2s ease;-moz-transition:all .2s ease;-o-transition:all .2s ease;transition:all .2s ease;}
-a,a:visited,.list thead td a,.list thead td{color:#1F4B60;}
 .list tbody .over td,.list tbody tr:hover td{background-color:#FFE4B5!important;}
 #container #content .box > .content > #tabs{position:fixed;top:97px;left:0;background:#FFF;z-index:1;width:100%;padding:5px 0 0 40px;}
 #container #content .box > .content > #tabs + #form{padding-top:30px;}

@@ -40,7 +40,7 @@
 .button_filter:hover{background:url(../image/icon/filter_list.png) left bottom no-repeat;}
 .button_download{background:url(../image/icon/download.png) 0 bottom no-repeat;height:32px;width:36px;display:inline-block;vertical-align:middle;}
 .hidden,tr.hidden{display:none;}
-.quick-button-icon{text-align:right;padding:3px;}
+.quick-button-icon{text-align:left;padding:3px;}
 .quick-button-icon a{text-decoration:none;}
 .button-action{display:inline-block;}
 .button_edit{background:url(../image/icon/product_edit.png) left bottom no-repeat;height:32px;width:32px;display:inline-block;text-indent:-9999px;}

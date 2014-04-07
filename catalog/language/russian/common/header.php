@@ -29,5 +29,5 @@ $_['text_address']  	  	= 'Адрес:';
 $_['text_email_address']  	= 'E-Mail:';
 $_['text_telephone']  	  	= '(МТС):';
 $_['text_mobile_telephone'] = '(Velcom):';
-$_['text_fax']  			= 'Факс:';
+$_['text_fax']  			= 'Вконтакте:';
 ?>

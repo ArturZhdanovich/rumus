@@ -58,7 +58,7 @@ class ControllerModuleCategory extends Controller {
 		$this->data['categories'] = array();
 
 		$categories = $this->model_catalog_category->getCategories(0);
-		
+		$show_product_count = $this->config->get('config_product_count');
 		if (empty($setting['limit'])) {
 			$setting['limit'] = 30;
 		}
@@ -124,13 +124,14 @@ class ControllerModuleCategory extends Controller {
 
                 foreach ($children2 as $child2) {
 
-                    $data2 = array(
-                        'filter_category_id'  => $child2['category_id'],
-                        'filter_sub_category' => true
-                    );
 
-                    $product_total2 = $this->model_catalog_product->getTotalProducts($data2);
-
+                    if ($show_product_count) {
+                        $data2 = array(
+                            'filter_category_id'  => $child2['category_id'],
+                            'filter_sub_category' => true
+                        );
+                        $product_total2 = $this->model_catalog_product->getTotalProducts($data2);
+                    }
                     $children3_data = array();
 					
                     $children3 = $this->model_catalog_category->getCategories($child2['category_id']);
@@ -155,23 +156,24 @@ class ControllerModuleCategory extends Controller {
 
                     foreach ($children3 as $child3) {
 
-                        $data3 = array(
-                            'filter_category_id'  => $child3['category_id'],
-                            'filter_sub_category' => true
-                        );
 
-                        $product_total3 = $this->model_catalog_product->getTotalProducts($data3);
-
+                        if ($show_product_count) {
+                            $data3 = array(
+                                'filter_category_id'  => $child3['category_id'],
+                                'filter_sub_category' => true
+                            );
+                            $product_total3 = $this->model_catalog_product->getTotalProducts($data3);
+                        }
                         $children3_data[] = array(
                             'category_id' => $child3['category_id'],
-                            'name'        => $child3['name'] . ($this->config->get('config_product_count') ? ' (' . $product_total3 . ')' : ''),
+                            'name'        => $child3['name'] . (show_product_count  ? ' (' . $product_total3 . ')' : ''),
                             'href'        => $this->url->link('product/category', 'path=' . $category['category_id'] . '_' . $child['category_id'] . '_' . $child2['category_id'] . '_' . $child3['category_id'])
                         );
                     }
 
                     $children2_data[] = array(
                         'category_id' 		 => $child2['category_id'],
-						'name'        		 => $child2_trimmed_name . ($this->config->get('config_product_count') ? ' (' . $product_total2 . ')' : ''),
+						'name'        		 => $child2_trimmed_name . ($show_product_count  ? ' (' . $product_total2 . ')' : ''),
                         'child3_id'   		 => $children3_data,
                         'child2_thumb'       => $child2_thumb,
 						'child2_description' => $child2_description,
@@ -181,7 +183,7 @@ class ControllerModuleCategory extends Controller {
 
 				$children_data[] = array(
 					'category_id' 		=> $child['category_id'],
-					'name'        		=> $child_trimmed_name . ($this->config->get('config_product_count') ? ' (' . $this->model_catalog_product->getTotalProducts($data) . ')' : ''),
+					'name'        		=> $child_trimmed_name . ($show_product_count  ? ' (' . $this->model_catalog_product->getTotalProducts($data) . ')' : ''),
 					'child2_id'   		=> $children2_data,
                     'child_thumb' 		=> $child_thumb,
 					'child_description' => $child_description,
@@ -196,7 +198,7 @@ class ControllerModuleCategory extends Controller {
 
 			$this->data['categories'][] = array(
 				'category_id' => $category['category_id'],
-				'name'        => $trimmed_name . ($this->config->get('config_product_count') ? ' (' . $this->model_catalog_product->getTotalProducts($data) . ')' : ''),
+				'name'        => $trimmed_name . ($show_product_count  ? ' (' . $this->model_catalog_product->getTotalProducts($data) . ')' : ''),
 				'children'    => $children_data,
 				'thumb'       => $thumb,
 				'no_image'    => $this->model_tool_image->resize('no_image.jpg', $setting['image_width'], $setting['image_height']),

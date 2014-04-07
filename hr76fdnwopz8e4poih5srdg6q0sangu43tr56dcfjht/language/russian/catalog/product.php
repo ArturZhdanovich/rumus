@@ -35,7 +35,7 @@ $_['entry_store']            = 'Магазины:';
 $_['entry_keyword']          = 'SEO URL (ЧПУ):<br /><span class="help">Должен быть уникальным на всю систему. <span style="color: #F00;">Запрещено использование пробелов.</span><br />Допустимые символы "-" и "_"</span>';
 $_['entry_model']            = 'Модель:';
 $_['entry_sku']              = 'SKU:<br/><span class="help">Артикул (код производителя)</span>';
-$_['entry_upc']              = 'UPC:<br/><span class="help">Универсальный код товара</span>';
+$_['entry_upc']              = 'Материал:<br/><span class="help">Материал товара</span>';
 $_['entry_ean']              = 'EAN:<br/><span class="help">Европейский артикул</span>';
 $_['entry_jan']              = 'JAN:<br/><span class="help">Японский артикул</span>';
 $_['entry_isbn']             = 'ISBN:<br/><span class="help">Номер книги по международному стандарту</span>';

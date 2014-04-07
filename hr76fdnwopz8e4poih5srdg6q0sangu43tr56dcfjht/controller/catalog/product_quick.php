@@ -1,10 +1,41 @@
 <?php 
 class ControllerCatalogProductQuick extends Controller {
 	private $error = array(); 
-     
+      // Options Boost
+            	public function category() {
+					$this->load->model('catalog/product');
+
+					if (isset($this->request->get['category_id'])) {
+						$category_id = $this->request->get['category_id'];
+					} else {
+						$category_id = 0;
+					}
+
+					$product_data = array();
+
+					$results = $this->model_catalog_product->getProductsByCategoryId($category_id);
+
+					foreach ($results as $result) {
+						$product_data[] = array(
+							'product_id' => $result['product_id'],
+							'name'       => $result['name'],
+							'model'      => $result['model']
+						);
+					}
+
+					if (version_compare(VERSION, '1.5.1.3', '<')) { //v1.5.1.2 or earlier
+						$this->load->library('json');
+						$this->response->setOutput(Json::encode($product_data));
+					} else {
+						$this->response->setOutput(json_encode($product_data));
+					}
+
+				}//
   	public function index() {
 		$this->language->load('catalog/product_quick');
-    	
+    	        $this->load->language('catalog/options_boost');
+        $this->data['entry_info'] = $this->language->get('entry_info');
+        $this->checkdb_ob(); //Q: Options Boost
 		$this->document->setTitle($this->language->get('heading_title')); 
 		
 		$this->load->model('catalog/product_quick');
@@ -15,10 +46,40 @@ class ControllerCatalogProductQuick extends Controller {
 		
 		$this->getList();
   	}
-  
+    //Q: Options Boost
+    private function checkdb_ob() {
+
+        $fields = array();
+
+        $fields[] = array(
+            'table'     => 'product_option_value',
+            'column'    => 'ob_sku',
+            'sql'       => "ALTER TABLE `" . DB_PREFIX . "product_option_value` ADD `ob_sku` VARCHAR(64) NOT NULL DEFAULT ''"
+        );
+        $fields[] = array(
+            'table'     => 'product_option_value',
+            'column'    => 'ob_info',
+            'sql'       => "ALTER TABLE `" . DB_PREFIX . "product_option_value` ADD `ob_info` VARCHAR(255) NOT NULL DEFAULT ''"
+        );
+        $fields[] = array(
+            'table'     => 'product_option_value',
+            'column'    => 'ob_image',
+            'sql'       => "ALTER TABLE `" . DB_PREFIX . "product_option_value` ADD `ob_image` VARCHAR(255) NOT NULL DEFAULT ''"
+        );
+
+        foreach ($fields as $field) {
+            $sql = "DESC `" . DB_PREFIX . "$field[table]` $field[column]";
+		    $query = $this->db->query($sql);
+		    if (!$query->num_rows) {
+				$this->db->query($field['sql']);
+		    }
+        }
+	}//
   	public function insert() {
     	$this->language->load('catalog/product_quick');
-
+        $this->load->language('catalog/options_boost');
+        $this->data['entry_info'] = $this->language->get('entry_info');
+        $this->checkdb_ob(); //Q: Options Boost
     	$this->document->setTitle($this->language->get('heading_title')); 
 		
 		$this->load->model('catalog/product_quick');
@@ -74,7 +135,9 @@ class ControllerCatalogProductQuick extends Controller {
 
   	public function update() {
     	$this->language->load('catalog/product_quick');
-
+        $this->load->language('catalog/options_boost');
+        $this->data['entry_info'] = $this->language->get('entry_info');
+        $this->checkdb_ob(); //Q: Options Boost
     	$this->document->setTitle($this->language->get('heading_title'));
 		
 		$this->load->model('catalog/product_quick');
@@ -130,7 +193,9 @@ class ControllerCatalogProductQuick extends Controller {
 
   	public function delete() {
     	$this->language->load('catalog/product_quick');
-
+        $this->load->language('catalog/options_boost');
+        $this->data['entry_info'] = $this->language->get('entry_info');
+        $this->checkdb_ob(); //Q: Options Boost
     	$this->document->setTitle($this->language->get('heading_title'));
 		
 		$this->load->model('catalog/product_quick');
@@ -188,7 +253,9 @@ class ControllerCatalogProductQuick extends Controller {
 
   	public function copy() {
     	$this->language->load('catalog/product_quick');
-
+        $this->load->language('catalog/options_boost');
+        $this->data['entry_info'] = $this->language->get('entry_info');
+        $this->checkdb_ob(); //Q: Options Boost
     	$this->document->setTitle($this->language->get('heading_title'));
 		
 		$this->load->model('catalog/product_quick');
@@ -247,7 +314,9 @@ class ControllerCatalogProductQuick extends Controller {
 	protected function getListing($product_id) {
 		$this->load->model('catalog/product_quick');
     	$this->language->load('catalog/product_quick');
-		
+		$this->load->language('catalog/options_boost');
+        $this->data['entry_info'] = $this->language->get('entry_info');
+        $this->checkdb_ob(); //Q: Options Boost
 		$this->data['text_meta_data'] = $this->language->get('text_meta_data');
 		$this->data['text_attribute'] = $this->language->get('text_attribute');
 		$this->data['text_special'] = $this->language->get('text_special');
@@ -612,6 +681,9 @@ class ControllerCatalogProductQuick extends Controller {
 				
 				foreach ($product_option['product_option_value'] as $product_option_value) {
 					$product_option_value_data[] = array(
+                    'ob_sku'                  	  => $product_option_value['ob_sku'], //Q: Options Boost
+            		'ob_info'                    => $product_option_value['ob_info'], //Q: Options Boost
+            		'ob_image'                   => $product_option_value['ob_image'], //Q: Options Boost
 						'product_option_value_id' => $product_option_value['product_option_value_id'],
 						'option_value_id'         => $product_option_value['option_value_id'],
 						'quantity'                => $product_option_value['quantity'],
@@ -655,7 +727,18 @@ class ControllerCatalogProductQuick extends Controller {
 				}
 			}
 		}
-		
+		//Q: Options Boost
+        foreach ($this->data['product_options'] as $k1 => $product_option) {
+			if (isset($product_option['product_option_value'])) {
+	            foreach ($product_option['product_option_value'] as $k2 => $product_option_value) {
+	                if (isset($product_option_value['ob_image']) && file_exists(DIR_IMAGE . $product_option_value['ob_image']) && is_file(DIR_IMAGE . $product_option_value['ob_image'])) {
+	                    $this->data['product_options'][$k1]['product_option_value'][$k2]['preview'] = $this->model_tool_image->resize($product_option_value['ob_image'], 38, 38);
+	                } else {
+	                    $this->data['product_options'][$k1]['product_option_value'][$k2]['preview'] = $this->model_tool_image->resize('no_image.jpg', 38, 38);
+	                }
+	            }
+	        }
+        }//
 		$this->load->model('sale/customer_group');
 		
 		$this->data['customer_groups'] = $this->model_sale_customer_group->getCustomerGroups();
@@ -1497,13 +1580,15 @@ class ControllerCatalogProductQuick extends Controller {
 
   	protected function getForm() {
     	$this->data['heading_title'] = $this->language->get('heading_title');
- 
     	$this->data['text_enabled'] = $this->language->get('text_enabled');
     	$this->data['text_disabled'] = $this->language->get('text_disabled');
     	$this->data['text_none'] = $this->language->get('text_none');
     	$this->data['text_yes'] = $this->language->get('text_yes');
     	$this->data['text_no'] = $this->language->get('text_no');
 		$this->data['text_select_all'] = $this->language->get('text_select_all');
+        $this->checkdb_ob(); //Q: Options Boost
+        $this->load->language('catalog/options_boost');
+        $this->data['entry_info'] = $this->language->get('entry_info');
 		$this->data['text_unselect_all'] = $this->language->get('text_unselect_all');
 		$this->data['text_plus'] = $this->language->get('text_plus');
 		$this->data['text_minus'] = $this->language->get('text_minus');
@@ -1862,7 +1947,7 @@ class ControllerCatalogProductQuick extends Controller {
     	} elseif (!empty($product_info)) {
       		$this->data['quantity'] = $product_info['quantity'];
     	} else {
-			$this->data['quantity'] = 1;
+			$this->data['quantity'] = 0;
 		}
 		
 		if (isset($this->request->post['minimum'])) {
@@ -2009,6 +2094,9 @@ class ControllerCatalogProductQuick extends Controller {
 				
 				foreach ($product_option['product_option_value'] as $product_option_value) {
 					$product_option_value_data[] = array(
+                    'ob_sku'                  	  => $product_option_value['ob_sku'], //Q: Options Boost
+            		'ob_info'                    => $product_option_value['ob_info'], //Q: Options Boost
+            		'ob_image'                   => $product_option_value['ob_image'], //Q: Options Boost
 						'product_option_value_id' => $product_option_value['product_option_value_id'],
 						'option_value_id'         => $product_option_value['option_value_id'],
 						'quantity'                => $product_option_value['quantity'],
@@ -2052,7 +2140,18 @@ class ControllerCatalogProductQuick extends Controller {
 				}
 			}
 		}
-		
+		//Q: Options Boost
+        foreach ($this->data['product_options'] as $k1 => $product_option) {
+			if (isset($product_option['product_option_value'])) {
+	            foreach ($product_option['product_option_value'] as $k2 => $product_option_value) {
+	                if (isset($product_option_value['ob_image']) && file_exists(DIR_IMAGE . $product_option_value['ob_image']) && is_file(DIR_IMAGE . $product_option_value['ob_image'])) {
+	                    $this->data['product_options'][$k1]['product_option_value'][$k2]['preview'] = $this->model_tool_image->resize($product_option_value['ob_image'], 38, 38);
+	                } else {
+	                    $this->data['product_options'][$k1]['product_option_value'][$k2]['preview'] = $this->model_tool_image->resize('no_image.jpg', 38, 38);
+	                }
+	            }
+	        }
+        }//
 		$this->load->model('sale/customer_group');
 		
 		$this->data['customer_groups'] = $this->model_sale_customer_group->getCustomerGroups();
@@ -2253,30 +2352,7 @@ class ControllerCatalogProductQuick extends Controller {
 		}
   	}
 	
-	public function category() {
-		$this->load->model('catalog/product_quick');
-		
-		if (isset($this->request->get['category_id'])) {
-			$category_id = $this->request->get['category_id'];
-		} else {
-			$category_id = 0;
-		}
-		
-		$product_data = array();
-		
-		$results = $this->model_catalog_product_quick->getProductsByCategoryId($category_id);
-		
-		foreach ($results as $result) {
-			$product_data[] = array(
-				'product_id' => $result['product_id'],
-				'name'       => $result['name'],
-				'model'      => $result['model']
-			);
-		}
 
-		$this->response->setOutput(json_encode($product_data));
-	}
-	
 	public function related() {
 		$this->load->model('catalog/product_quick');
 		
@@ -2342,6 +2418,9 @@ class ControllerCatalogProductQuick extends Controller {
 	
 	public function changeStatus() {
 		$this->language->load('catalog/product_quick');
+                $this->load->language('catalog/options_boost');
+        $this->data['entry_info'] = $this->language->get('entry_info');
+        $this->checkdb_ob(); //Q: Options Boost
 		$this->load->model('catalog/product_quick');
 		$output='';
 		if(isset($this->request->get['object_id'])){

@@ -62,9 +62,6 @@
 		  <?php if ($jan) { ?>
 			<span><?php echo $text_jan; ?></span> <?php echo $jan; ?><br />
           <?php } ?>
-		  <?php if ($isbn) { ?>
-			<span><?php echo $text_isbn; ?></span> <?php echo $isbn; ?><br />
-          <?php } ?>
 		  <?php if ($mpn) { ?>
 			<span><?php echo $text_mpn; ?></span> <?php echo $mpn; ?><br />
           <?php } ?>
@@ -247,13 +244,16 @@
 			<?php } ?>
 		  </div>
 		  <?php } ?>
+          <?php if ($isbn) { ?>
+            <span style="color:#111111;font-weight: 600;"><?php echo $text_isbn; ?></span><br />
+          <?php } ?>
 		  <?php if ($review_status) { ?>
 		  <div class="review">
 			<div><img src="catalog/view/theme/default/image/stars-<?php echo $rating; ?>.png" alt="<?php echo $reviews; ?>" />&nbsp;&nbsp;<a onclick="$('a[href=\'#tab-quick-review\']').trigger('click');"><?php echo $reviews; ?></a>&nbsp;&nbsp;|&nbsp;&nbsp;<?php if ($guest_review) { ?><a onclick="$('a[href=\'#tab-quick-review\']').trigger('click');"><?php echo $text_write; ?></a><?php } else { echo $text_login_write; } ?></div>
 			<div class="share"><!-- AddThis Button BEGIN -->
 			  <div class="addthis_default_style"><a class="addthis_button_compact"><?php echo $text_share; ?></a> <a class="addthis_button_email"></a><a class="addthis_button_print"></a> <a class="addthis_button_facebook"></a> <a class="addthis_button_twitter"></a></div>
 			  <script type="text/javascript" src="//s7.addthis.com/js/250/addthis_widget.js"></script> 
-			  <!-- AddThis Button END --> 
+			  <!-- AddThis Button END -->
 			</div>
 		  </div>
 		  <?php } ?>

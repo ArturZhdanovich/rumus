@@ -1,0 +1,29 @@
+
+[LIST]
+//AUTO LIST START - сгенерировано автоматически
+products = tags_href "a"
+
+
+
+[PRODUCT]
+//AUTO START - сгенерировано автоматически
+name = tag_text "h1"
+find_manufacturer
+price = inside "$", " "
+main_image = inside "e"" src=""", """"
+images = tags_image "img"
+if (!price and !empty(noprice)) skip = true
+//AUTO END
+
+[PASS]
+/* Опции прописаные Мастером Инструкций */
+/**<h2 style='font-weight:normal'>Настройки парсинга</h2>**/
+global description_images, site_language, noprice, update_price, update_name, update_description, update_images, update_attributes, update_options
+description_images = false // Загружать изображения из описания (Изображения из описания будут загружены к вам на сервер)
+site_language = "" // Язык сайта для перевода (Для автоматического перевода установите язык сайта<br/><b>Например:</b> EN - английский, RU - русский)
+noprice = false // Пропускать товары без цены
+update_price = true // Обновлять цену
+update_description = false // Обновлять название и описание
+update_images = false // Обновлять изображения
+update_attributes = true // Обновлять характеристики
+update_options = true // Обновлять опции
