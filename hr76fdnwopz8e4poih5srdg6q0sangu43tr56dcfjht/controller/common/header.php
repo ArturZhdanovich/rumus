@@ -200,9 +200,9 @@ class ControllerCommonHeader extends Controller {
 			$this->data['weight_class'] = $this->url->link('localisation/weight_class', 'token=' . $this->session->data['token'], 'SSL');
 			$this->data['length_class'] = $this->url->link('localisation/length_class', 'token=' . $this->session->data['token'], 'SSL');
 			$this->data['zone'] = $this->url->link('localisation/zone', 'token=' . $this->session->data['token'], 'SSL');
+            $this->data['vk_export']= $this->url->link('extension/vk_export','token='. $this->session->data['token'],'SSL'); $this->data['vk_export_albums']= $this->url->link('extension/vk_export/albums','token='. $this->session->data['token'],'SSL'); $this->data['vk_export_setting']= $this->url->link('module/vk_export','token='. $this->session->data['token'],'SSL'); $this->data['vk_export_report']= $this->url->link('extension/vk_export/report','token='. $this->session->data['token'],'SSL'); $this->language->load('extension/vk_export_header'); $this->data['text_vk_export']= $this->language->get('text_vk_export'); $this->data['text_vk_export_albums']= $this->language->get('text_vk_export_albums'); $this->data['text_vk_export_setting']= $this->language->get('text_vk_export_setting'); $this->data['text_vk_export_cron_report']= $this->language->get('text_vk_export_cron_report');
 			$this->data['control_unit'] = $this->url->link('tool/control_unit', 'token=' . $this->session->data['token'], 'SSL');
 			$this->data['seo_manager'] = $this->url->link('tool/seo_manager', 'token=' . $this->session->data['token'], 'SSL');
-
 			$this->data['clear_all_cache'] = $this->url->link('common/home', 'token=' . $this->session->data['token']. '&clear_all_cache=true', 'SSL');
 			$this->data['clear_image_cache'] = $this->url->link('common/home', 'token=' . $this->session->data['token']. '&clear_image_cache=true', 'SSL');
 			$this->data['clear_seo_cache'] = $this->url->link('common/home', 'token=' . $this->session->data['token']. '&clear_seo_cache=true', 'SSL');

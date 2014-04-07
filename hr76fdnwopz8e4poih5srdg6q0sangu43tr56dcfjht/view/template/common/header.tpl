@@ -103,6 +103,7 @@ $(document).ready(function(){
           <li><a href="<?php echo $total; ?>"><?php echo $text_total; ?></a></li>
           <li><a href="<?php echo $feed; ?>"><?php echo $text_feed; ?></a></li>
           <li><a href="<?php echo $sitemap; ?>"><?php echo $text_sitemap; ?></a></li>
+          <li><a href="<?php echo $vk_export;?>" class="parent"><?php echo $text_vk_export;?></a><ul><li><a href="<?php echo $vk_export;?>"><?php echo $text_vk_export;?></a></li><li><a href="<?php echo $vk_export_albums;?>"><?php echo $text_vk_export_albums;?></a></li><li><a href="<?php echo $vk_export_setting;?>"><?php echo $text_vk_export_setting;?></a></li><li><a href="<?php echo $vk_export_report;?>"><?php echo $text_vk_export_cron_report;?></a></li></ul></li>
         </ul>
       </li>
       <li id="sale"><a class="top"><?php echo $text_sale; ?></a>

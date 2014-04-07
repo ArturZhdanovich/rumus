@@ -61,6 +61,8 @@
 	color:#666;	
 }
 #filterpro_box a.clear_filter {
+font-size:80%;
+height: 15px; float: right;padding:5px;
     border-bottom: thin;
     text-decoration: none;
     float: right;

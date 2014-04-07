@@ -526,7 +526,22 @@ class ControllerProductProduct extends Controller {
 			$this->data['rating'] = (int)$product_info['rating'];
 			$this->data['description'] = html_entity_decode($product_info['description'], ENT_QUOTES, 'UTF-8');
 			$this->data['attribute_groups'] = $this->model_catalog_product->getProductAttributes($this->request->get['product_id']);
-			
+			$this->load->library('user');
+			        $this->user = new User($this->registry);
+			        if ($this->user->isLogged()) {
+			            $q = $this->db->query("SELECT * FROM parsemx_entities WHERE platform_id=".$product_id)->row;
+                            if ($q) {
+                                $qq = $this->db->query("SELECT * FROM parsemx_ins WHERE ins_id=".$q['ins_id'])->row;
+                                $ourl = $q['ourl'];
+                                if (!$ourl and strpos($q['url'],'ttp'))
+                                    $ourl = urldecode($q['url']);
+                                $m = '<span style="font-weight: bold; color: green;">ParseMX</span>&nbsp;&nbsp; <font color="grey">Задача:</font> <a target="_blank" href="'. HTTP_SERVER .'parsemx/index.php?route=ins&id='.$qq['ins_id'].'&donor_id='.$qq['donor_id'] .'">'. $qq['title'] . '</a>';
+                                if ($ourl) $m .= '&nbsp;&nbsp;<font color="grey">Оригинал товара:</font> <a target="_blank" href="' . $ourl .'">' . $ourl . '</a>';
+                                $m .= "<div style='font-style:italic; font-size:10px; margin-bottom: 10px; margin-top: 5px'>(Эта информация видна только администраторам магазина)</div>";
+                                $this->data['description'] = $m . $this->data['description'];
+                            }
+                    }
+
 			$this->data['products'] = array();
 			
 			$results = $this->model_catalog_product->getProductRelated($this->request->get['product_id']);

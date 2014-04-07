@@ -1,7 +1,7 @@
 <?php if($tags || $categories || $options || $manufacturers || $attributes || $price_slider) { ?>
 <div id="filterpro_box" class="box">
 <div class="box-heading"><?php echo $heading_title; ?>
-	<a class="clear_filter"style="height: 15px; float: right;padding:0;"><?php echo $clear_filter?></a></div>
+	<a class="clear_filter"><?php echo $clear_filter?></a></div>
 <div class="box-content filterpro">
 <form id="filterpro">
 

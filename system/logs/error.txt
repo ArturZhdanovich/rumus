@@ -47,3 +47,8 @@
 2014-02-27 18:03:50 - PHP Warning:  imagecreatefromjpeg(): '/var/www/rumusby/data/www/rumus.by/image/data/products/2_ebay/3_bag/3_briefcase/2014_02_27_1/mm1.jpg' is not a valid JPEG file in /var/www/rumusby/data/www/rumus.by/system/library/image.php on line 34
 2014-02-27 18:03:50 - PHP Warning:  imagecopyresampled() expects parameter 2 to be resource, boolean given in /var/www/rumusby/data/www/rumus.by/system/library/image.php on line 109
 2014-02-27 18:03:50 - PHP Warning:  imagedestroy() expects parameter 1 to be resource, boolean given in /var/www/rumusby/data/www/rumus.by/system/library/image.php on line 110
+2014-03-04 17:05:00 - PHP Warning:  imagecreatefromjpeg(): gd-jpeg, libjpeg: recoverable error: Premature end of JPEG file
+ in /var/www/rumusby/data/www/rumus.by/system/library/image.php on line 34
+2014-03-04 17:05:00 - PHP Warning:  imagecreatefromjpeg(): '/var/www/rumusby/data/www/rumus.by/image/data/products/2_e/1_women/8_dress/2014_03_04_1/w1.jpg' is not a valid JPEG file in /var/www/rumusby/data/www/rumus.by/system/library/image.php on line 34
+2014-03-04 17:05:00 - PHP Warning:  imagecopyresampled() expects parameter 2 to be resource, boolean given in /var/www/rumusby/data/www/rumus.by/system/library/image.php on line 109
+2014-03-04 17:05:00 - PHP Warning:  imagedestroy() expects parameter 1 to be resource, boolean given in /var/www/rumusby/data/www/rumus.by/system/library/image.php on line 110

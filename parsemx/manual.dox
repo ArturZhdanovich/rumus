@@ -1,0 +1,682 @@
+[LIST]
+ids
+ids = products
+Product IDs
+Specify it if you want to use fast product stock/price update.
+Array of product IDs (as specified at [PRODUCT] section).
+Set to {products} if you do not specify ID.
+#
+prices
+prices = tags_text ".price"
+Product prices
+Specify it if you want to use fast product price update.
+Array of product prices. {ids} should be specified as well.
+#
+products
+products = tags_href ".plink"
+URLs of individual products pages 
+This URLs will be processed at [PRODUCT] section.
+#
+nextpage
+nextpage = tag_href ".next"
+URL of next page or pages
+#
+category_name
+category_name = tag_text "h1"
+Name of the category
+Name of the category to which products and/or subcategories will be added.
+If not exists it will be created using ... data
+#
+category_image
+category_image = tag_attr ".himage", "src" -> url
+Image of the category
+Is used when new category is created.
+#
+description
+description = tag_html ".description"
+Category description
+Is used when new category is created.
+#
+meta_description
+meta_description = inside "&lt;meta name=""description"" content=""", """"
+Category meta-description
+Is used when new category is created.
+#
+meta_keyword
+meta_keyword = inside "&lt;meta name=""keywords"" content=""", """"
+Category meta-keywords
+Is used when new category is created.
+#
+subcategories
+subcategories = tags_href ".subcat"
+Links to subcategories
+#
+subcategories_images
+subcategories = tags_attr ".subpic", "src" -> urls
+ 
+Links to subcategories images.
+Use it if subcategory page doesn't have subcategory image.
+#
+[PRODUCT]
+description_files
+description_files [] = "pdf"
+Downloadable files extensions
+Array of files extensions that are downloaded when using {description_images} directive.
+Defaults to usual images extensions.
+#
+name
+name = tag_text "h1"
+Product name
+If empty, product is not added.
+Update is controlled with {update_name}.
+#
+model
+model = tag_text ".sku"
+Product model
+If empty, sets to product name.
+#
+id
+id = model
+String to distinguish products
+By default products are checked by their URLs. To change this behaviour, set id to some value that makes products different and unique.
+#
+product_match
+product_match = "model"
+Match existing products
+If you need to update products in your shop that was not created by ParseMX, use {product_match}. Set it to the field name that would be matched agains {id}.
+#
+category
+category = tag_text ".cat"
+Product category
+Set this to add product to some category.
+#
+categories
+categories [] = "Bestsellers"
+Product additional categories
+Add elelements to this array to link product to additional categories.
+{categories} are prefilled with categories specified at entire task.
+#
+description
+description = tag_html ".description"
+Product description
+#
+meta_description
+meta_description = inside "&lt;meta name=""description"" content=""", """"
+Product meta-description
+#
+meta_keyword
+meta_keyword = inside "&lt;meta name=""keywords"" content=""", """"
+Product meta-keywords
+#
+seo_url
+seo_url = name -> translit
+Product path
+#
+h1
+h1 = name
+Product H1
+Your shop needs to support this field.
+#
+title
+title = name
+Product title
+Your shop needs to support this field.
+#
+tags
+tags = "buy, best, book"
+Product tags
+#
+related
+related [] = tag_href ".similar" -> EntityPlatformID
+Related products
+Array of {product_id}s of related products.
+#
+sku
+sku = tag_text ".sku"
+Product SKU
+#
+upc
+upc = tag_text ".upc"
+Product UPC
+#
+ean
+ean = tag_text ".ean"
+Product EAN
+#
+jan
+jan = tag_text ".jan"
+Product JAN
+#
+isbn
+isbn = tag_text ".isbn"
+Product ISBN
+#
+mpn
+mpn = tag_text ".mpn"
+Product MPN
+#
+price
+price = tag_text ".price"
+Product price
+Use {currency} command to recalculate it to shop's currency.
+#
+location
+location = "California"
+Product location
+#
+tax_class_id
+tax_class_id = 2
+Product tax class
+#
+quantity
+quantity = 3
+Product quantity
+Defaults to {3}.
+#
+minimum
+minimum = 5
+Minimum number of products to order.
+Defaults to {1}.
+#
+substract
+substract = false
+Product substraction
+Indicates if purchases are substracting product quantity.
+Defaults to {true}.
+#
+stock_status_id
+stock_status_id = 9
+Product stock status.
+Defaults to {8} - Pre-Order.
+Negative statuses are visible only when {quantity} is {0}.
+#
+shipping
+shipping = false
+Product shipping
+Indicates if product is shippable.
+Defaults to {true}.
+#
+date_available
+date_available = "2013-03-13"
+ 
+Date from which products becomes avaible for purchase.
+Defaults to today.
+#
+length
+length = 15
+Product length
+#
+width
+width = 45
+Product width
+#
+height
+height = 7
+Product height
+#
+weight
+weight = 2.6
+Product weight
+#
+length_class_id
+length_class_id = 2
+Product length class
+#
+weight_class_id
+weight_class_id = 2
+Product weight class
+#
+status
+status = false
+Product visibility
+Indicates if product is visible at the shop.
+Defaults to {true}.
+Update is controlled with {update_status}.
+#
+manufacturer
+manufacturer = tag_text ".man"
+Product manufacturer.
+If manufacturer doesn't exist it will be created using {manufacturer_description} and {manufacturer_image}.
+#
+product_store
+product_store = array (0,2)
+Product stores
+Used for multistore. Array of stores id's product will be binded to.
+#
+points
+points = price * 3
+Product points
+Number of points customer will be rewarded on product purchase.
+#
+main_image
+main_image = tag_attr ".picimg", "src" -> url
+Product image
+Main image URL of the product. If empty, first element from {images} will be used.
+#
+images
+images = tags_href ".pics"
+Product images
+Additional images URLs of the product.
+#
+attributes
+attributes["Main"] = tags_text ".atable td"
+Product attributes
+Array of groups (where title is the key). Each group is array of attributes names and values.
+#
+options
+options["Color"] = tags_text ".colors"
+Product options
+Array of options (where title is the key). Each group is array of option values and (optionally) values or images.
+Option name can have an addition:
+{_select} - dropdown select type
+{_checkbox} - checkbox type
+{_image} - image type
+By default options are radio type.
+#
+product
+product["downloads"] = array(112,114)
+Additional product data
+This is array of additional data to be supplied to {model_catalog_product->addProduct}. You can write here data for different OpenCart modifications also.
+#
+min_image_size
+min_image_size = 30000
+Image size restriction
+Sets the minimum image size in bytes to be downloaded and used in results. If the image is smaller, it is skipped.
+#
+max_image_size
+max_image_size = 450000
+Image size restriction
+Sets the maximum image size in bytes to be downloaded and used in results. If the image is bigger, it is skipped.
+#
+update_attributes
+update_attributes = false
+ 
+Indicates the {attributes} update for existing products. Defaults to {true}.
+#
+update_related
+update_related = true
+ 
+Indicates the {related} products update for existing products. Defaults to {false}.
+#
+update_images
+update_images = true
+ 
+Indicates the images update for existing products. Defaults to {false}.
+#
+update_categories
+update_categories = true
+ 
+Indicates the categories update for existing products. Defaults to {false}. In this case update will occur only additional categories will be added. Set to {-1} to disable categories update at all.
+#
+update_description
+update_description = true
+ 
+Indicates the {name}, {description}, {meta_description}, {meta_keyword} and {tags} update for existing products. Defaults to {false}.
+#
+update_status
+update_status = true
+ 
+Indicates the {status} update for existing products. Defaults to {false}.
+#
+update_stock_status
+update_stock_status = true
+ 
+Indicates the {stock_status_id} update for existing products. Defaults to {false}.
+#
+update_price
+update_price = false
+ 
+Indicates the {price} update for existing products. Defaults to {true}.
+#
+update_options
+update_options = false
+ 
+Indicates the {options} update for existing products. Defaults to {true}.
+#
+[Functions]
+tag_text
+-> tag_text ".name"
+Text inside tag
+#
+tags_text
+-> tags_text ".options"
+Texts inside tags
+#
+tag_href
+-> tag_href ".link"|, "text"
+Link of the tag
+HREF attribute of the tag.
+If {"text"} is specified, tag also need to have {"text"} inside.
+#
+tags_href
+-> tags_href ".link"|, "text"
+Links of the tags
+HREF attributes of the tags.
+If {"text"} is specified, tags also need to have {"text"} inside.
+#
+tag_attr
+-> tag_attr ".image", "src"|, "text"
+Attribute of the tag
+If {"text"} is specified, tag also need to have {"text"} inside.
+#
+tags_attr
+-> tags_attr ".images", "src"|, "text"
+Attributes of the tags
+If {"text"} is specified, tags also need to have {"text"} inside.
+#
+tag_html
+-> tag_html ".description"
+HTML inside the tag
+Returns all HTML contained at the tag. Performs closing tags check with {close_tags}.
+#
+tags_html
+-> tags_html ".options"
+HTMLs inside the tags
+Returns all HTMLs contained at the tags. Performs closing tags check with {close_tags}.
+#
+url
+-> url
+Expand URL to full form
+Recommended for use at every link.
+#
+urls
+-> urls
+Expand URLs to full form
+Recommended for use at all links.
+#
+translit
+-> translit
+Make latin letters text
+Converts text to latin lower-case letters with dashes instead of spaces.
+Nice for SEO-URLs.
+#
+y_translate
+-> y_translate "en-de"
+Translate with Yandex.Translate
+If language pair {"en-de"} is omitted, text is translated from Russian to English. Can't translate more then 7000 characters.
+#
+find
+-> find "Welcome"
+Check for text
+Returns {true} if {"Welcome"} is found, {false} if no.
+#
+replace
+-> replace "before",| "after"
+Replace text
+Changes all {"before"} to {"after"}.
+If {"after"} is omitted all "before" entries are removed.
+#
+inside
+-> inside "begin", "end"
+Text between some strings
+Gives the first text inside {"begin"} and {"end"}.
+If {"begin"} is {""} the start of text is taken.
+If {"end"} is empty or omitted the end of text is taken.
+#
+pinside
+-> pinside "begin", "end"
+{inside} with pos info
+Same as inside, but found element position info is saved as well.
+Is used with {pgroup}.
+#
+pinsides
+-> pinsides "begin", "end"
+{insides} with pos info
+Same as {insides}, but found elements position info is saved as well.
+Is used with {pgroup}.
+#
+pgroup
+attributes = pgroup groups, elements, elements2, default_group
+Group {pinsides} data for options or attrs
+Merges data harvested with {pinside} and {pinsides} into options or attributes array. {pgroup} uses entries position information to decide to which group element belongs.
+Parameters explanation:
+{groups} - options names or attrs groups headers (optional)
+{elements} - options values or attrs names
+{elements2} - options values prices/images or attrs values (optional)
+{default_group} - default group name for elements  that do not belong to any group.
+#
+insiden
+-> insiden "&lt;div", "&lt;/div&gt;"
+Text inside nested tags
+Gives the first text inside {"&lt;div"} and {"&lt;/div&gt;"}. Takes nested openings and closings in consideration.
+#
+insidex
+-> insidex "begin", "end"
+ 
+Text between some strings (including {"begin"} and {"end"}).
+Gives the first text inside {"begin"} and {"end"}.
+If {"begin"} is {""} the start of text is taken.
+If {"end"} is empty or omitted the end of text is taken.
+#
+insides
+-> insides "begin", "end"
+Texts between some strings
+Gives the texts inside all {"begin"} and {"end"} pairs.
+#
+insidesx
+-> insidesx "begin", "end"
+ 
+Texts between some strings (including {"begin"} and {"end"})
+Gives the texts inside all {"begin"} and {"end"} pairs.
+#
+replace_inside
+-> replace_inside "find", "replace", "begin", "end"
+Replace between some strings
+Replace {"find"} to {"replace"} in all entries between {"begin"} and {"end"}.
+#
+reset
+-> reset
+First element of array
+#
+end
+-> end
+Last element of array
+#
+unset
+images[0] -> unset
+Delete element of array
+#
+sort
+sort images
+Sort the array
+#
+array_merge
+array_merge arr1, arr2
+Merge 2 arrays
+First go all element from {arr1}, then from {arr2}.
+#
+shred_arrays
+shred_arrays arr1, arr2|, arr3 ...
+Merge arrays by element
+Merges any number of arrays, taking first element from first array, second - from second and so on. Then again next element from first array, next from second and so on.
+#
+trim
+-> trim
+Trim spaces and new lines
+Trims spaces and new lines from the beginning and end of the text.
+#
+close_tags
+-> close_tags
+Check tags opening and closing
+Analyzes HTML and makes its tags properly opened and closed. Useful for any HTML piece you are going to insert into your site. 
+#
+random
+random| data
+Random number, element or text
+If no {data} specified - random float number from 0 to 1
+If {data} is some number - random integer from 0 to {data}
+If {data} is array - random element from array
+Also such a variant is supported:
+{random "text1", "text2", .. "textN"}
+This returns random element.
+#
+rreplace
+-> rreplace "KR\d+$", "No"
+Replace with regular expressions
+<a target="_blank" href="http://rubular.com">Regular exressions syntax and builder</a>
+Search is case case insensitive. You can use {"/"} character without any prefixing.
+#
+nodes
+-> nodes ".blocks"
+Get specified tags as XHTML nodes array.
+Most commands accept nodes as source.
+#
+get_noko
+-> get_noko
+Return Nokogiri object from source
+#
+google_images
+images = name -> google_images 5
+Search images at Google
+Get {5} first images from google on search {name}.
+#
+translate
+-> translate "EN"|, "JP"
+Use Google Translate Toolkit
+Translate from {"EN"} to {"JP"}.
+If second language is omitted, default shop language is used.
+#
+saveinfo
+saveinfo info, tag|, id
+Save info into DB storage
+{info} - data, 2000 chars max
+{tag} - info group name. If first letter is uppercase, info will be saved after donor pass.
+{id} - numeric info ID. If omitted, new one is generated and returned as result.
+#
+loadinfo
+info = loadinfo tag, id
+Load info from DB storage
+Loads info saved with {saveinfo}.
+#
+loadinfos
+infos = loadinfos tag|, id
+Load infos from DB storage
+Loads all info entries saved with {saveinfo} as array.
+#
+deleteinfo
+deleteinfo tag, id
+Delete info from DB storage
+Deletes info saved with {saveinfo}.
+#
+get_file
+filename = get_file url, savepath|, accesspath
+Load file from URL
+Saves file to {savepath} and returns its filename.
+{accesspath} is added to filename if specified.
+#
+EntityPlatformId
+product_id = EntityPlatformId id
+Get {product_id}
+Checks if product with such an {id} was parsed already and returns its {product_id}
+#
+get
+page = get myURL
+Get URL contents
+#
+xlog
+xlog "Test message"
+Add message to log
+Also accepts any type of variable.
+#
+GetHtmlImages
+description -> GetHtmlImages
+Load images from HTML
+Loads all images from HTML in variable and replaces their URLs to point to your server.
+#
+attribute
+model = attribute "Model"
+Get attribute value
+Finds attribute with given name in {attributes} and returns its value.
+#
+take_attribute
+take_attribute "Quantity"
+Get and remove attribute
+Removes attribute with given name from {attributes} and returns its value.
+#
+currency
+price = tag_text ".price" -> currency "EUR"
+Convert to shop's currency
+Converts price from {"EUR"} to your shop's currency. If currency name is ommited, {"USD"} is taken as source currency.
+#
+last_result
+if (last_result!=200) DonorStop
+Result code of last request
+#
+skip
+skip = true
+Skip the script results processing
+No products/tasks will be added at this step if {skip} was set.
+#
+script
+script = "advanced.txt"
+Additional script name
+Script with such a filename will be executed after section commands.
+#
+[Commands]
+if
+if (name=="Notebook") 
+Check the codition and do something
+#
+for
+for (images) 
+Take some action for all elements
+Individual element is called as array minus last letter.
+#
+StartCommands
+StartCommands
+Call on {html} change
+Do this command after you change {html} variable for {tag_...} to work properly.
+#
+DonorStop
+DonorStop
+Stop the current parsing process
+#
+add_tasks
+add_tasks type, tasks|, z_order
+Add new tasks to processing queue
+{type} - {"list"} or {"product"}
+{tasks} - URL or array of URLs
+{z_order} - task priority
+#
+[COMMON]
+image_filename
+image_filename = "%model/image"
+Images folder and name
+Changes the image files location folder and/or names.
+Usage cases:
+{image_filename = "image"} - call image files {image1.jpg}, {image2.jpg} ...
+{image_filename = "%model/"} - save image files to subfolder called same as model.
+{image_filename = "ebay/new/product"} - save image files to {ebay/new} subfolder and call them like {product.jpg}
+#
+info
+info = tag_text ".path"
+Transfer data between tasks
+{info} is variable that is transferred between tasks. You can set it at {[LIST]} section and read at {[PRODUCTS]} section.
+#
+url
+url
+Current task URL
+#
+html
+html
+Current task HTML received from {url}
+Line breakes and spaces between tags are removed.
+#
+ohtml
+ohtml
+Current task original HTML.
+Current task original HTML received from {url} - without any modifications.
+#
+InsertCategory
+InsertCategory
+Add category data
+This command have the same effect as the end of {[LIST]} section. All variables that play in this section are processed. 
+Usually there is no need to use this command.
+Call it if you need to insert several categories at one step.
+#
+description_images
+description_images = true
+Load desc images
+By default images from descriptions are not loaded and images links to their original location.
+Set {description_images} to {true} to download images to your shop.
+#
