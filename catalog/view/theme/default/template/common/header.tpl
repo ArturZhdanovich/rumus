@@ -156,7 +156,8 @@ $('body').prepend('<iframe src="<?php echo $store; ?>" style="display: none;"></
 		<?php } ?>
 	  </div>
     </div>
-    <?php if ($categories) { ?>
+    <?php echo $supermenu; ?>
+    <?php if ($categories) { ?>  
 <?php if($we_menu_cache = $this->config->get('we_menu_cache')){ ?>
     <ul class="<?php echo $this->config->get('we_menu_class') ?>">
         <?php if(!empty($we_menu_cache)){ ?>
@@ -167,49 +168,6 @@ $('body').prepend('<iframe src="<?php echo $store; ?>" style="display: none;"></
         <?php } ?>
     </ul>
 <?php } ?>
-      <div id="menu">
-		<ul>
-		  <?php if ($all_news_top_menu == 'top_left') { ?>
-			<li><a href="<?php echo $all_news; ?>"><?php echo $text_all_news; ?></a></li>
-		  <?php } ?>
-		  <?php foreach ($categories as $category) { ?>
-			<li class="dropdown"><a href="<?php echo $category['href']; ?>"><?php echo $category['name']; ?></a>
-			<?php if ($category['children']) { ?>
-			  <div class="dropdown-block">
-				<?php for ($i = 0; $i < count($category['children']);) { ?>
-				  <ul>
-					<?php $j = $i + ceil(count($category['children']) / $category['column']); ?>
-					<?php for (; $i < $j; $i++) { ?>
-					  <?php if (isset($category['children'][$i])) { ?>
-						<li class="dropdown-level"> 
-						  <?php $levels_2 = $this->model_catalog_category->getCategories($category['children'][$i]['category_id']); ?>
-						  <?php if($levels_2) {  ?>
-							<a href="<?php echo $category['children'][$i]['href']; ?>"><?php echo $category['children'][$i]['name']; ?><span class="parent"></span></a>
-							<div class="dropdown-block-level">
-							  <ul>
-								<?php foreach ($levels_2 as $level_2) { ?>
-								  <li><a href="<?php echo $this->url->link('product/category', 'path='.$category['category_id'].'_' . $category['children'][$i]['category_id'] . '_' . $level_2['category_id']); ?>"><?php echo $level_2['name']; ?></a></li>	
-								<?php } ?>
-							  </ul>
-							</div>
-						  <?php } else { ?>
-							<a href="<?php echo $category['children'][$i]['href']; ?>"><?php echo $category['children'][$i]['name']; ?></a>
-						  <?php } ?>
-						</li>
-					  <?php } ?>
-					<?php } ?>
-				  </ul>
-				<?php } ?>
-			  </div>
-			<?php } ?>
-		    </li>
-		  <?php } ?>
-		  <?php echo $menu; ?>
-		  <?php if ($all_news_top_menu == 'top_right') { ?>
-			<li><a href="<?php echo $all_news; ?>"><?php echo $text_all_news; ?></a></li>
-		  <?php } ?>
-		</ul>
-	  </div>
 	<?php } ?>
 	<div class="clear"></div>
 	<div id="notification"></div>

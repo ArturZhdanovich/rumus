@@ -246,7 +246,10 @@ class ControllerCommonHeader extends Controller {
 		$this->data['text_mobile_telephone'] = $this->language->get('text_mobile_telephone');
 		$this->data['text_fax'] = $this->language->get('text_fax');
 		
-		$this->children = array(
+		$this->data['categories'] = null;
+            $this->children = array(
+
+            'module/supermenu',
 			'module/language',
 			'module/currency',
 			'module/menu',
