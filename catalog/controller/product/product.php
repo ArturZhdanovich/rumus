@@ -319,7 +319,7 @@ class ControllerProductProduct extends Controller {
 			$this->document->setKeywords($product_info['meta_keyword']);
 			$this->document->addLink($this->url->link('product/product', 'product_id=' . $this->request->get['product_id']), 'canonical');
 			$this->document->addScript('catalog/view/javascript/jquery/tabs.js');
-			$this->document->addScript('catalog/view/javascript/jquery/colorbox/jquery.colorbox.js');
+			$this->document->addScript('catalog/view/javascript/jquery/colorbox/jquery.colorbox-min.js');
 			$this->document->addStyle('catalog/view/javascript/jquery/colorbox/colorbox.css');
 			
 			if ($product_info['seo_h1']) {
@@ -678,8 +678,7 @@ class ControllerProductProduct extends Controller {
 					}
 				} else {
 					$popular = false;
-				}
-							
+				}		
 				$this->data['products'][] = array(
 					'product_id' => $result['product_id'],
 					'name'    	 => $result['name'],

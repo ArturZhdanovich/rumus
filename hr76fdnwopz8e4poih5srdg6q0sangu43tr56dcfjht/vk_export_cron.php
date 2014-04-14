@@ -34,9 +34,7 @@ chmod(DIR_LOGS . $logfile, 0777);
 
 $res = mysql_connect(DB_HOSTNAME, DB_USERNAME, DB_PASSWORD);
 mysql_select_db(DB_DATABASE);
-$query = mysql_query('SELECT * FROM ' . DB_PREFIX . 'setting 
-    WHERE `group` = \'vk_export\' AND (`key` = \'vk_export_cron_user\' OR `key` = \'vk_export_cron_pass\')
-');
+$query = mysql_query('SELECT * FROM ' . DB_PREFIX . 'setting WHERE `group` = \'vk_export\' AND (`key` = \'vk_export_cron_user\' OR `key` = \'vk_export_cron_pass\')');
 $user = array();
 while ($row = mysql_fetch_assoc($query)) {
     $user[$row['key']] = $row['value'];

@@ -265,17 +265,21 @@ class ControllerProductCategory extends Controller {
 			
 			$this->data['products'] = array();
 			
+		/* Начало Товары в категории из под-категории */
 			$data = array(
 				'filter_category_id' => $category_id,
-				'filter_filter'      => $filter, 
-				'sort'               => $sort,
-				'order'              => $order,
-				'start'              => ($page - 1) * $limit,
-				'limit'              => $limit
+				'filter_sub_category' => true,
+				'sort'			  => $sort,
+				'order'			  => $order,
+				'start'			  => ($page - 1) * $limit,
+				'limit'			  => $limit
 			);
+		
+			$product_total = $this->model_catalog_product->getTotalProducts($data);
+ 
 			$results = $this->model_catalog_product->getProducts($data);
-			$product_total = $this->model_catalog_product->getFoundProducts(); 
-			
+
+/* Конец Товары в категории из под-категории */
 			foreach ($results as $result) {
 				if ($result['image']) {
 					$image = $this->model_tool_image->resize($result['image'], $this->config->get('config_image_product_width'), $this->config->get('config_image_product_height'));
@@ -340,7 +344,11 @@ class ControllerProductCategory extends Controller {
 				} else {
 					$popular = false;
 				}
-								
+				if (($result['quantity']) > 1 ) {
+						$instock = '<div class="stiker-instock"></div>';
+				}else {
+					$instock = false;
+				}			
 				$this->data['products'][] = array(
 					'product_id'  	   	=> $result['product_id'],
 					'name'        	   	=> $result['name'],
@@ -356,6 +364,7 @@ class ControllerProductCategory extends Controller {
 					'sale' 	  	  		=> $sale,
 					'new'     	  		=> $new,
 					'popular'     		=> $popular,
+                    'instock' 	  	  	=> $instock,
 					'reviews'     		=> sprintf($this->language->get('text_reviews'), (int)$result['reviews']),
 					'href'        		=> $this->url->link('product/product', 'path=' . $this->request->get['path'] . '&product_id=' . $result['product_id'] . $url)
 				);

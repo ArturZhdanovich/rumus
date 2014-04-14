@@ -15,7 +15,7 @@
       <?php if ($thumb) { ?>
           
       <div class="image">
-      <a href="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>"  class="colorbox cloud-zoom" id='zoom1' rel="position: 'right' ,showTitle:false, adjustX:-0, adjustY:-4" data-gal="prettyPhoto[gallery]" ><img src="<?php echo $thumb; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" id="image" /></a>
+      <a href="<?php echo $popup; ?>" title="<?php echo $heading_title; ?>"  class="colorbox cloud-zoom" id='zoom1' rel="position: 'right' ,showTitle:false, adjustX:-0, adjustY:-4" ><img src="<?php echo $thumb; ?>" title="<?php echo $heading_title; ?>" alt="<?php echo $heading_title; ?>" id="image" /></a>
       
       <?php echo $sale; ?><?php echo $new; ?><?php echo $popular; ?>
       </div>
@@ -29,8 +29,8 @@
 			    <span class="plus"></span>
 			    <input type="hidden" name="product_id" size="2" value="<?php echo $product_id; ?>" />
 			  </div>
-			  <a onclick="addToWishList('<?php echo $product_id; ?>');" class="poshytips button-wishlists" title="<?php echo $button_wishlist; ?>" /></a>
-			  <input type="button" value="<?php echo $button_cart; ?>" id="button-cart" class="poshytips button-carts" title="<?php echo $button_cart; ?>" />	  
+			  <a onclick="addToWishList('<?php echo $product_id; ?>');" class="button-wishlists" title="<?php echo $button_wishlist; ?>" /></a>
+			  <input type="button" value="<?php echo $button_cart; ?>" id="button-cart" class="button-carts" title="<?php echo $button_cart; ?>" />	  
            </div>
 		    <?php if ($minimum > 1) { ?>
 			  <div class="minimum"><?php echo $text_minimum; ?></div>
@@ -44,11 +44,7 @@
         <?php } ?>
       </div>
       <?php } ?>
-   
     </div>
-    
-    
-    
    <div class="right">
       <div class="description">
         <?php if ($manufacturer) { ?>

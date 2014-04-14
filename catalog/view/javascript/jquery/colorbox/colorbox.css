@@ -17,5 +17,7 @@
 #cboxMiddleLeft{width:14px;background:url(images/controls.png) repeat-y -175px 0;}
 #cboxMiddleRight{width:14px;background:url(images/controls.png) repeat-y -211px 0;}
 #cboxError{border:1px solid #ccc;padding:50px;}
-#cboxClose{position:absolute;bottom:-29px;background:url(images/controls.png) no-repeat 0 0;width:23px;height:23px;text-indent:-9999px;right:0;background-position:-100px -25px;}
+#cboxClose{position:absolute;top:0px;background:url(images/controls.png) no-repeat 0 0;width:23px;height:23px;text-indent:-9999px;right:0;background-position:-100px -25px;}
 #cboxClose:hover{background-position:-100px 0;}
+#cboxPrevious{position:absolute;background:url(../../../theme/default/image/arrows.png) 0 -50% no-repeat;width:30px;height:30px;bottom:-32px;left:0px;}
+#cboxNext{position:absolute;background:url(../../../theme/default/image/arrows.png) 100% 0 no-repeat;width:30px;height:30px;bottom:-32px;right:0px;}

@@ -616,7 +616,7 @@ class ControllerModuleFilterPro extends Controller {
 				} else {
 					$new = false;
 				}
-
+                
 				if ($this->config->get('config_sticker_popular_categories')) {
 					if (($result['viewed']) > ($limit_viewed_popular_product)) {
 						$popular = '<div class="stiker-popular"></div>';
@@ -626,7 +626,9 @@ class ControllerModuleFilterPro extends Controller {
 				} else {
 					$popular = false;
 				}
-
+                if (($result['quantity']) > 0) {
+						$instock = '<div class="stiker-instock"></div>';
+				}
 			$this->data['products'][] = array(
 				'product_id'  => $result['product_id'],
 				'thumb'       => $image,
@@ -642,6 +644,7 @@ class ControllerModuleFilterPro extends Controller {
                 'sale' 	  	  		=> $sale,
 				'new'     	  		=> $new,
 				'popular'     		=> $popular,
+                'instock' 	  	  	=> $instock,
 				'reviews'     => sprintf($this->language->get('text_reviews'), (int)$result['reviews']),
 				'href'        => $this->url->link('product/product', 'path=' . $this->request->get['path'] . '&product_id=' . $result['product_id'])
 			);

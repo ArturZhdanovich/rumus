@@ -512,14 +512,14 @@
                       <?php } ?>
                     </select>
                     <input type="hidden" name="product_option[<?php echo $option_row; ?>][product_option_value][<?php echo $option_value_row; ?>][product_option_value_id]" value="<?php echo $product_option_value['product_option_value_id']; ?>" /></td>
-                  <td class="right"><input type="text" name="product_option[<?php echo $option_row; ?>][product_option_value][<?php echo $option_value_row; ?>][quantity]" value="<?php echo $product_option_value['quantity']; ?>" size="3" /></td>
+                  <td class="right"><input type="text" name="product_option[<?php echo $option_row; ?>][product_option_value][1][quantity]" value="1" size="3" /></td>
                   <td class="left"><select name="product_option[<?php echo $option_row; ?>][product_option_value][<?php echo $option_value_row; ?>][subtract]">
                       <?php if ($product_option_value['subtract']) { ?>
-                      <option value="1" selected="selected"><?php echo $text_yes; ?></option>
-                      <option value="0"><?php echo $text_no; ?></option>
-                      <?php } else { ?>
                       <option value="1"><?php echo $text_yes; ?></option>
                       <option value="0" selected="selected"><?php echo $text_no; ?></option>
+                      <?php } else { ?>
+                      <option value="1" selected="selected"><?php echo $text_yes; ?></option>
+                      <option value="0"><?php echo $text_no; ?></option>
                       <?php } ?>
                     </select></td>
                   <td class="right"><select name="product_option[<?php echo $option_row; ?>][product_option_value][<?php echo $option_value_row; ?>][price_prefix]">

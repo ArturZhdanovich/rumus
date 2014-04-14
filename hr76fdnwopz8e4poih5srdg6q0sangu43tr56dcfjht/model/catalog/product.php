@@ -397,9 +397,10 @@ class ModelCatalogProduct extends Model {
 		}
 	}
 	public function editProductStatus($product_id, $status) { $this->db->query("UPDATE " . DB_PREFIX . "product SET status = '" . (int)$status . "', date_modified = NOW() WHERE product_id = '" . (int)$product_id . "'"); $this->cache->delete('product'); }
-	public function deleteProduct($product_id) {
+	
+    public function deleteProduct($product_id) {
     
-     $query = $this->db->query("SELECT image FROM " . DB_PREFIX . "product WHERE  product_id = '" . (int)$product_id . "' UNION ALL SELECT image FROM " . DB_PREFIX . "product_image WHERE  product_id = '" . (int)$product_id . "'");
+     $query = $this->db->query("SELECT image FROM " . DB_PREFIX . "product WHERE  product_id = '" . (int)$product_id . "' UNION ALL SELECT image FROM " . DB_PREFIX . "product_image WHERE  product_id = '" . (int)$product_id . "'UNION ALL SELECT ob_image FROM " . DB_PREFIX . "product_option_value WHERE  product_id = '" . (int)$product_id . "'");
     foreach ($query->rows as $result) {
         @unlink(DIR_IMAGE . $result['image']);
     }
